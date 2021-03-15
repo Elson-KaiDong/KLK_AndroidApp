@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions.BunchCounting_InputScreen2"
+             BackgroundImageSource="bg.jpg">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,15,0,15"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="BackgroundColor" Value="Green"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="8"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Image Source="ffb.jpg" Aspect="AspectFill" HeightRequest="150" Opacity="1"/>
+                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
+                <Label Text="Bunch Counting"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,20,0,0"
+                   TextColor="white"/>
+            </Grid>
+           
+
+            <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="1. Ripe :" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="2. Unripe :" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="3. Black Bunch :" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="4. Rotten Bunch :" Grid.Row="3" Grid.Column="0"/>
+                <Label Text="5. Long Stalk :" Grid.Row="4" Grid.Column="0"/>
+                <Label Text="6. Pest Damage :" Grid.Row="5" Grid.Column="0"/>
+                <Label Text="7. Trash Status :" Grid.Row="6" Grid.Column="0"/>
+
+                <Frame Grid.Row="0" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_Ripe_Entry"/>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_Unripe_Entry"/>
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_BlackBunch_Entry"/>
+                </Frame>
+                <Frame Grid.Row="3" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_RottenBunch_Entry"/>
+                </Frame>
+                <Frame Grid.Row="4" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_LongStalk_Entry"/>
+                </Frame>
+                <Frame Grid.Row="5" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_PestDamage_Entry"/>
+                </Frame>
+                <Frame Grid.Row="6" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg2_TrashStatus_Entry"/>
+                </Frame>
+
+                
+            </Grid>
+            <Label TextColor="Red" Text="Trash Status : 0 = &quot;Good&quot; &amp; 1 = &quot;Bad&quot;" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Print Receipt (ENT)" Margin="20,0,20,0"  x:Name=" BunchCounting_pg2_PrintBtn" Clicked="BunchCounting_pg2_PrintBtn_Clicked"/>
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions.BunchCounting_InputScreen1"
+             BackgroundImageSource="bg.jpg">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,15,0,15"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="BackgroundColor" Value="Green"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>  
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="8"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Image Source="ffb.jpg" Aspect="AspectFill" HeightRequest="150" Opacity="1"/>
+                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
+                <Label Text="Bunch Counting"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,20,0,0"
+                   TextColor="white"/>
+            </Grid>
+            <StackLayout>
+                <Label x:Name="BunchCCounting_pg1_OC_Name"
+                       Text="OC :1.5-LADANG SERAPOH"
+                       HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="1. Field No" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="2. Task No" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="3. Cutter ID" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="4. Carrier ID" Grid.Row="3" Grid.Column="0"/>
+
+                <Frame Grid.Row="0" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg1_FieldNo_Entry"/>
+                </Frame>                
+                <Frame Grid.Row="1" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg1_TaskNo_Entry"/>
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg1_CutterID_Entry"/>
+                </Frame>
+                <Frame Grid.Row="3" Grid.Column="1">
+                    <Entry x:Name="bunchCounting_pg1_CarrierID_Entry"/>
+                </Frame>
+
+                <ImageButton Grid.Row="0" Grid.Column="2" x:Name="btn_ScanFieldNo"/>                
+                <ImageButton Grid.Row="2" Grid.Column="2" x:Name="btn_ScanCutterID"/>
+                <ImageButton Grid.Row="3" Grid.Column="2" x:Name="btn_ScanCarrierID"/>
+            </Grid>
+
+            <Grid Padding="20,20,20,0" ColumnSpacing="20">
+                <Grid.RowDefinitions/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btn_BunchCounting_pg1_Contract" Text="CONTRACT" Grid.Column="0"/>
+                <Button x:Name="btn_BunchCounting_pg1_Checkroll" Text="CHECKROLL" Grid.Column="1"/>
+            </Grid>
+
+            
+
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

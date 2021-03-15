@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCounting"
+             BackgroundImageSource="bg.jpg">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,15,0,15"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Image Source="ffb.jpg" Aspect="AspectFill" HeightRequest="150" Opacity="1"/>
+                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
+                <Label Text="FFB COUNTING"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,20,0,0"
+                   TextColor="white"/>
+            </Grid>
+
+            <StackLayout Padding="20,0,20,0" >
+                <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
+                    <StackLayout>
+                        <Button Text="1. Bunch Counting" Clicked="FFBCounting_to_BunchCounting"/>
+                        <Button Text="2. Loose Fruit Weighing" Clicked="FFBCounting_to_LooseFruitWeighing"/>
+                        <Button Text="3. FFB Verification" Clicked="FFBCounting_to_FFBVerification"/>
+                        <Button Text="4. Amend Verified FFB" Clicked="FFBCounting_to_AmendVerifiedFFB"/>
+                        <Button Text="5. Mandore Attendance" Clicked="FFBCounting_to_MandoreAttendance" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+
+        </StackLayout>
+    </ContentPage.Content>    
+</ContentPage>

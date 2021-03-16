@@ -109,7 +109,7 @@
                 <ImageButton Grid.Row="3" Grid.Column="2" x:Name="btn_ScanCarrierID"/>
             </Grid>
 
-            <Grid Padding="20,20,20,0" ColumnSpacing="20">
+            <Grid Padding="20,20,20,0" ColumnSpacing="20" VerticalOptions="EndAndExpand">
                 <Grid.RowDefinitions/>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>

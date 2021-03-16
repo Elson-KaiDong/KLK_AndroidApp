@@ -21,7 +21,7 @@ namespace IPMS_KLK.Views
         private async void Login_Button_Clicked(object sender, EventArgs e)
         {
             
-            await Navigation.PushModalAsync(new NavigationPage(new MainMenu()));
+            await Navigation.PushModalAsync(new MainMenu());
         }
     }
 

@@ -2,10 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenu"            
-             BackgroundImageSource="bg.jpg"
-             NavigationPage.HasBackButton="False"
-             NavigationPage.HasNavigationBar="True"
-             NavigationPage.BackButtonTitle="Back">
+             BackgroundImageSource="bg.jpg">
 
     <ContentPage.Resources>
         <ResourceDictionary>

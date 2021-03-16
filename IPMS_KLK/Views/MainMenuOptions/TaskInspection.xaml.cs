@@ -15,6 +15,19 @@ namespace IPMS_KLK.Views.MainMenuOptions
         public TaskInspection()
         {
             InitializeComponent();
+            Title = "Task Inspection";
+            btn_TaskInspection_Reset.Clicked += Btn_TaskInspection_Reset_Clicked;
+            SetValue(NavigationPage.HasBackButtonProperty, true);
+            NavigationPage.SetHasBackButton(this, true);
+            
+        }
+
+        private void Btn_TaskInspection_Reset_Clicked(object sender, EventArgs e)
+        {
+            TaskInspection_WorkerID_Entry.Text = "";
+            TaskInspection_FieldNo_Entry.Text = "";
+            TaskInspection_TaskNo_Entry.Text = "";         
+            
         }
     }
 }

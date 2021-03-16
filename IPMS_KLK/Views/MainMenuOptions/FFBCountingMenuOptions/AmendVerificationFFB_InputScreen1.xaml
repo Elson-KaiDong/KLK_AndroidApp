@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions.AmendVerificationFFB_InputScreen1"
-             BackgroundImageSource="bg.jpg">
+             BackgroundImageSource="bg.jpg"
+             BackgroundColor="Transparent">
     
     
     
-    <ContentPage.Content>       
-        
-        <StackLayout >
-            
+    <ContentPage.Content>
+        <StackLayout>
+          
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

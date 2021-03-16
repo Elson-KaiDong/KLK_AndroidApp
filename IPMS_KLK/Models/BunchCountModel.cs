@@ -24,13 +24,16 @@ namespace IPMS_KLK.Models
 
         public override string ToString()
         {
-            return "Transaction No:" + this.TRANS_NO +
-                    "\r\nField No:" + FIELD_NO +
-                    "\r\nTask No:" + TASK_NO +
-                    "\r\nCutter ID:" + CUTTER_ID +
-                    "\r\nCarrier ID" + CARRIER_ID +
-                    "Contract/Checkroll" + HARVESTING_TYPE;
+            return "TRANS_NO:" + TRANS_NO + Environment.NewLine +
+                    "\nFIELD NO:" + FIELD_NO +
+                    "\nTASK NO:" + TASK_NO +
+                    "\nCUTTER ID:" + CUTTER_ID +
+                    "\nCARRIER ID" + CARRIER_ID +
+                    "\nRIPE" + NO_RIPE +
+                    "\nUNRIPE" + NO_UNRIPE;
         }
+
+        
     }
 
 }

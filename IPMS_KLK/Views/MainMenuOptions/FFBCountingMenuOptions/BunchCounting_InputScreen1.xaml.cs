@@ -18,12 +18,29 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
         {
             InitializeComponent();
             
-            btn_ScanFieldNo.Clicked += Btn_ScanFieldNo_Clicked;            
+            btn_ScanFieldNo.Clicked += Btn_ScanFieldNo_Clicked;
+            btn_ScanTaskNo.Clicked += Btn_ScanTaskNo_Clicked;
             btn_ScanCutterID.Clicked += Btn_ScanCutterID_Clicked;
             btn_ScanCarrierID.Clicked += Btn_ScanCarrierID_Clicked;
             btn_BunchCounting_pg1_Contract.Clicked += Btn_BunchCounting_pg1_Contract_Clicked;
             btn_BunchCounting_pg1_Checkroll.Clicked += Btn_BunchCounting_pg1_Checkroll_Clicked;           
-        }      
+        }
+
+        private async void Btn_ScanTaskNo_Clicked(object sender, EventArgs e)
+        {
+            scanFieldNo_Page = new ZXingScannerPage();
+            scanFieldNo_Page.OnScanResult += (result) =>
+            {
+                scanFieldNo_Page.IsScanning = false;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Navigation.PopModalAsync();
+                    bunchCounting_pg1_FieldNo_Entry.Text = result.Text;
+                });
+            };
+            await Navigation.PushModalAsync(scanFieldNo_Page);
+        }
 
         private async void Btn_BunchCounting_pg1_Checkroll_Clicked(object sender, EventArgs e)
         {           
@@ -109,6 +126,8 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
                 }
             }
         }
+
+        
 
         private async void Btn_ScanFieldNo_Clicked(object sender, EventArgs e)
         {

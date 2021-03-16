@@ -31,7 +31,7 @@ namespace IPMS_KLK.Views
         }
         private async void MainMenu_to_TaskInspection(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainMenuOptions.TaskInspection());
+            await Navigation.PushModalAsync(new NavigationPage(new MainMenuOptions.TaskInspection()));
         }
         private async void MainMenu_to_ReceiptReprint(object sender, EventArgs e)
         {

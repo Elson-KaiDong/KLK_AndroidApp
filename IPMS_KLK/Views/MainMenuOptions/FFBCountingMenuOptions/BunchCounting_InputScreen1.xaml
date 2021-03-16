@@ -103,7 +103,8 @@
                     <Entry x:Name="bunchCounting_pg1_CarrierID_Entry"/>
                 </Frame>
 
-                <ImageButton Grid.Row="0" Grid.Column="2" x:Name="btn_ScanFieldNo"/>                
+                <ImageButton Grid.Row="0" Grid.Column="2" x:Name="btn_ScanFieldNo"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" x:Name="btn_ScanTaskNo"/>
                 <ImageButton Grid.Row="2" Grid.Column="2" x:Name="btn_ScanCutterID"/>
                 <ImageButton Grid.Row="3" Grid.Column="2" x:Name="btn_ScanCarrierID"/>
             </Grid>

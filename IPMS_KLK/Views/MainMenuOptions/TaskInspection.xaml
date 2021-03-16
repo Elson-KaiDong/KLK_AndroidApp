@@ -106,7 +106,7 @@
 
             <StackLayout Margin="20,0,20,0" VerticalOptions="EndAndExpand">
                 <Button Text="NEXT"/>
-                <Button Text="PRINT SUMMARY" IsEnabled="False"/>
+                <Button Text="PRINT SUMMARY" IsEnabled="True"/>
             </StackLayout>
 
 

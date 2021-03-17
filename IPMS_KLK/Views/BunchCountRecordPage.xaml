@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IPMS_KLK.Views.BunchCountRecordPage"
+             Title="Bunch Count Records"
+             NavigationPage.HasNavigationBar="True">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Bunch Count" Command="{Binding AddBunchCountRecordCommand}"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ListView ItemsSource="{Binding BunchCountRecord}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Label Text="{Binding TRANS_NO}"/>
+                </StackLayout>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+</ContentPage>

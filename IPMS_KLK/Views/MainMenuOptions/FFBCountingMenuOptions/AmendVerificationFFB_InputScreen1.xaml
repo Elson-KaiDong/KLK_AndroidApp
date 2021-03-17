@@ -8,9 +8,7 @@
     
     
     <ContentPage.Content>
-        <StackLayout>
-          
-        </StackLayout>
+        
         
     </ContentPage.Content>
 </ContentPage>

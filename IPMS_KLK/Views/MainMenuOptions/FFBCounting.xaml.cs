@@ -37,5 +37,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
         {
             await Navigation.PushModalAsync(new FFBCountingMenuOptions.MandoreAttendance_InputScreen1());
         }
+
+        private async void FFBCounting_to_Record(object sender,EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new BunchCountRecordPage()));
+        }
     }
 }

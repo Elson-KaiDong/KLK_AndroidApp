@@ -27,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\BunchCountDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BunchCountRecordPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\FFBCounting.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

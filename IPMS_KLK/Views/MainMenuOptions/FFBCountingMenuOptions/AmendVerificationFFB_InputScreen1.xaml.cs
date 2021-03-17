@@ -17,11 +17,9 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AmendVerificationFFB_InputScreen1 : ContentPage
     {
+        //private ListView AmendVerified_ListView;
+        private CollectionView AmendVerified_ListView;
         
-        
-        
-
-        private ListView AmendVerified_ListView;
         string db_Path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ipmsklk_db");
 
         public AmendVerificationFFB_InputScreen1()
@@ -30,15 +28,35 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
             this.Title = "Amend Verified";
             var db = new SQLiteConnection(db_Path);
 
-            StackLayout stackLayout = new StackLayout();
-            AmendVerified_ListView = new ListView();
-            
-            var listviewItemSource= db.Table<BunchCountModel>().OrderBy(x => x.TRANS_NO).ToArray();
-            AmendVerified_ListView.ItemsSource = listviewItemSource;
-            
-            //tc_TRANS_NO.Text = "";
-            
+            StackLayout stackLayout = new StackLayout
+            {
+                Padding = new Thickness(20, 20, 20, 20),
+                Orientation = StackOrientation.Vertical,
+                VerticalOptions = LayoutOptions.StartAndExpand
+            };
 
+
+            //AmendVerified_ListView = new ListView();
+
+            AmendVerified_ListView = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+               
+            };
+            
+            try
+            {
+                var listviewItemSource = db.Table<BunchCountModel>().OrderBy(x => x.TRANS_NO).ToString();
+                AmendVerified_ListView.ItemsSource = db.Query<BunchCountModel>("SELECT * FROM[BunchCountModel]");
+            }
+
+            catch
+            {
+                DisplayAlert("", "There is no bunch count record in this device", "OK");
+            }
+            
+            
+            // AmendVerified_ListView.ItemsSource = listviewItemSource; 
             stackLayout.Children.Add(AmendVerified_ListView);
             
             Content = stackLayout;

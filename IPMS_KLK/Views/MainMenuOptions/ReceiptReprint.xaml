@@ -22,7 +22,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid>
-                <Image Source="ffb.jpg" Aspect="AspectFill" HeightRequest="150"/>
+                <Image Source="desk.jpg" Aspect="AspectFill" HeightRequest="150"/>
                 <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
                 <Label Text="RECEIPT REPRINT/CANCEL"
                    FontSize="Title"

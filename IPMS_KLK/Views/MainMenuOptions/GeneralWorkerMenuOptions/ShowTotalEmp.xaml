@@ -26,12 +26,12 @@
                 <Label Text="Total Employee:"
                        FontAttributes="Bold"
                        Grid.Column="0"
-                       FontSize="Title"
+                       FontSize="Medium"
                        TextColor="Black"/>
                 <Label Text="0"
                        FontAttributes="Bold"
                        Grid.Column="1"
-                       FontSize="Title"
+                       FontSize="Medium"
                        TextColor="DarkGreen"
                        TextDecorations="Underline"/>
                 

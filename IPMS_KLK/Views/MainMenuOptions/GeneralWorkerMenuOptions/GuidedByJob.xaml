@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.GeneralWorkerMenuOptions.GuidedByJob">
+             x:Class="IPMS_KLK.Views.MainMenuOptions.GeneralWorkerMenuOptions.GuidedByJob"
+             BackgroundImageSource="bg.jpg">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Image Source="workers.jpg" Aspect="AspectFill" HeightRequest="150"/>
+                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
+                <Label Text="GUIDED BY JOB"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,20,0,0"
+                   TextColor="White"/>
+            </Grid>
+
+            <StackLayout  VerticalOptions="EndAndExpand">
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

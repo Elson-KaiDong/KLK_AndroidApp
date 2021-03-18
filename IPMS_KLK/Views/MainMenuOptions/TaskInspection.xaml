@@ -92,8 +92,8 @@
                     <Entry x:Name="TaskInspection_TaskNo_Entry"/>
                 </Frame>
                 <StackLayout RadioButtonGroup.GroupName="Direction_Type"  Grid.Row="3" Grid.Column="1">
-                    <RadioButton Content="P&lt;&lt;" Value="Left" IsChecked="True" x:Name="start_from_left"/>
-                    <RadioButton Content="&gt;&gt;P" Value="Right" x:Name="start_from_right"/>
+                    <RadioButton TextColor="Black" Content="P&lt;&lt;" Value="Left" IsChecked="True" x:Name="start_from_left"/>
+                    <RadioButton TextColor="Black" Content="&gt;&gt;P" Value="Right" x:Name="start_from_right"/>
                 </StackLayout>
                 
 

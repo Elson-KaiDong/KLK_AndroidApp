@@ -54,7 +54,7 @@ namespace IPMS_KLK.ViewModels
 
         private async Task AddBunchCountRecord()
         {
-            await _pageService.PushAsync(new BunchCountDetailPage(new BunchCountRecordViewModel()));
+            await _pageService.PushAsync(new BunchCountDetailPage());
         }
 
         private async Task SelectBunchCountRecord(BunchCountRecordViewModel bunchCountRecord)
@@ -63,7 +63,7 @@ namespace IPMS_KLK.ViewModels
                 return;
 
             SelectedBunchCountRecord = null;
-            await _pageService.PushAsync(new BunchCountDetailPage(bunchCountRecord));
+            await _pageService.PushAsync(new BunchCountDetailPage());
 
         }
 

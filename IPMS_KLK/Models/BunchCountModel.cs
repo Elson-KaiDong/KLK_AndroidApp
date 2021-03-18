@@ -28,7 +28,7 @@ namespace IPMS_KLK.Models
                     "\nFIELD NO:" + FIELD_NO +
                     "\nTASK NO:" + TASK_NO +
                     "\nCUTTER ID:" + CUTTER_ID +
-                    "\nCARRIER ID" + CARRIER_ID +
+                    "\nCARRIER ID:" + CARRIER_ID +
                     "\nRIPE:" + NO_RIPE +
                     "\nUNRIPE:" + NO_UNRIPE +
                     "\nBLACK BUNCH:" + NO_BLACKBUNCH +

@@ -34,12 +34,12 @@
             <StackLayout Padding="20,0,20,0">
                 <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
                     <StackLayout>
-                        <Button Text="1. General Workers" Clicked="MainMenu_to_GeneralWorker" TabIndex="1"/>
-                        <Button Text="2. Rubber Reception" Clicked="MainMenu_to_RubberReception"/>
-                        <Button Text="3. FFB Counting" Clicked="MainMenu_to_FFBCounting"/>
-                        <Button Text="4. Task Inspection" Clicked="MainMenu_to_TaskInspection"/>
-                        <Button Text="5. Receipt Reprint/Cancel" Clicked="MainMenu_to_ReceiptReprint"/>
-                        <Button Text="6. Others/Changes" Clicked="MainMenu_to_OthersChanges"/>
+                        <Button Text="1. General Workers" Command="{Binding MainMenu_to_GeneralWorkerCommand}"/>
+                        <Button Text="2. Rubber Reception" Command="{Binding MainMenu_to_RubberReceptionCommand}"/>
+                        <Button Text="3. FFB Counting" Command="{Binding MainMenu_to_FFBCountingCommand}"/>
+                        <Button Text="4. Task Inspection" Command="{Binding MainMenu_to_TaskInspectionrCommand}"/>
+                        <Button Text="5. Receipt Reprint/Cancel" Command="{Binding MainMenu_to_ReceiptReprintCommand}"/>
+                        <Button Text="6. Others/Changes" Command="{Binding MainMenu_to_OthersChangesCommand}"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>

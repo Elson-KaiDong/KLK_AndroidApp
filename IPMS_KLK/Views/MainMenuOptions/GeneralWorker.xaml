@@ -14,6 +14,7 @@
                 <Setter Property="BackgroundColor" Value="Black"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -35,11 +36,12 @@
             <StackLayout Padding="20,0,20,0">
                 <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
                     <StackLayout>
-                        <Button Text="1. Guided by Job" />
-                        <Button Text="2. Add New Job"/>
-                        <Button Text="3. Add New Vehicle"/>
-                        <Button Text="4. Print Receipt" />
-                        <Button Text="5. Show Total Emp Menu" />
+                        <Button Text="1. Guided by Job" Command="{Binding GeneralWorker_to_GuidedByJobCommand}"/>
+                        <Button Text="2. Guided by Vehicle" Command="{Binding GeneralWorker_to_GuidedByVehicleCommand}"/>
+                        <Button Text="3. Add New Job" Command="{Binding GeneralWorker_to_AddNewJobCommand}"/>
+                        <Button Text="4. Add New Vehicle" Command="{Binding GeneralWorker_to_AddNewVechicleCommand}"/>
+                        <Button Text="5. Print Receipt" Command="{Binding GeneralWorker_to_PrintReceiptCommand}"/>
+                        <Button Text="6. Show Total Emp" Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}"/>
                     </StackLayout>
                 </Frame>                
             </StackLayout>

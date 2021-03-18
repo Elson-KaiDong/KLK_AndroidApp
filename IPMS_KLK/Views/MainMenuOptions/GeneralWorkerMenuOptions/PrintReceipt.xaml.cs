@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace IPMS_KLK.Views.MainMenuOptions
+namespace IPMS_KLK.Views.MainMenuOptions.GeneralWorkerMenuOptions
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GeneralWorker : ContentPage
+    public partial class PrintReceipt : ContentPage
     {
-        public GeneralWorker()
+        public PrintReceipt()
         {
             InitializeComponent();
-            BindingContext = new ViewModels.GeneralWorkerViewModel();
         }
     }
 }

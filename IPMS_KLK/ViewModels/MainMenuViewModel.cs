@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -56,11 +53,5 @@ namespace IPMS_KLK.ViewModels
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.OthersChanges());
         }
-
-
-
-
-
-
     }
 }

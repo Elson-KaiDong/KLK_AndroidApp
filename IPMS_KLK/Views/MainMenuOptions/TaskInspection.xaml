@@ -107,11 +107,11 @@
             <StackLayout Margin="20,0,20,0" VerticalOptions="EndAndExpand">
                 <Button Text="NEXT"/>
                 <Button Text="PRINT SUMMARY" IsEnabled="True"/>
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
+
             </StackLayout>
 
 
-
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
 
         </StackLayout>
     </ContentPage.Content>

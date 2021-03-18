@@ -61,11 +61,13 @@
                     <Button Text="Yes" BackgroundColor="DarkGreen" Grid.Column="0" Command="{Binding AddNewJobScanOC_YesCommand}"/>
                     <Button Text="No" BackgroundColor="DarkRed" Grid.Column="1" Command="{Binding AddNewJobScanOC_NoCommand}"/>
                 </Grid>
+
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
+
             </StackLayout>
 
             
             
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
 
         </StackLayout>
     </ContentPage.Content>

@@ -22,7 +22,6 @@
   <ItemGroup>
     <Folder Include="Views\MainMenuOptions\OthersChangesMenuOptions\" />
     <Folder Include="Views\MainMenuOptions\TaskInspectionMenuOptions\" />
-    <Folder Include="Views\MainMenuOptions\RubberReceptionMenuOptions\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -96,6 +95,24 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\RubberReception.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\BucketCageWt.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\FCWeighing.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\LatexFC.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\LatexWeighing.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\PrintTotalWt.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\RubberReception_MandoreAttendance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\TaskInspection.xaml">

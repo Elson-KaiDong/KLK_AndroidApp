@@ -12,7 +12,6 @@ namespace IPMS_KLK.ViewModels
         public ICommand MainMenu_to_FFBCountingCommand { get; }
         public ICommand MainMenu_to_TaskInspectionrCommand { get; }
         public ICommand MainMenu_to_ReceiptReprintCommand { get; }
-
         public ICommand MainMenu_to_OthersChangesCommand { get; }
         public MainMenuViewModel()
         {

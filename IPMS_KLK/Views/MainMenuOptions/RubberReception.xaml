@@ -35,11 +35,12 @@
             <StackLayout Padding="20,0,20,0" >
                 <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
                     <StackLayout>
-                        <Button Text="1. Latex and FC" />
-                        <Button Text="2. Latex Weighing"/>
-                        <Button Text="3. FC Weighing"/>
-                        <Button Text="4. Print Total Wt" />
-                        <Button Text="5. Bucket/Cage Wt" />
+                        <Button Text="1. Latex and FC" Command="{Binding RubberReception_to_LatexFCCommand}" />
+                        <Button Text="2. Latex Weighing" Command="{Binding RubberReception_to_LatexWeighingCommand}"/>
+                        <Button Text="3. FC Weighing" Command="{Binding RubberReception_to_FCWeighingCommand}"/>
+                        <Button Text="4. Print Total Wt" Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"/>
+                        <Button Text="5. Bucket/Cage Wt" Command="{Binding RubberReception_to_BucketCageWtCommand}"/>
+                        <Button Text="6. Mandore Attendance" Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}"/>
                     </StackLayout>                    
                 </Frame>                
             </StackLayout>

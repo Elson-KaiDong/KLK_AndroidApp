@@ -106,6 +106,9 @@
     <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\LatexFC.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\LatexFC2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\RubberReceptionMenuOptions\LatexWeighing.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

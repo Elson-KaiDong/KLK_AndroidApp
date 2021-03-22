@@ -1,48 +1,116 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
 using Xamarin.Forms;
+using System.Text;
+using ZXing.Net.Mobile.Forms;
+using System;
 
 namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
 {
-    public class LatexFC_ViewModel :INotifyPropertyChanged
+    public class LatexFC_ViewModel :BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        
+        ZXingScannerPage scanFieldNo_Page;
+        string _workerID;
+        string _fieldNo;
+        string _taskNo;
 
-        bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        public Command NextButtonCommand { get; }
+        public Command ScanWorkerIDCommand { get; }
+        public Command ScanFieldNoCommand { get; }
+        public Command ScanTaskNoCommand { get; }
+
+        public string WorkerID
         {
-            if (Object.Equals(storage, value))
-                return false;
-
-            storage = value;
-            OnPropertyChanged(propertyName);
-            return true;
+            get { return _workerID; }
+            set
+            {
+                SetProperty(ref _workerID, value);
+                NextButtonCommand.ChangeCanExecute();
+            }                
         }
 
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        public string FieldNo
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            get { return _fieldNo; }
+            set
+            {
+                SetProperty(ref _fieldNo, value);
+                NextButtonCommand.ChangeCanExecute();
+            }
+        }
+
+        public string TaskNo
+        {
+            get { return _taskNo; }
+            set
+            {
+                SetProperty(ref _taskNo, value);
+                NextButtonCommand.ChangeCanExecute();
+                
+            }
+        }
+
+        private async void scanWorkerID_btn_Clicked(object sender)
+        {
+            scanFieldNo_Page = new ZXingScannerPage();
+            scanFieldNo_Page.OnScanResult += (result) =>
+            {
+                scanFieldNo_Page.IsScanning = false;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Application.Current.MainPage.Navigation.PopModalAsync();
+                    WorkerID = result.Text;
+                });
+            };
+            await Application.Current.MainPage.Navigation.PushModalAsync(scanFieldNo_Page);
+        }
+
+        private async void scanFieldNo_btn_Clicked(object sender)
+        {
+            scanFieldNo_Page = new ZXingScannerPage();
+            scanFieldNo_Page.OnScanResult += (result) =>
+            {
+                scanFieldNo_Page.IsScanning = false;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Application.Current.MainPage.Navigation.PopModalAsync();
+                    FieldNo = result.Text;
+                });
+            };
+            await Application.Current.MainPage.Navigation.PushModalAsync(scanFieldNo_Page);
+        }
+
+        private async void scanTaskNo_btn_Clicked(object sender)
+        {
+            scanFieldNo_Page = new ZXingScannerPage();
+            scanFieldNo_Page.OnScanResult += (result) =>
+            {
+                scanFieldNo_Page.IsScanning = false;
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    Application.Current.MainPage.Navigation.PopModalAsync();
+                    TaskNo = result.Text;
+                });
+            };
+            await Application.Current.MainPage.Navigation.PushModalAsync(scanFieldNo_Page);
         }
 
         private LatexFC_TappingType _selectedTappingType { get; set; }
         public LatexFC_TappingType SelectedTappingType
         {
-            get { return _selectedTappingType; }
+            get => _selectedTappingType;
             set
             {
-                if (_selectedTappingType != value)
+                if (_selectedTappingType != value)                
                 {
                     _selectedTappingType = value;
-                    if (_selectedTappingType.TypeKey == 4)
-                    {
-                        IsMethodPickerEnabled = true;
-                    }
                     OnPropertyChanged();
-                    
+                    OnPropertyChanged("IsMethodPickerEnabled");                   
                 }
             }
         }
@@ -54,16 +122,18 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
 
             set
             {
-                if (_selectedTappingType.TypeKey!=4)
+                if(_isMethodPickerEnabled!=value)
                 {
-                    _isMethodPickerEnabled = false;
-                    OnPropertyChanged();
+                    if (_selectedTappingType == tappingTypeList[3])
+                        _isMethodPickerEnabled = true;
+                    else
+                        _isMethodPickerEnabled = false;
+
                 }
             }
         }
 
         
-
         public List<LatexFC_TappingType> tappingTypeList { get; set; }
         public List<LatexFC_Method> methodList { get; set; }
          
@@ -71,11 +141,23 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
         public LatexFC_ViewModel() //Constructor
         {
             tappingTypeList = GetTappingTypes().OrderBy(t => t.TappingType).ToList();
-            methodList = GetMethod().OrderBy(t => t.TappingMethod).ToList(); 
+            methodList = GetMethod().OrderBy(t => t.TappingMethod).ToList();
+            NextButtonCommand = new Command(OnNextClicked, NextButtonAllowed);
+            ScanWorkerIDCommand = new Command(scanWorkerID_btn_Clicked);
+            ScanFieldNoCommand = new Command(scanFieldNo_btn_Clicked);
+            ScanTaskNoCommand = new Command(scanTaskNo_btn_Clicked);
         }
 
-       
+        public bool NextButtonAllowed(object obj) => !string.IsNullOrEmpty(_workerID)
+            && !string.IsNullOrEmpty(_fieldNo) && !string.IsNullOrEmpty(_taskNo);
 
+        private async void OnNextClicked(object obj)
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexFC2());
+        }
+
+
+        #region **List Of Tapping Types and Methods
         public List<LatexFC_TappingType> GetTappingTypes()
         {
             var _tappingType = new List<LatexFC_TappingType>()
@@ -87,7 +169,7 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
                 new LatexFC_TappingType(){TypeKey=5, TappingType="Washout"},
             };
             return _tappingType;
-        } //List of tapping types
+        } 
 
         public List<LatexFC_Method> GetMethod()
         {
@@ -97,18 +179,20 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
                 new LatexFC_Method(){MethodKey=2, TappingMethod="2nd Task Only"},                
             };
             return _method;
-        } 
-    }   
+        }
+        
+    }
 
     public class LatexFC_TappingType
     {
         public int TypeKey { get; set; }
         public string TappingType { get; set; }
-    }
+    }//Define tapping type
 
     public class LatexFC_Method
     {
         public int MethodKey { get; set; }
         public string TappingMethod { get; set; }
     }
+    #endregion
 }

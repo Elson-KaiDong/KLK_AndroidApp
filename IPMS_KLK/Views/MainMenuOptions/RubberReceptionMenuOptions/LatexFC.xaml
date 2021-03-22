@@ -86,13 +86,13 @@
                 <Label Text="5. Method **" Grid.Row="4" Grid.Column="0"/>
 
                 <Frame Grid.Row="0" Grid.Column="1">
-                    <Entry/>
+                    <Entry Text="{Binding WorkerID}"/>
                 </Frame>
                 <Frame Grid.Row="1" Grid.Column="1">
-                    <Entry/>
+                    <Entry Text="{Binding FieldNo}"/>
                 </Frame>
                 <Frame Grid.Row="2" Grid.Column="1">
-                    <Entry/>
+                    <Entry Text="{Binding TaskNo}"/>
                 </Frame>
 
                 <Picker Title="--Select tapping type--" 
@@ -101,23 +101,21 @@
                         ItemsSource="{Binding tappingTypeList}"
                         ItemDisplayBinding="{Binding TappingType}"
                         SelectedItem="{Binding SelectedTappingType}"/>
-                <Picker ItemsSource="{Binding methodList}"
-                        IsEnabled="{Binding IsMethodPickerEnabled}"
-                        ItemDisplayBinding="{Binding TappingMethod}"
+                <Picker x:Name="methodPicker"
+                        IsEnabled="{Binding IsMethodPickerEnabled, Mode=TwoWay}"
+                        ItemsSource="{Binding methodList}"
+                        ItemDisplayBinding="{Binding TappingMethod}"                        
                         Title="--Select method--" 
                         Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
-
-
-                
-                
-                <ImageButton Grid.Row="0" Grid.Column="2" />
-                <ImageButton Grid.Row="1" Grid.Column="2" />
-                <ImageButton Grid.Row="2" Grid.Column="2" />
+                <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanWorkerIDCommand}"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanFieldNoCommand}" />
+                <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanTaskNoCommand}"/>
             </Grid>
 
             <StackLayout VerticalOptions="EndAndExpand" Margin="20,0,20,0">
                 <Label Text="** Only applied to Recovery Tapping"/>
-                <Button Text="NEXT"/>
+                <Button Text="NEXT" 
+                        Command="{Binding NextButtonCommand}"/>
                 <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
             </StackLayout>
 

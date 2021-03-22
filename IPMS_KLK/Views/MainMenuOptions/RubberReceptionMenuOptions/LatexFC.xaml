@@ -96,11 +96,14 @@
                 </Frame>
 
                 <Picker Title="--Select tapping type--" 
+                        SelectedIndex="{Binding TappingTypeSelectedIndex}"
+                        
                         x:Name="pickerTappingType"
                         Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
                         ItemsSource="{Binding tappingTypeList}"
                         ItemDisplayBinding="{Binding TappingType}"
-                        SelectedItem="{Binding SelectedTappingType}"/>
+                        
+                        />
                 <Picker x:Name="methodPicker"
                         IsEnabled="{Binding IsMethodPickerEnabled, Mode=TwoWay}"
                         ItemsSource="{Binding methodList}"

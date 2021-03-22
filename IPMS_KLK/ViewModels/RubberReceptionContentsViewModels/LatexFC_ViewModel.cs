@@ -115,6 +115,35 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
             }
         }
 
+        int tappingTypeSelectedIndex;
+        public int TappingTypeSelectedIndex
+        {
+            get
+            {
+                return tappingTypeSelectedIndex;
+            }
+            set
+            {
+                if (tappingTypeSelectedIndex != value)
+                {
+                    tappingTypeSelectedIndex = value;
+
+                    
+                    OnPropertyChanged(nameof(TappingTypeSelectedIndex));
+                    if (tappingTypeSelectedIndex == 3)
+                    {
+                        _isMethodPickerEnabled = true;
+                    }
+
+                    else
+                    {
+                        _isMethodPickerEnabled = false;
+                    }
+                    SelectedTappingType = tappingTypeList[tappingTypeSelectedIndex];
+                }
+            }
+        }
+
         private bool _isMethodPickerEnabled { get; set; }
         public bool IsMethodPickerEnabled
         {
@@ -124,11 +153,7 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
             {
                 if(_isMethodPickerEnabled!=value)
                 {
-                    if (_selectedTappingType == tappingTypeList[3])
-                        _isMethodPickerEnabled = true;
-                    else
-                        _isMethodPickerEnabled = false;
-
+                    _isMethodPickerEnabled = value;
                 }
             }
         }

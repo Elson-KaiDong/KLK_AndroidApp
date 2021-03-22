@@ -167,18 +167,33 @@ namespace IPMS_KLK.ViewModels.RubberReceptionContentsViewModels
         {
             tappingTypeList = GetTappingTypes().OrderBy(t => t.TappingType).ToList();
             methodList = GetMethod().OrderBy(t => t.TappingMethod).ToList();
-            NextButtonCommand = new Command(OnNextClicked, NextButtonAllowed);
+            NextButtonCommand = new Command(OnNextClicked);
             ScanWorkerIDCommand = new Command(scanWorkerID_btn_Clicked);
             ScanFieldNoCommand = new Command(scanFieldNo_btn_Clicked);
             ScanTaskNoCommand = new Command(scanTaskNo_btn_Clicked);
         }
 
-        public bool NextButtonAllowed(object obj) => !string.IsNullOrEmpty(_workerID)
-            && !string.IsNullOrEmpty(_fieldNo) && !string.IsNullOrEmpty(_taskNo);
+        /*public bool NextButtonAllowed(object obj) => !string.IsNullOrEmpty(_workerID)
+            && !string.IsNullOrEmpty(_fieldNo) && !string.IsNullOrEmpty(_taskNo);*/
 
         private async void OnNextClicked(object obj)
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexFC2());
+            if(string.IsNullOrEmpty(_workerID))
+            {
+                await Application.Current.MainPage.DisplayAlert("", "Please scan or input Worker ID", "OK");
+            }
+
+            else if (!string.IsNullOrEmpty(_workerID) && string.IsNullOrEmpty(_fieldNo))
+            {
+                await Application.Current.MainPage.DisplayAlert("", "Please scan or input Field No", "OK");
+            }
+
+            else if (!string.IsNullOrEmpty(_workerID) && !string.IsNullOrEmpty(_fieldNo) && string.IsNullOrEmpty(_taskNo))
+            {
+                await Application.Current.MainPage.DisplayAlert("", "Please scan or input Task No", "OK");
+            }
+            else 
+                await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexFC2());
         }
 
 

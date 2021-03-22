@@ -5,8 +5,15 @@
              BackgroundImageSource="bg.jpg">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style TargetType="Picker">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                
+            </Style>
+            
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Padding" Value="0,15,0,15"/>
                 <Setter Property="Margin" Value="0,10,0,0"/>
@@ -17,7 +24,7 @@
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
@@ -25,14 +32,14 @@
             </Style>
 
             <Style TargetType="Entry">
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="PlaceholderColor" Value="DarkGray"/>
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
                 <Setter Property="HorizontalOptions" Value="Fill"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="MaxLength" Value="8"/>
+                <Setter Property="MaxLength" Value="7"/>
             </Style>
 
             <Style TargetType="Frame">
@@ -74,7 +81,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
@@ -85,31 +92,25 @@
                 <Label Text="4. Tapping Type" Grid.Row="3" Grid.Column="0"/>
                 <Label Text="5. Method **" Grid.Row="4" Grid.Column="0"/>
 
-                <Frame Grid.Row="0" Grid.Column="1">
-                    <Entry Text="{Binding WorkerID}"/>
-                </Frame>
-                <Frame Grid.Row="1" Grid.Column="1">
-                    <Entry Text="{Binding FieldNo}"/>
-                </Frame>
-                <Frame Grid.Row="2" Grid.Column="1">
-                    <Entry Text="{Binding TaskNo}"/>
+                <Frame Grid.Row="0" Grid.Column="1"><Entry Text="{Binding WorkerID}"/></Frame>
+                <Frame Grid.Row="1" Grid.Column="1"><Entry Text="{Binding FieldNo}"/></Frame>
+                <Frame Grid.Row="2" Grid.Column="1"><Entry Text="{Binding TaskNo}"/></Frame>
+                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Picker Title="--Select tapping type--" 
+                        SelectedIndex="{Binding TappingTypeSelectedIndex}"                        
+                        x:Name="pickerTappingType"
+                        ItemsSource="{Binding tappingTypeList}"
+                        ItemDisplayBinding="{Binding TappingType}"/>
                 </Frame>
 
-                <Picker Title="--Select tapping type--" 
-                        SelectedIndex="{Binding TappingTypeSelectedIndex}"
-                        
-                        x:Name="pickerTappingType"
-                        Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"
-                        ItemsSource="{Binding tappingTypeList}"
-                        ItemDisplayBinding="{Binding TappingType}"
-                        
-                        />
-                <Picker x:Name="methodPicker"
+                <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Picker x:Name="methodPicker"
                         IsEnabled="{Binding IsMethodPickerEnabled, Mode=TwoWay}"
                         ItemsSource="{Binding methodList}"
                         ItemDisplayBinding="{Binding TappingMethod}"                        
-                        Title="--Select method--" 
-                        Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+                        Title="--Select method--" />
+                </Frame>
+                
                 <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanWorkerIDCommand}"/>
                 <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanFieldNoCommand}" />
                 <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanTaskNoCommand}"/>

@@ -7,7 +7,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Padding" Value="0,15,0,15"/>
                 <Setter Property="Margin" Value="0,10,0,0"/>
@@ -20,14 +20,14 @@
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
 
             <Style TargetType="Entry">
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="PlaceholderColor" Value="DarkGray"/>
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
@@ -111,10 +111,13 @@
 
                 
             </Grid>
-            <Label TextColor="Red" Text="Trash Status : 0 = &quot;Good&quot; &amp; 1 = &quot;Bad&quot;" HorizontalOptions="CenterAndExpand"/>
-            <Button Text="Print Receipt (ENT)" Margin="20,0,20,0"  x:Name=" BunchCounting_pg2_PrintBtn" Clicked="BunchCounting_pg2_PrintBtn_Clicked"/>
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
 
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label TextColor="Red" Text="Trash Status : 0 = &quot;Good&quot; &amp; 1 = &quot;Bad&quot;" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Print Receipt (ENT)" Margin="20,0,20,0"  x:Name=" BunchCounting_pg2_PrintBtn" Clicked="BunchCounting_pg2_PrintBtn_Clicked"/>
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50"  Margin="0,0,0,10"/>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

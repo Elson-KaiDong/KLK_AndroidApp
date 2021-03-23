@@ -8,8 +8,7 @@
             <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>                
             </Style>
             
             <Style TargetType="Button">

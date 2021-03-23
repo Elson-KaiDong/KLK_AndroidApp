@@ -7,7 +7,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Padding" Value="0,15,0,15"/>
                 <Setter Property="Margin" Value="0,10,0,0"/>
@@ -20,14 +20,14 @@
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
 
             <Style TargetType="Entry">
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="PlaceholderColor" Value="DarkGray"/>  
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
@@ -73,10 +73,10 @@
 
             <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -91,39 +91,39 @@
                 <Label Text="4. Carrier ID" Grid.Row="3" Grid.Column="0"/>
 
                 <Frame Grid.Row="0" Grid.Column="1">
-                    <Entry x:Name="bunchCounting_pg1_FieldNo_Entry"/>
+                    <Entry Text="{Binding FieldNo}"/>
                 </Frame>                
                 <Frame Grid.Row="1" Grid.Column="1">
-                    <Entry x:Name="bunchCounting_pg1_TaskNo_Entry"/>
+                    <Entry Text="{Binding TaskNo}"/>
                 </Frame>
                 <Frame Grid.Row="2" Grid.Column="1">
-                    <Entry x:Name="bunchCounting_pg1_CutterID_Entry"/>
+                    <Entry Text="{Binding CutterID}"/>
                 </Frame>
                 <Frame Grid.Row="3" Grid.Column="1">
-                    <Entry x:Name="bunchCounting_pg1_CarrierID_Entry"/>
+                    <Entry Text="{Binding CarrierID}"/>
                 </Frame>
 
-                <ImageButton Grid.Row="0" Grid.Column="2" x:Name="btn_ScanFieldNo"/>
-                <ImageButton Grid.Row="1" Grid.Column="2" x:Name="btn_ScanTaskNo"/>
-                <ImageButton Grid.Row="2" Grid.Column="2" x:Name="btn_ScanCutterID"/>
-                <ImageButton Grid.Row="3" Grid.Column="2" x:Name="btn_ScanCarrierID"/>
+                <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanFieldNo_Command}"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanTaskNo_Command}"/>
+                <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanCutterID_Command}"/>
+                <ImageButton Grid.Row="3" Grid.Column="2" Command="{Binding ScanCarrierID_Command}"/>
             </Grid>
 
-            <Grid Padding="20,20,20,0" ColumnSpacing="20" VerticalOptions="EndAndExpand">
-                <Grid.RowDefinitions/>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <Button x:Name="btn_BunchCounting_pg1_Contract" Text="CONTRACT" Grid.Column="0"/>
-                <Button x:Name="btn_BunchCounting_pg1_Checkroll" Text="CHECKROLL" Grid.Column="1"/>
-            </Grid>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Grid Padding="20,20,20,0" ColumnSpacing="20" VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
+                    <Button  Text="CONTRACT" Grid.Column="0" Command="{Binding ContractButtonCommand}"/>
+                    <Button  Text="CHECKROLL" Grid.Column="1" Command="{Binding CheckrollButtonCommand}"/>
+                </Grid>
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+            </StackLayout>
             
-
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

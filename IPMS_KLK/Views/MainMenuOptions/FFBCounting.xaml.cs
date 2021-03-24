@@ -19,7 +19,7 @@ namespace IPMS_KLK.Views.MainMenuOptions
 
         private async void FFBCounting_to_BunchCounting(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new FFBCountingMenuOptions.BunchCounting_InputScreen1());
+            await Navigation.PushModalAsync(new NavigationPage(new BunchCountRecordPage()));
         }
         private async void FFBCounting_to_LooseFruitWeighing(object sender, EventArgs e)
         {

@@ -10,10 +10,15 @@
     </ContentPage.ToolbarItems>
 
 
-    <ListView ItemsSource="{Binding BunchCountRecord}">
+    <ListView ItemsSource="{Binding BunchCountRecord}" 
+              SelectedItem="{Binding SelectedBunchCountRecord, Mode=TwoWay}" 
+              HasUnevenRows="True"
+              SeparatorColor="Gray"
+              ItemSelected="OnBunchCountRecordSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
+                    <Label Text="{Binding TRANS_NO}"/>
                     <Label Text="{Binding TRANS_NO}"/>
                 </StackLayout>
             </DataTemplate>

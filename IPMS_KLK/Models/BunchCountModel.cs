@@ -24,18 +24,19 @@ namespace IPMS_KLK.Models
 
         public override string ToString()
         {
-            return "TRANS_NO:" + TRANS_NO +
-                    "\nFIELD NO:" + FIELD_NO +
-                    "\nTASK NO:" + TASK_NO +
-                    "\nCUTTER ID:" + CUTTER_ID +
-                    "\nCARRIER ID:" + CARRIER_ID +
-                    "\nRIPE:" + NO_RIPE +
-                    "\nUNRIPE:" + NO_UNRIPE +
-                    "\nBLACK BUNCH:" + NO_BLACKBUNCH +
-                    "\nROTTEN BUNCH:" + NO_ROTTENBUNCH +
-                    "\nLONG STALK:" + NO_LONGSTALK +
-                    "\nPEST DAMAGE:" + NO_PESTDAMAGE +
-                    "\nTRASH STATUS:" + TRASH_STATUS 
+            return "TRANS_NO: " + TRANS_NO +
+                    "\nFIELD NO: " + FIELD_NO +
+                    "\nTASK NO: " + TASK_NO +
+                    "\nCUTTER ID: " + CUTTER_ID +
+                    "\nCARRIER ID: " + CARRIER_ID +
+                    "\nHARVESTING TYPE: " + HARVESTING_TYPE +
+                    "\nRIPE: " + NO_RIPE +
+                    "\nUNRIPE: " + NO_UNRIPE +
+                    "\nBLACK BUNCH: " + NO_BLACKBUNCH +
+                    "\nROTTEN BUNCH: " + NO_ROTTENBUNCH +
+                    "\nLONG STALK: " + NO_LONGSTALK +
+                    "\nPEST DAMAGE: " + NO_PESTDAMAGE +
+                    "\nTRASH STATUS: " + TRASH_STATUS 
                     +Environment.NewLine;
         }
 

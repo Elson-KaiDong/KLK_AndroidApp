@@ -23,7 +23,7 @@ namespace IPMS_KLK.ViewModels
 
         public async Task PushAsync(Page page)
         {
-            await MainPage.Navigation.PushAsync(page);
+            await MainPage.Navigation.PushModalAsync(page);
         }
 
         private Page MainPage

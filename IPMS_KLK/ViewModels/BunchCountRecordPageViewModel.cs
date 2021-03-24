@@ -16,14 +16,14 @@ namespace IPMS_KLK.ViewModels
         private IPageService _pageService;
 
         private bool _isDataLoaded;
-
+        public ObservableCollection<BunchCountRecordViewModel> BunchCountRecord { get; private set; } = new ObservableCollection<BunchCountRecordViewModel>();
         public BunchCountRecordViewModel SelectedBunchCountRecord
         {
             get { return _selectedBunchCountRecord; }
             set { SetValue(ref _selectedBunchCountRecord, value); }
         }
 
-        public ObservableCollection<BunchCountRecordViewModel> BunchCountRecord { get; private set; } = new ObservableCollection<BunchCountRecordViewModel>();
+       
 
         public ICommand LoadDataCommand { get; private set; }
         public ICommand AddBunchCountRecordCommand { get; private set; }
@@ -54,7 +54,7 @@ namespace IPMS_KLK.ViewModels
 
         private async Task AddBunchCountRecord()
         {
-            await _pageService.PushAsync(new BunchCountDetailPage());
+            await _pageService.PushAsync(new NavigationPage(new BunchCountDetailPage()));
         }
 
         private async Task SelectBunchCountRecord(BunchCountRecordViewModel bunchCountRecord)

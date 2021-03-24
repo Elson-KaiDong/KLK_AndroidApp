@@ -1,12 +1,187 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.BunchCountDetailPage">
+             x:Class="IPMS_KLK.Views.BunchCountDetailPage"
+             BackgroundImageSource="bg.jpg"
+             Title="Bunch Counting">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,15,0,15"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="BackgroundColor" Value="Green"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="8"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            <StackLayout Margin="15,15,15,0">
+            <Label Text="---DETAILS---" HorizontalOptions="CenterAndExpand"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="1. Field No" Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="2. Task No" Grid.Row="1" Grid.Column="0"/>
+                    <Label Text="3. Cutter ID" Grid.Row="2" Grid.Column="0"/>
+                    <Label Text="4. Carrier ID" Grid.Row="3" Grid.Column="0"/>
+
+                    <Frame Grid.Row="0" Grid.Column="1">
+                        <Entry Text="{Binding Path= bunchCountRecord.FIELD_NO}"/>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1">
+                        <Entry Text="{Binding Path= bunchCountRecord.TASK_NO}"/>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="1">
+                        <Entry Text="{Binding Path= bunchCountRecord.CUTTER_ID}"/>
+                    </Frame>
+                    <Frame Grid.Row="3" Grid.Column="1">
+                        <Entry Text="{Binding Path= bunchCountRecord.CARRIER_ID}"/>
+                    </Frame>
+
+                    <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanFieldNo_Command}"/>
+                    <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanTaskNo_Command}"/>
+                    <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanCutterID_Command}"/>
+                    <ImageButton Grid.Row="3" Grid.Column="2" Command="{Binding ScanCarrierID_Command}"/>
+                </Grid>
+
+            </StackLayout>
+
+
+            <StackLayout Margin="15,20,15,0">
+                <Label Text="---COUNTING---" HorizontalOptions="CenterAndExpand" />
+
+
+                <Grid ColumnSpacing="20" RowSpacing="10">                 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0" Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Ripe :" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="Unripe :" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="Black Bunch :" Grid.Row="2" Grid.Column="0"/>
+                            <Label Text="Rotten Bunch :" Grid.Row="3" Grid.Column="0"/>
+
+
+                            <Frame Grid.Row="0" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.NO_RIPE}" />
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.NO_UNRIPE}" />
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.NO_BLACKBUNCH}" />
+                            </Frame>
+                            <Frame Grid.Row="3" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.NO_ROTTENBUNCH}"/>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Long Stalk :" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="Pest Damage :" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="Trash Status :" Grid.Row="2" Grid.Column="0"/>
+
+                            <Frame Grid.Row="0" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.NO_LONGSTALK}"/>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.NO_PESTDAMAGE}"/>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="1">
+                                <Entry Text="{Binding Path= bunchCountRecord.TRASH_STATUS}"/>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+
+
+
+
+            <StackLayout VerticalOptions="EndAndExpand" Margin="15,0,15,0">
+                    <Button Text="SAVE" Command="{Binding SaveCommand}"/>
+                    <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+                </StackLayout>
+            </StackLayout>
+
     </ContentPage.Content>
-</ContentPage>
+
+    </ContentPage>

@@ -18,14 +18,14 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
     public partial class AmendVerificationFFB_InputScreen1 : ContentPage
     {
         //private ListView AmendVerified_ListView;
-        private CollectionView AmendVerified_ListView;
+        //private CollectionView AmendVerified_ListView;
         
-        string db_Path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ipmsklk_db");
+        //string db_Path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "ipmsklk_db");
 
         public AmendVerificationFFB_InputScreen1()
         {
-            
-            this.Title = "Amend Verified";
+            BindingContext = new ViewModels.FFBCountingContentsViewModels.AmendVerificationViewModel();
+            /*this.Title = "Amend Verified";
             var db = new SQLiteConnection(db_Path);
 
             StackLayout stackLayout = new StackLayout
@@ -46,7 +46,7 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
             
             try
             {
-                var listviewItemSource = db.Table<BunchCountModel>().OrderBy(x => x.TRANS_NO).ToString();
+                var listviewItemSource = db.Table<BunchCountModel>().OrderBy(x => x.TRANS_NO).ToList();
                 AmendVerified_ListView.ItemsSource = db.Query<BunchCountModel>("SELECT * FROM[BunchCountModel]");
             }
 
@@ -59,7 +59,7 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
             // AmendVerified_ListView.ItemsSource = listviewItemSource; 
             stackLayout.Children.Add(AmendVerified_ListView);
             
-            Content = stackLayout;
+            Content = stackLayout;*/
         }        
     }
 }

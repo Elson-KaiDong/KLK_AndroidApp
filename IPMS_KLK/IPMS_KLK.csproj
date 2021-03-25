@@ -11,10 +11,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\BebasNeue-Regular.otf" />
+    <None Remove="Resources\Fonts\coolvetica.ttf" />
+    <None Remove="Resources\Fonts\SFUIDisplay-Black.otf" />
+    <None Remove="Resources\Fonts\SFUIDisplay-Bold.ttf" />
+    <None Remove="Resources\Fonts\SFUIDisplay-Light.ttf" />
+    <None Remove="Resources\Fonts\SFUIDisplay-Regular.otf" />
+    <None Remove="Resources\Fonts\SFUIDisplay-Thin.otf" />
+    <None Remove="Resources\Fonts\Theater_Bold.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\BebasNeue-Regular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\coolvetica.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Black.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Regular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Thin.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Theater_Bold.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.47" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
   </ItemGroup>

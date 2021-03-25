@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenu"            
+             x:Class="IPMS_KLK.Views.MainMenu" 
+            xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              BackgroundImageSource="bg.jpg">
 
     <ContentPage.Resources>
@@ -15,36 +17,173 @@
                 <Setter Property="BackgroundColor" Value="Black"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="HeightRequest" Value="150"/>
+                <Setter Property="FontFamily" Value="sfRegular"/>
             </Style>
         </ResourceDictionary>        
     </ContentPage.Resources>
 
     <ContentPage.Content>        
         <StackLayout>
-            <Grid>
-                <Image Source="oilpalm.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <Label Text="MAIN MENU"
-                   FontSize="Title"
+            
+                <!--Label Text="MAIN MENU"
+                   FontSize="Large"
                    FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
                    VerticalTextAlignment="Center"
                    Padding="0,20,0,0"
-                   TextColor="White"/>
-            </Grid>
-            <StackLayout Padding="20,0,20,0">
-                <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
-                    <StackLayout>
-                        <Button Text="1. General Workers" Command="{Binding MainMenu_to_GeneralWorkerCommand}"/>
-                        <Button Text="2. Rubber Reception" Command="{Binding MainMenu_to_RubberReceptionCommand}"/>
-                        <Button Text="3. FFB Counting" Command="{Binding MainMenu_to_FFBCountingCommand}"/>
-                        <Button Text="4. Task Inspection" Command="{Binding MainMenu_to_TaskInspectionrCommand}"/>
-                        <Button Text="5. Receipt Reprint/Cancel" Command="{Binding MainMenu_to_ReceiptReprintCommand}"/>
-                        <Button Text="6. Others/Changes" Command="{Binding MainMenu_to_OthersChangesCommand}"/>
-                    </StackLayout>
-                </Frame>
+                   TextColor="Black"
+                   FontFamily="sfBlack"
+                   Margin="20,0,0,0"/-->
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+
+            <StackLayout>             
+
+                <Grid ColumnSpacing="25" RowSpacing="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                    <!--General Workers-->
+                    <yummy:PancakeView BackgroundGradientStartPoint="0,0" BackgroundGradientEndPoint="0,1"  
+                                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                                       CornerRadius="0,30,0,30" HorizontalOptions="CenterAndExpand" 
+                                       Margin="0,0,20,0 ">
+                        <yummy:PancakeView.BackgroundGradientStops>
+                            <yummy:GradientStopCollection>
+                                <yummy:GradientStop Color="Red" Offset="0" />
+                                <yummy:GradientStop Color="Orange" Offset="0.5" />
+                                <yummy:GradientStop Color="Yellow" Offset="1" />
+                            </yummy:GradientStopCollection>
+                        </yummy:PancakeView.BackgroundGradientStops>
+                        
+                        <StackLayout>
+                                <Grid>                                   
+                                    <ImageButton Source="workers.jpg" 
+                                                 Aspect="Fill" 
+                                                 Grid.Row="0" 
+                                                 Grid.Column="0"
+                                                 Command="{Binding MainMenu_to_GeneralWorkerCommand}"/>
+                                    
+                                <StackLayout>                                    
+                                </StackLayout>                                    
+                                    <Label Text="1. General Workers" Grid.Row="0" Grid.Column="0" TextColor="White" 
+                                           FontSize="Title" FontFamily="sfBlack"
+                                           VerticalOptions="End"
+                                           Margin="10,0,0,10"/>
+                                </Grid>                                   
+                            </StackLayout>                            
+                     </yummy:PancakeView>
+
+                    <!--Rubber Reception-->
+                    <PanCake:PancakeView Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" CornerRadius="0,30,0,30" HorizontalOptions="EndAndExpand">
+                            <StackLayout>
+                                <Grid>
+                                    <ImageButton Source="rubbertree.jpg" 
+                                                         Aspect="Fill" 
+                                                         Grid.Row="0" 
+                                                         Grid.Column="0"
+                                                         Command="{Binding MainMenu_to_RubberReceptionCommand}"/>
+                                    <Label Text="2. Rubber Reception" Grid.Row="0" Grid.Column="0" TextColor="White" 
+                                                   FontSize="Title" FontFamily="sfBlack"
+                                                   VerticalOptions="EndAndExpand"
+                                                   HorizontalTextAlignment="End"
+                                                   Margin="0,0,10,10"/>                                
+                            </Grid>
+                            </StackLayout>
+                    </PanCake:PancakeView>
+
+                    <!--FFB Counting-->
+                    <PanCake:PancakeView Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" CornerRadius="30,0,30,0" HorizontalOptions="StartAndExpand">
+                        <StackLayout>
+                            <Grid>
+                                <ImageButton Source="main.jpg" 
+                                                 Aspect="Fill" 
+                                                 Grid.Row="0" 
+                                                 Grid.Column="0"
+                                                 Command="{Binding MainMenu_to_FFBCountingCommand}"/>
+                                
+                                <Label Text="3. FFB Counting" Grid.Row="0" Grid.Column="0" TextColor="White" 
+                                           FontSize="Title" FontFamily="sfBlack"
+                                           VerticalOptions="EndAndExpand"
+                                           Margin="10,0,0,10"/>
+                            </Grid>
+                        </StackLayout>
+                    </PanCake:PancakeView>
+
+                    <!--Task Inspection-->
+                    <PanCake:PancakeView Margin="20,0,0,0" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="30,0,30,0" HorizontalOptions="EndAndExpand">
+                        <StackLayout>
+                            <Grid>
+                                <ImageButton Source="rubbertree.jpg" 
+                                                         Aspect="Fill" 
+                                                         Grid.Row="0" 
+                                                         Grid.Column="0"
+                                                         Command="{Binding MainMenu_to_TaskInspectionrCommand}"/>
+                                
+                                <Label Text="4. Task Inspection" Grid.Row="0" Grid.Column="0" TextColor="White" 
+                                                   FontSize="Title" FontFamily="sfBlack"
+                                                   VerticalOptions="EndAndExpand"
+                                                   HorizontalTextAlignment="End"
+                                                   Margin="0,0,10,10"/>
+                            </Grid>
+                        </StackLayout>
+                    </PanCake:PancakeView>
+
+                    <!--Receipt Reprint-->
+                    <PanCake:PancakeView Margin="0,0,0,20"  Grid.Row="4" Grid.Column="0" CornerRadius="0,30,0,30" HorizontalOptions="StartAndExpand">
+                        <StackLayout>
+                            <Grid>
+                                <ImageButton Source="printer.jpg" 
+                                                 Aspect="Fill" 
+                                                 Grid.Row="0" 
+                                                 Grid.Column="0"
+                                                 Command="{Binding MainMenu_to_ReceiptReprintCommand}"/>
+
+                                <Label Text="5. Receipt Reprint/Cancel" Grid.Row="0" Grid.Column="0" TextColor="White" 
+                                           FontSize="Title" FontFamily="sfBlack"
+                                           VerticalOptions="EndAndExpand"
+                                           Margin="10,0,0,10"/>
+                            </Grid>
+                        </StackLayout>
+                    </PanCake:PancakeView>
+
+                    <!--Others/Changes-->
+                    <PanCake:PancakeView Margin="0,0,0,20" Grid.Row="4" Grid.Column="1" CornerRadius="30,0,30,0" HorizontalOptions="EndAndExpand">
+                        <StackLayout>
+                            <Grid>
+                                <ImageButton Source="office1.jpg" 
+                                                         Aspect="Fill" 
+                                                         Grid.Row="0" 
+                                                         Grid.Column="0"
+                                                         Command="{Binding MainMenu_to_OthersChangesCommand}"/>
+                                
+                                <Label Text="6. Others/Changes" Grid.Row="0" Grid.Column="0" TextColor="White" 
+                                                   FontSize="Title" FontFamily="sfBlack"
+                                                   VerticalOptions="EndAndExpand"
+                                                   HorizontalTextAlignment="Center"
+                                                    VerticalTextAlignment="End"
+                                                   Margin="0,0,10,10"/>
+                            </Grid>
+                        </StackLayout>
+                    </PanCake:PancakeView>
+
+                    
+
+                    </Grid>                   
+                   
+                
             </StackLayout>
 
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

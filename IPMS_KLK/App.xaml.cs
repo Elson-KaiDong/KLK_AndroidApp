@@ -3,6 +3,15 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
+[assembly: ExportFont("BebasNeue-Regular.otf",Alias = "Bebas")]
+[assembly: ExportFont("coolvetica.ttf", Alias = "Cool")]
+[assembly: ExportFont("SFUIDisplay-Black.otf", Alias = "sfBlack")]
+[assembly: ExportFont("SFUIDisplay-Bold.otf", Alias = "sfBold")]
+[assembly: ExportFont("SFUIDisplay-Regular.otf", Alias = "sfRegular")]
+[assembly: ExportFont("SFUIDisplay-Thin.otf", Alias = "sfThin")]
+[assembly: ExportFont("SFUIDisplay-Light.otf", Alias = "sfLight")]
+
 namespace IPMS_KLK
 {
     public partial class App : Application

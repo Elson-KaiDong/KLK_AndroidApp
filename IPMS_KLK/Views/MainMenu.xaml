@@ -6,7 +6,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>                
                 <Setter Property="FontFamily" Value="sfBlack"/>
@@ -19,12 +19,15 @@
     <ContentPage.Content>        
         <StackLayout VerticalOptions="FillAndExpand">            
             <!--Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/-->
-
+            
             <StackLayout>
-                <Image Source="ui.png" Aspect="AspectFit" HorizontalOptions="Center" Margin="75,20,75,0"/>
-                <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" StrokeThickness="2"  StrokeDashArray="1,1" StrokeDashOffset="10"   Margin="20,0,20,0"/>
+                <Frame Margin="20,10,20,0" BorderColor="LightGray" HasShadow="True" CornerRadius="20">
+                    <Image Source="ui.png" Aspect="AspectFit" HorizontalOptions="Center" Margin="75,0,75,0"/>
+
+                </Frame>
+                
                     <Label Text="Main Menu"
-                   FontSize="Title"
+                   FontSize="Large"
                    FontAttributes="Bold"
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Center"
@@ -40,9 +43,9 @@
                                 <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
-                                <RowDefinition Height="4"/>
-                                <RowDefinition Height="15*"/>
-                                <RowDefinition Height="40*"/>
+                                <RowDefinition Height="45*"/>
+                                <RowDefinition Height="45*"/>
+                                <RowDefinition Height="45*"/>
                     </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -51,8 +54,8 @@
 
 
                             <!--General Workers-->
-                            <Frame Padding="0"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" CornerRadius="20" BackgroundColor="Gray">
-                                <Button Text="1. General Worker" 
+                            <Frame Padding="0"  Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" CornerRadius="20" BackgroundColor="Black">
+                                <Button Text="General Worker" 
                                         
                                         Command="{Binding MainMenu_to_GeneralWorkerCommand}"                               
                                         HorizontalOptions="FillAndExpand"
@@ -60,8 +63,8 @@
                                         TextColor="white">
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0,1">
-                                            <GradientStop Color="#e3ff73" Offset="0.1" />
-                                            <GradientStop Color="#e27c39" Offset="1.0" />
+                                            <GradientStop Color="#f5cec7" Offset="0.1" />
+                                            <GradientStop Color="#e79796" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Button.Background>
 
@@ -70,8 +73,8 @@
                             
                             <!--Rubber Reception-->
 
-                            <Frame Padding="0"  Grid.Row="0" Grid.Column="1"  CornerRadius="20" BackgroundColor="Gray">
-                                <Button Text="2. Rubber Reception" 
+                    <Frame Padding="0"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" CornerRadius="20" BackgroundColor="Black">
+                                <Button Text="Rubber Reception" 
                                                 
                                                             Command="{Binding MainMenu_to_RubberReceptionCommand}"                               
                                                             HorizontalOptions="FillAndExpand"
@@ -79,16 +82,16 @@
                                                             TextColor="White">
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0,1">
-                                            <GradientStop Color="#09ebbe" Offset="0.1" />
-                                            <GradientStop Color="#388ee9" Offset="1.0" />
+                                            <GradientStop Color="#e3ff73" Offset="0.1" />
+                                            <GradientStop Color="#e27c39" Offset="1.0" />
                                         </LinearGradientBrush>
                                     </Button.Background>
                                 </Button>
                             </Frame>
 
                     <!--FFB Counting-->
-                            <Frame Padding="0" Grid.Row="1" Grid.Column="1"   CornerRadius="20" BackgroundColor="Gray">
-                                <Button Text="3. FFB Counting"   
+                    <Frame Padding="0" Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" CornerRadius="20" BackgroundColor="Black">
+                                <Button Text="FFB Counting"   
                                                 
                                                 Command="{Binding MainMenu_to_FFBCountingCommand}"                               
                                                 HorizontalOptions="FillAndExpand"
@@ -104,8 +107,8 @@
                             </Frame>
                             
                             <!--Task Inspection-->
-                            <Frame Padding="0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"  CornerRadius="20" BackgroundColor="Gray">
-                                <Button Text="4. Task Inspection"
+                    <Frame Padding="0" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"  CornerRadius="20" BackgroundColor="Black">
+                                <Button Text="Task Inspection"
                                                  
                                                 Command="{Binding MainMenu_to_TaskInspectionCommand}"                               
                                                 HorizontalOptions="FillAndExpand"
@@ -120,7 +123,7 @@
                                 </Button>
                             </Frame>
 
-                            <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" 
+                        <!--    <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" 
                                   StrokeThickness="2"
                                   StrokeDashArray="1,1"
                                   StrokeDashOffset="10"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Margin="0"/>      
@@ -132,11 +135,11 @@
                                    Padding="0,0,0,0"
                                    TextColor="Black"
                                    FontFamily="Cool"
-                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>  
+                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> --> 
 
                     <!--Receipt Reprint-->
-                            <Frame Padding="0" Grid.Row="5" Grid.Column="0"   CornerRadius="20" BackgroundColor="Gray">
-                                <Button Text="5. Receipt Reprint/Cancel"   
+                    <Frame Padding="0" Grid.Row="4" Grid.Column="1"   CornerRadius="20" BackgroundColor="Black">
+                                <Button Text="Receipt Reprint/Cancel"   
                                                  
                                                 Command="{Binding MainMenu_to_ReceiptReprintCommand}"                               
                                                 HorizontalOptions="FillAndExpand"
@@ -144,20 +147,20 @@
                                                 TextColor="White">
                                             <Button.Background>
                                                 <LinearGradientBrush EndPoint="0,1">
-                                                    <GradientStop Color="#C1B0E7" Offset="0.1" />
-                                                    <GradientStop Color="#743BF8" Offset="1.0" />
+                                                    <GradientStop Color="#b8d5cd" Offset="0.1" />
+                                                    <GradientStop Color="#5ca08e" Offset="1.0" />
                                                 </LinearGradientBrush>
                                             </Button.Background>
                         </Button>
                             </Frame>                           
                             
                             <!--Others/Changes-->
-                            <Frame Padding="0" Grid.Row="5" Grid.Column="1"   CornerRadius="20" BackgroundColor="Gray">
-                                <Button Text="6. Others/Changes" 
+                    <Frame Padding="0" Grid.Row="5" Grid.Column="1"   CornerRadius="20" BackgroundColor="Black">
+                        <Button Text="Others/Changes" 
                                                 Command="{Binding MainMenu_to_OthersChangesCommand}"                               
                                                 HorizontalOptions="FillAndExpand"
                                                 Margin="0,0,0,2"
-                                                TextColor="White">
+                                                TextColor="White" >
                                             <Button.Background>
                                                 <LinearGradientBrush EndPoint="0,1">
                                                     <GradientStop Color="#C1B0E7" Offset="0.1" />

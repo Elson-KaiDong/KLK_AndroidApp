@@ -10,7 +10,7 @@ namespace IPMS_KLK.ViewModels
         public ICommand MainMenu_to_GeneralWorkerCommand { get; }
         public ICommand MainMenu_to_RubberReceptionCommand { get; }
         public ICommand MainMenu_to_FFBCountingCommand { get; }
-        public ICommand MainMenu_to_TaskInspectionrCommand { get; }
+        public ICommand MainMenu_to_TaskInspectionCommand { get; }
         public ICommand MainMenu_to_ReceiptReprintCommand { get; }
         public ICommand MainMenu_to_OthersChangesCommand { get; }
         public MainMenuViewModel()
@@ -18,7 +18,7 @@ namespace IPMS_KLK.ViewModels
             MainMenu_to_GeneralWorkerCommand = new Command(async () =>  await MainMenu_to_GeneralWorker());
             MainMenu_to_RubberReceptionCommand = new Command(async () => await MainMenu_to_RubberReception());
             MainMenu_to_FFBCountingCommand = new Command(async () => await MainMenu_to_FFBCounting());
-            MainMenu_to_TaskInspectionrCommand = new Command(async () => await MainMenu_to_TaskInspection());
+            MainMenu_to_TaskInspectionCommand = new Command(async () => await MainMenu_to_TaskInspection());
             MainMenu_to_ReceiptReprintCommand = new Command(async () => await MainMenu_to_ReceiptReprint());
             MainMenu_to_OthersChangesCommand = new Command(async () => await MainMenu_to_OthersChanges());
         }       

@@ -31,27 +31,34 @@
         
         <Grid VerticalOptions="EndAndExpand">          
             <StackLayout >
-                <Image Source="ui.png" Aspect="AspectFit" HorizontalOptions="Center" Margin="50,20,50,20"/>               
+                <Image Source="ui1.png" Aspect="AspectFit" HorizontalOptions="Center" Margin="75,0,75,0"/>               
                     
                     <StackLayout>  
                         <StackLayout Margin="50,15,50,0">
                             <Label Text="Enter Username : "  Margin="10,0,0,0" FontAttributes="Bold" FontSize="Medium"/>
                             <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="LightSeaGreen" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7"/>
+                                    <Frame BackgroundColor="#cbe54e" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7"/>
                                     <Entry PlaceholderColor="Black" Placeholder="Username" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                             <Label Text="Enter Password : "  Margin="10,25,0,0" FontAttributes="Bold" FontSize="Medium"/>
                         <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="0,0,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="LightSeaGreen" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7"/>
+                                <Frame BackgroundColor="#cbe54e" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7"/>
                                     <Entry PlaceholderColor="Black" Placeholder="Password" IsPassword="True" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
 
-                    <Button x:Name="Login_Button" Margin="40,30,40,30" Padding="0,25,0,25" Text="LOGIN" BackgroundColor="DarkCyan" FontSize="Large" TextColor="White"  CornerRadius="40" FontFamily="Cool" />
+                    <Button x:Name="Login_Button" Margin="40,30,40,30" Padding="0,25,0,25" Text="LOGIN" BackgroundColor="DarkCyan" FontSize="Large" TextColor="White"  CornerRadius="40" FontFamily="Cool" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Color="#cbe54e" Offset="0.1" />
+                                <GradientStop Color="#5ba8a0" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                     </StackLayout>
                 
             </StackLayout>

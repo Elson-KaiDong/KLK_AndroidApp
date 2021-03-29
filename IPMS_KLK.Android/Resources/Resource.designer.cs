@@ -14796,43 +14796,61 @@ namespace IPMS_KLK.Droid
 			public const int oilpalm = 2131165380;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int printer = 2131165381;
+			public const int pngworker = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int rubbertree = 2131165382;
+			public const int printer = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int scan = 2131165383;
+			public const int rubbertree = 2131165383;
 			
 			// aapt resource value: 0x7F0700C8
-			public const int sky_bg = 2131165384;
+			public const int scan = 2131165384;
 			
 			// aapt resource value: 0x7F0700C9
-			public const int SplashScreen = 2131165385;
+			public const int sky_bg = 2131165385;
 			
 			// aapt resource value: 0x7F0700CA
-			public const int teamicon = 2131165386;
+			public const int SplashScreen = 2131165386;
 			
 			// aapt resource value: 0x7F0700CB
-			public const int test_custom_background = 2131165387;
+			public const int teamicon = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int tooltip_frame_dark = 2131165388;
+			public const int test_custom_background = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int tooltip_frame_light = 2131165389;
+			public const int tooltip_frame_dark = 2131165389;
 			
 			// aapt resource value: 0x7F0700CE
-			public const int ui = 2131165390;
+			public const int tooltip_frame_light = 2131165390;
 			
 			// aapt resource value: 0x7F0700CF
-			public const int ui1 = 2131165391;
+			public const int ui = 2131165391;
 			
 			// aapt resource value: 0x7F0700D0
-			public const int white = 2131165392;
+			public const int ui1 = 2131165392;
 			
 			// aapt resource value: 0x7F0700D1
-			public const int workers = 2131165393;
+			public const int ui2 = 2131165393;
+			
+			// aapt resource value: 0x7F0700D2
+			public const int ui3 = 2131165394;
+			
+			// aapt resource value: 0x7F0700D3
+			public const int ui4 = 2131165395;
+			
+			// aapt resource value: 0x7F0700D4
+			public const int ui5 = 2131165396;
+			
+			// aapt resource value: 0x7F0700D5
+			public const int ui6 = 2131165397;
+			
+			// aapt resource value: 0x7F0700D6
+			public const int white = 2131165398;
+			
+			// aapt resource value: 0x7F0700D7
+			public const int workers = 2131165399;
 			
 			static Drawable()
 			{

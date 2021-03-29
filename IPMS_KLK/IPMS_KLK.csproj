@@ -14,6 +14,7 @@
     <None Remove="Resources\Fonts\BebasNeue-Regular.otf" />
     <None Remove="Resources\Fonts\coolvetica.ttf" />
     <None Remove="Resources\Fonts\KeepCalm-Medium.ttf" />
+    <None Remove="Resources\Fonts\PassionOne-Regular.ttf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Black.otf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Bold.ttf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Light.ttf" />
@@ -26,6 +27,7 @@
     <EmbeddedResource Include="Resources\Fonts\BebasNeue-Regular.otf" />
     <EmbeddedResource Include="Resources\Fonts\coolvetica.ttf" />
     <EmbeddedResource Include="Resources\Fonts\KeepCalm-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\PassionOne-Regular.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Black.otf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Light.ttf" />

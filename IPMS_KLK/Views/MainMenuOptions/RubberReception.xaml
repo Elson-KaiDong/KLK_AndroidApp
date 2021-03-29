@@ -1,52 +1,159 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReception"
-             BackgroundImageSource="bg.jpg">
+             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReception">
+
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#9cd0f2" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="30" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#9cdef6"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
-                <Image Source="rubbertree.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="RUBBER RECEPTION"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="White"/>
-            </Grid>
-            
-            <StackLayout Padding="20,0,20,0" >
-                <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
+        <StackLayout Margin="0,40,0,0">
+
+            <Frame BackgroundColor="Transparent" Margin="0,5,0,0">
+                <Grid>
+                    <Image Source="ui3.png" Aspect="AspectFit" 
+                           HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
+                           HeightRequest="150"
+                           Margin="0,10,0,0"/>
                     <StackLayout>
-                        <Button Text="1. Latex and FC" Command="{Binding RubberReception_to_LatexFCCommand}" />
-                        <Button Text="2. Latex Weighing" Command="{Binding RubberReception_to_LatexWeighingCommand}"/>
-                        <Button Text="3. FC Weighing" Command="{Binding RubberReception_to_FCWeighingCommand}"/>
-                        <Button Text="4. Print Total Wt" Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"/>
-                        <Button Text="5. Bucket/Cage Wt" Command="{Binding RubberReception_to_BucketCageWtCommand}"/>
-                        <Button Text="6. Mandore Attendance" Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}"/>
-                    </StackLayout>                    
-                </Frame>                
+                        <Label Text="Rubber Reception" 
+                               FontFamily="passion" 
+                               HorizontalOptions="StartAndExpand" 
+                               FontSize="40" 
+                               TextColor="Black" Margin="20,10,0,0"
+                               VerticalOptions="Start"/>                        
+                    </StackLayout>
+                    
+                </Grid>
+                
+            </Frame>
+                        
+
+
+                    
+
+            <StackLayout Padding="5,0,5,0" Margin="0,0,0,0">
+
+                <StackLayout VerticalOptions="FillAndExpand" Margin="20,10,20,0">
+                    <Grid  ColumnSpacing="20" RowSpacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="70*"/>
+                            <RowDefinition Height="70*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <!--FC Weighing-->
+                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                            <Button Text="FC Weighing" 
+                                    Command="{Binding RubberReception_to_FCWeighingCommand}"   
+                                    >
+                            </Button>
+                        </Frame>
+
+                        <!--Latex and FC-->
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" >
+                            <Button Text="Latex and FC" 
+                                        Command="{Binding RubberReception_to_LatexFCCommand}" 
+                                        >
+                            </Button>
+                        </Frame>
+
+
+                        <!--Latex Weighing-->
+                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4">
+                            <Button Text="Latex Weighing" 
+                                        Command="{Binding RubberReception_to_LatexWeighingCommand}"
+                                        >
+                            </Button>
+                        </Frame>
+
+                        <!--Bucket/Cage Wt-->
+                        <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  >
+                            <Button Text="Bucket/Cage Wt"
+                                    Command="{Binding RubberReception_to_BucketCageWtCommand}"
+                                   >
+                            </Button>
+                        </Frame>
+
+                        <!--    <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" 
+                                  StrokeThickness="2"
+                                  StrokeDashArray="1,1"
+                                  StrokeDashOffset="10"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Margin="0"/>      
+
+                    <Label Text="Others"
+                                   FontSize="Title"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"                                   
+                                   Padding="0,0,0,0"
+                                   TextColor="Black"
+                                   FontFamily="Cool"
+                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> -->
+
+                        <!--Print Total Wt-->
+                        <Frame  Grid.Row="6" Grid.Column="1">
+                            <Button Text="Print Total Wt"   
+                                        Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"
+                                        >
+
+
+                            </Button>
+                        </Frame>
+
+                        <!--Mandore Attendance-->
+                        <Frame Grid.Row="7" Grid.Column="1">
+                            <Button Text="Mandore Attendance" 
+                                Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}" 
+                                >
+                            </Button>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+
+
+
             </StackLayout>
 
             <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
-        
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+
+

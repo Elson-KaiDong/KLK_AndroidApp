@@ -1,50 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCounting"
-             BackgroundImageSource="bg.jpg">
-    
+             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCounting">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#C6F8E5" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="30" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#81fbd4"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Grid>
-                <Image Source="ffb.jpg" Aspect="AspectFill" HeightRequest="150" Opacity="1"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="FFB COUNTING"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="white"/>
-            </Grid>
+        <StackLayout Margin="0,0,0,0" VerticalOptions="FillAndExpand">
+            <Frame BackgroundColor="Transparent" HasShadow="True" Margin="20,20,20,0">
+                <StackLayout Margin="0,15,0,0">
+                    <Grid>
+                        <Image HeightRequest="200" Source="ui6.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="Start"/>
 
-            <StackLayout Padding="20,0,20,0" >
-                <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
-                    <StackLayout>
-                        <Button Text="1. Bunch Counting" Clicked="FFBCounting_to_BunchCounting"/>
-                        <Button Text="2. Loose Fruit Weighing" Clicked="FFBCounting_to_LooseFruitWeighing"/>
-                        <Button Text="3. FFB Verification" Clicked="FFBCounting_to_FFBVerification"/>
-                        <Button Text="4. Amend Verified FFB" Clicked="FFBCounting_to_AmendVerifiedFFB"/>
-                        <Button Text="5. Mandore Attendance" Clicked="FFBCounting_to_MandoreAttendance" />
-                        <Button Text="6. Bunch Count Record" Clicked="FFBCounting_to_Record" />
-                    </StackLayout>
-                </Frame>
+                        <StackLayout Margin="20,20,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                            <Label Text="FFB"
+                               FontSize="40"  
+                               TextColor="BLack"
+                               FontFamily="passion"/>
+
+                            <Label Text="Counting"
+                               FontSize="40"                
+                               TextColor="Black"
+                               FontFamily="passion" />
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout VerticalOptions="FillAndExpand" Margin="20,50,20,0">
+                <Grid  ColumnSpacing="20" RowSpacing="20" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Bunch Counting-->
+                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" >
+                        <Button Text="Bunch Counting" 
+                                Command="{Binding FFBCounting_to_BunchCountingCommand}">
+                        </Button>
+                    </Frame>
+
+
+                    <!--Loose Fruit Weighing-->
+                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4">
+                        <Button Text="Loose Fruit Weighing" 
+                                Command="{Binding FFBCounting_to_LooseFruitWeighingCommand}">
+                        </Button>
+                    </Frame>
+
+                    <!--FFB Verification-->
+                    <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                        <Button Text="FFB Verification" 
+                                    Command="{Binding FFBCounting_to_FFBVerificationCommand}">
+                        </Button>
+                    </Frame>
+
+                    <!--Amend Verified FFB-->
+                    <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  >
+                        <Button Text="Amend Verified FFB"
+                                    Command="{Binding FFBCounting_to_AmendVerifiedFFBCommand}"
+                                   >
+                        </Button>
+                    </Frame>
+
+
+                    <!--Mandore Attendance-->
+                    <Frame  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2">
+                        <Button Text="Mandore Attendance"   
+                                Command="{Binding FFBCounting_to_MandoreAttendanceCommand}">
+                        </Button>
+                    </Frame>
+
+                    
+                </Grid>
             </StackLayout>
+         
 
             <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
 

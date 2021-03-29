@@ -2,8 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenuOptions.TaskInspection"
-             BackgroundImageSource="bg.jpg"
              NavigationPage.HasBackButton="True">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#F9DED7" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -18,6 +25,7 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
                 <Setter Property="HorizontalOptions" Value="Fill"/>
                 <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
             </Style>
 
             <Style TargetType="Label">
@@ -25,6 +33,7 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
             </Style>
 
             <Style TargetType="Entry">
@@ -54,7 +63,7 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="0,20,0,0">
             
             <StackLayout>
                 <Label x:Name="BunchCCounting_pg1_OC_Name"

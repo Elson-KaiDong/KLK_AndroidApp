@@ -15,32 +15,8 @@ namespace IPMS_KLK.Views.MainMenuOptions
         public FFBCounting()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.FFBCountingContentsViewModels.FFBCountingViewModel();
         }
 
-        private async void FFBCounting_to_BunchCounting(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new BunchCountRecordPage()));
-        }
-        private async void FFBCounting_to_LooseFruitWeighing(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new FFBCountingMenuOptions.LooseFruitWeighing_InputScreen1());
-        }
-        private async void FFBCounting_to_FFBVerification(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new FFBCountingMenuOptions.FFBVerification_InputScreen1());
-        }
-        private async void FFBCounting_to_AmendVerifiedFFB(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new FFBCountingMenuOptions.AmendVerificationFFB_InputScreen1());
-        }
-        private async void FFBCounting_to_MandoreAttendance(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new FFBCountingMenuOptions.MandoreAttendance_InputScreen1());
-        }
-
-        private async void FFBCounting_to_Record(object sender,EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new BunchCountRecordPage()));
-        }
     }
 }

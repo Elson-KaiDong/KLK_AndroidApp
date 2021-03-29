@@ -57,7 +57,7 @@
                         </StackLayout>
                           
                         <!--<Frame Margin="20,10,20,0" BorderColor="LightGray" HasShadow="True" CornerRadius="20"/>-->
-                        <Image HeightRequest="250" Source="ui.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="EndAndExpand"/>
+                        <Image HeightRequest="200" Source="ui.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="EndAndExpand"/>
                     </Grid>
                 </StackLayout>
             </Frame>

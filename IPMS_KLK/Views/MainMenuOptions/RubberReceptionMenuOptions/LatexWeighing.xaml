@@ -1,12 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.LatexWeighing">
+             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.LatexWeighing" BackgroundImageSource="bg.jpg">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Picker">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,15,0,15"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="7"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Image Source="rubbertree.jpg" Aspect="AspectFill" HeightRequest="150"/>
+                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
+                <Label Text="LATEX WEIGHING"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Padding="0,20,0,0"
+                   TextColor="White"/>
+            </Grid>
+
+            <Grid Margin="20,20,20,20" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="1. Worker ID" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="2. Field No" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="3. Task No" Grid.Row="2" Grid.Column="0"/>
+                <Label Text="4. Tapping Type" Grid.Row="3" Grid.Column="0"/>
+                <Label Text="5. Method **" Grid.Row="4" Grid.Column="0"/>
+
+                <Frame Grid.Row="0" Grid.Column="1">
+                    <Entry Text="{Binding WorkerID}"/>
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1">
+                    <Entry Text="{Binding FieldNo}"/>
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="1">
+                    <Entry Text="{Binding TaskNo}"/>
+                </Frame>
+                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Picker Title="--Select tapping type--" 
+                        SelectedIndex="{Binding TappingTypeSelectedIndex}"                        
+                        x:Name="pickerTappingType"
+                        ItemsSource="{Binding tappingTypeList}"
+                        ItemDisplayBinding="{Binding TappingType}"/>
+                </Frame>
+
+                <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Picker x:Name="methodPicker"
+                        IsEnabled="{Binding IsMethodPickerEnabled, Mode=TwoWay}"
+                        ItemsSource="{Binding methodList}"
+                        ItemDisplayBinding="{Binding TappingMethod}"                        
+                        Title="--Select method--" />
+                </Frame>
+
+                <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanWorkerIDCommand}"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanFieldNoCommand}" />
+                <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanTaskNoCommand}"/>
+            </Grid>
+
+            <StackLayout VerticalOptions="EndAndExpand" Margin="20,0,20,0">
+                <Label Text="** Only applied to Recovery Tapping"/>
+                <Button Text="NEXT" 
+                        Command="{Binding NextButtonCommand}"/>
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
+            </StackLayout>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

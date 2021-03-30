@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions.BunchCounting_InputScreen1"
-             BackgroundImageSource="bg.jpg">
+             x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions.BunchCounting_InputScreen1">
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -17,12 +17,13 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
                 <Setter Property="HorizontalOptions" Value="Fill"/>
                 <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontFamily" Value="sfMedium"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
 
@@ -39,7 +40,7 @@
 
             <Style TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="BorderColor" Value="LightGray"/>
                 <Setter Property="CornerRadius" Value="20"/>
                 <Setter Property="HasShadow" Value="True"/>
                 <Setter Property="Padding" Value="0"/>
@@ -54,44 +55,35 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
-                <Image Source="ffb.jpg" Aspect="AspectFill" HeightRequest="150" Opacity="1"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="Bunch Counting"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="white"/>
-            </Grid>
-            <StackLayout>
+            
+            <Frame Margin="20,20,20,0">
                 <Label x:Name="BunchCCounting_pg1_OC_Name"
                        Text="OC :135-LADANG SERAPOH"
-                       HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="sfBlack"/>
+            </Frame>
 
             <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="125"/>
-                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="1. Field No" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="1. Field No" Grid.Row="0" Grid.Column="0" FontFamily="sfMedium" FontSize="Medium"/>
                 <Label Text="2. Task No" Grid.Row="1" Grid.Column="0"/>
                 <Label Text="3. Cutter ID" Grid.Row="2" Grid.Column="0"/>
                 <Label Text="4. Carrier ID" Grid.Row="3" Grid.Column="0"/>
 
                 <Frame Grid.Row="0" Grid.Column="1">
-                    <Entry Text="{Binding FieldNo}"/>
+                    <Entry Text="{Binding FieldNo}" />
                 </Frame>                
                 <Frame Grid.Row="1" Grid.Column="1">
                     <Entry Text="{Binding TaskNo}"/>
@@ -118,8 +110,10 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button  Text="CONTRACT" Grid.Column="0" Command="{Binding ContractButtonCommand}"/>
-                    <Button  Text="CHECKROLL" Grid.Column="1" Command="{Binding CheckrollButtonCommand}"/>
+                    <Button  Text="Contract" Grid.Column="0" Command="{Binding ContractButtonCommand}" FontFamily="sfThin" FontSize="Large">
+                       
+                     </Button>
+                    <Button  Text="Checkroll" Grid.Column="1" Command="{Binding CheckrollButtonCommand}" FontFamily="sfThin" FontSize="Large"/>
                 </Grid>
                 <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
             </StackLayout>

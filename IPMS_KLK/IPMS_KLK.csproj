@@ -18,6 +18,7 @@
     <None Remove="Resources\Fonts\SFUIDisplay-Black.otf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Bold.ttf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Light.ttf" />
+    <None Remove="Resources\Fonts\SFUIDisplay-Medium.otf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Regular.otf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Thin.otf" />
     <None Remove="Resources\Fonts\Theater_Bold.otf" />
@@ -31,6 +32,7 @@
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Black.otf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Medium.otf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Regular.otf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Thin.otf" />
     <EmbeddedResource Include="Resources\Fonts\Theater_Bold.otf" />

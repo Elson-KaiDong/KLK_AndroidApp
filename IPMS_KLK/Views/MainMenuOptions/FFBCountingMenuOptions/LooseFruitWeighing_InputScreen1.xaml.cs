@@ -15,6 +15,8 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
         public LooseFruitWeighing_InputScreen1()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.FFBCountingContentsViewModels.LooseFruitWeighingViewModel();
+
         }
     }
 }

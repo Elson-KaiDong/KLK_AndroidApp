@@ -55,6 +55,7 @@
                 </Grid>
                 
             </Frame>
+            
                         
 
 
@@ -71,8 +72,8 @@
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
-                            <RowDefinition Height="70"/>
-                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -130,18 +131,15 @@
                         <!--Print Total Wt-->
                         <Frame  Grid.Row="6" Grid.Column="1">
                             <Button Text="Print Total Wt"   
-                                        Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"
-                                        >
-
-
+                                    Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"
+                                    Padding="0">
                             </Button>
                         </Frame>
 
                         <!--Mandore Attendance-->
                         <Frame Grid.Row="7" Grid.Column="1">
-                            <Button Text="Mandore Attendance" 
-                                Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}" 
-                                >
+                            <Button Text="Mandore Attendance" Padding="0"
+                                    Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}" >
                             </Button>
                         </Frame>
                     </Grid>

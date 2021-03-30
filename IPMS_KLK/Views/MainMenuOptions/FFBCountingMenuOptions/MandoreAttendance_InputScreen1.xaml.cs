@@ -15,6 +15,7 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
         public MandoreAttendance_InputScreen1()
         {
             InitializeComponent();
+            
         }
     }
 }

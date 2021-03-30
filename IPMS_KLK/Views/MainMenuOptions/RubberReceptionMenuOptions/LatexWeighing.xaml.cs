@@ -15,6 +15,8 @@ namespace IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions
         public LatexWeighing()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.RubberReceptionContentsViewModels.LatexFC_ViewModel();
+
         }
     }
 }

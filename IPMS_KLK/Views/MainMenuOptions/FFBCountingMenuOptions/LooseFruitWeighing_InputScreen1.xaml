@@ -2,11 +2,118 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions.LooseFruitWeighing_InputScreen1">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Padding" Value="0,15,0,15"/>
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="sfMedium"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="8"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="LightGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="LooseFruit Weighing screen1 "
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Frame Margin="20,20,20,0">
+                <Label x:Name="BunchCCounting_pg1_OC_Name"
+                       Text="OC :135-LADANG SERAPOH"
+                       HorizontalOptions="CenterAndExpand"
+                       FontFamily="sfBlack"/>
+            </Frame>
+
+            <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="1. Field No" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="2. Task No" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="3. Collector ID" Grid.Row="2" Grid.Column="0"/>
+                
+
+                <Frame Grid.Row="0" Grid.Column="1">
+                    <Entry Text="{Binding FieldNo}" />
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="1">
+                    <Entry Text="{Binding TaskNo}"/>
+                </Frame>
+                <Frame Grid.Row="2" Grid.Column="1">
+                    <Entry Text="{Binding CollectorID}"/>
+                </Frame>
+                
+
+                <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanFieldNo_Command}"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanTaskNo_Command}"/>
+                <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanCollectorID_Command}"/>
+                
+            </Grid>
+
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Grid Padding="20,20,20,0" ColumnSpacing="20" VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button  Text="Contract" Grid.Column="0" Command="{Binding ContractButtonCommand}" FontFamily="sfThin" FontSize="Large">
+
+                    </Button>
+                    <Button  Text="Checkroll" Grid.Column="1" Command="{Binding CheckrollButtonCommand}" FontFamily="sfThin" FontSize="Large"/>
+                </Grid>
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

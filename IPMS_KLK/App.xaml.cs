@@ -13,6 +13,7 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("SFUIDisplay-Light.otf", Alias = "sfLight")]
 [assembly: ExportFont("KeepCalm-Medium.ttf", Alias = "keepcalm")]
 [assembly: ExportFont("PassionOne-Regular.ttf", Alias = "passion")]
+[assembly: ExportFont("SFUIDisplay-Medium.otf", Alias = "sfMedium")]
 namespace IPMS_KLK
 {
     public partial class App : Application

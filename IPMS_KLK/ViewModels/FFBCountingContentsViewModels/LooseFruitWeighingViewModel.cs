@@ -1,28 +1,23 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 
 namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
 {
-    public class BunchCountingViewModel : BaseViewModel
+    public class LooseFruitWeighingViewModel : BaseViewModel
     {
         ZXingScannerPage scanPage;
 
         string _fieldNo;
-        string _taskNo;
-        string _cutterID;
-        string _carrierID;
+        string _taskNo;       
+        string _collectorID;
         string _harvestingType;
-       
 
-        public Command ContractButtonCommand {get;}
+
+        public Command ContractButtonCommand { get; }
         public Command CheckrollButtonCommand { get; }
         public Command ScanFieldNo_Command { get; }
         public Command ScanTaskNo_Command { get; }
-        public Command ScanCutterID_Command { get; }
-        public Command ScanCarrierID_Command { get; }
         public Command ScanCollectorID_Command { get; }
 
         public string FieldNo
@@ -49,31 +44,18 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
             }
         }
 
-        public string CutterID
+
+        public string CollectorID
         {
-            get { return _cutterID; }
+            get { return _collectorID; }
 
             set
             {
-                if (_cutterID != value)
-                    _cutterID = value;
-                OnPropertyChanged(nameof(CutterID));
+                if (_collectorID != value)
+                    _collectorID = value;
+                OnPropertyChanged(nameof(CollectorID));
             }
         }
-
-        public string CarrierID
-        {
-            get { return _carrierID; }
-
-            set
-            {
-                if (_carrierID != value)
-                    _carrierID = value;
-                OnPropertyChanged(nameof(CarrierID));
-            }
-        }
-
-        
 
         public string HarvestingType
         {
@@ -86,17 +68,16 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
             }
         }
 
-        public BunchCountingViewModel()
-        {
-            ContractButtonCommand = new Command(async()=>await ContractButton_Clicked());
-            CheckrollButtonCommand = new Command(async ()=>await CheckrollButton_Clicked());
-            ScanFieldNo_Command = new Command(btn_ScanFieldNo_Clicked);
-            ScanTaskNo_Command = new Command(btn_ScanTaskNo_Clicked);
-            ScanCutterID_Command = new Command(btn_ScanCutterID_Clicked);
-            ScanCarrierID_Command = new Command(btn_ScanCarrierID_Clicked);
-            
 
-        }//Constructor
+        public LooseFruitWeighingViewModel()
+        {
+            ContractButtonCommand = new Command(async () => await ContractButton_Clicked());
+            CheckrollButtonCommand = new Command(async () => await CheckrollButton_Clicked());
+            ScanFieldNo_Command = new Command(btn_ScanFieldNo_Clicked);
+            ScanTaskNo_Command = new Command(btn_ScanTaskNo_Clicked);            
+            ScanCollectorID_Command = new Command(btn_ScanCollectorID_Clicked);
+
+        }
 
         private async Task CheckrollButton_Clicked()
         {
@@ -107,7 +88,7 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
         private async Task ContractButton_Clicked()
         {
             _harvestingType = "Contract";
-             checkIsEmptyField(_harvestingType);
+            checkIsEmptyField(_harvestingType);
         }
 
         private async void checkIsEmptyField(string harvestingType)
@@ -116,14 +97,11 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
                 await Application.Current.MainPage.DisplayAlert("", "Please scan or input Field No", "OK");
             else if (!string.IsNullOrEmpty(_fieldNo) && (string.IsNullOrEmpty(_taskNo)))
                 await Application.Current.MainPage.DisplayAlert("", "Please scan or input Task No", "OK");
-            else if (!string.IsNullOrEmpty(_fieldNo) && (!string.IsNullOrEmpty(_taskNo)) && (string.IsNullOrEmpty(_cutterID)))
-                await Application.Current.MainPage.DisplayAlert("", "Please scan or input Cutter ID", "OK");
-            else if (!string.IsNullOrEmpty(_fieldNo) && (!string.IsNullOrEmpty(_taskNo)) && (!string.IsNullOrEmpty(_cutterID)) && (string.IsNullOrEmpty(_carrierID)))
-                await Application.Current.MainPage.DisplayAlert("", "Please scan or input Carrier ID", "OK");
+            else if (!string.IsNullOrEmpty(_fieldNo) && (!string.IsNullOrEmpty(_taskNo)) && (string.IsNullOrEmpty(_collectorID)))
+                await Application.Current.MainPage.DisplayAlert("", "Please scan or input Collector ID", "OK");
             else
                 await Application.Current.MainPage.Navigation.PushModalAsync
-                    (new Views.MainMenuOptions.FFBCountingMenuOptions.BunchCounting_InputScreen2
-                    (_fieldNo,_taskNo,_cutterID,_carrierID,harvestingType));
+                    (new Views.MainMenuOptions.FFBCountingMenuOptions.LooseFruitWeighing_InputScreen2());
 
         }
 
@@ -159,7 +137,7 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
             await Application.Current.MainPage.Navigation.PushModalAsync(scanPage);
         }
 
-        private async void btn_ScanCutterID_Clicked()
+        private async void btn_ScanCollectorID_Clicked()
         {
             scanPage = new ZXingScannerPage();
             scanPage.OnScanResult += (result) =>
@@ -169,28 +147,10 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Application.Current.MainPage.Navigation.PopModalAsync();
-                    CutterID = result.Text;
+                    CollectorID = result.Text;
                 });
             };
             await Application.Current.MainPage.Navigation.PushModalAsync(scanPage);
         }
-
-        private async void btn_ScanCarrierID_Clicked()
-        {
-            scanPage = new ZXingScannerPage();
-            scanPage.OnScanResult += (result) =>
-            {
-                scanPage.IsScanning = false;
-
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    Application.Current.MainPage.Navigation.PopModalAsync();
-                    CarrierID = result.Text;
-                });
-            };
-            await Application.Current.MainPage.Navigation.PushModalAsync(scanPage);
-        }
-
-        
     }
 }

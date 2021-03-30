@@ -65,7 +65,7 @@ namespace IPMS_KLK.Views.MainMenuOptions.FFBCountingMenuOptions
 
             db.Insert(bunchCountModel);            
             await DisplayAlert(null, "Bunch Counting Completed", "OK"); 
-            await Navigation.PopModalAsync();
+            await Navigation.PushModalAsync(new FFBCounting());
 
 
         }

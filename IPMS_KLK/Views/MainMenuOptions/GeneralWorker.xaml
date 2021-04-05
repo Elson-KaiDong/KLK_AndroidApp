@@ -25,6 +25,7 @@
                 <Setter Property="Margin" Value="0,0,0,2"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="#faefbe"/>
+                <Setter Property="FontSize" Value="16"/>
             </Style>
 
             <Style TargetType="Frame">

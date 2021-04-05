@@ -15,19 +15,19 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>                
                 <Setter Property="FontFamily" Value="sfBlack"/>
                 <Setter Property="Padding" Value="10,10,10,10"/>                
                 <Setter Property="VerticalOptions" Value="FillAndExpand"/>
-                
+                <Setter Property="FontSize" Value="16"/>
             </Style>
 
             <Style TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="DarkGray"/>
                 <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="CornerRadius" Value="20"/>
             </Style>
         </ResourceDictionary>        
     </ContentPage.Resources>
@@ -64,7 +64,7 @@
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
                          AutoPlay="True"
-                         HeightRequest="250"
+                         HeightRequest="200"
                          VerticalOptions="CenterAndExpand"
                          Margin="125,0,0,0"/>
                     </Grid>
@@ -79,7 +79,9 @@
                                 <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
-                                <RowDefinition Height="70*"/>
+                                <RowDefinition Height="45*"/>
+                                <RowDefinition Height="45*"/>
+                                <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
                     </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -97,19 +99,14 @@
                                         Margin="0,0,0,2"
                                         TextColor="Black"
                                         BackgroundColor="#FBF7D5">
-                                    <!--<Button.Background>
-                                        <LinearGradientBrush EndPoint="0,1">
-                                            <GradientStop Color="#f5cec7" Offset="0.1" />
-                                            <GradientStop Color="#e79796" Offset="1.0" />
-                                        </LinearGradientBrush>
-                                    </Button.Background>-->
+                                    
 
                         </Button>                                
                             </Frame>
                             
                             <!--Rubber Reception-->
 
-                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" x:Name="rubber_reception_frame">
+                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="rubber_reception_frame">
                                 <Button Text="Rubber Reception" x:Name="rubber_reception_btn"
                                         Command="{Binding MainMenu_to_RubberReceptionCommand}"                               
                                         HorizontalOptions="FillAndExpand"
@@ -129,7 +126,7 @@
                     
 
                     <!--FFB Counting-->
-                    <Frame Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" x:Name="ffb_frame">
+                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="ffb_frame">
                                 <Button Text="FFB Counting" x:Name="ffb_btn"
                                         Command="{Binding MainMenu_to_FFBCountingCommand}"                               
                                         HorizontalOptions="FillAndExpand"
@@ -178,7 +175,7 @@
                                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> --> 
 
                     <!--Receipt Reprint-->
-                    <Frame  Grid.Row="4" Grid.Column="1" x:Name="receipt_reprint_frame">
+                    <Frame  Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" x:Name="receipt_reprint_frame">
                                 <Button Text="Receipt Reprint/Cancel"  x:Name="receipt_reprint_btn"  
                                         Command="{Binding MainMenu_to_ReceiptReprintCommand}"                               
                                         HorizontalOptions="FillAndExpand"
@@ -195,7 +192,7 @@
                             </Frame>                           
                             
                             <!--Others/Changes-->
-                    <Frame Grid.Row="5" Grid.Column="1" x:Name="others_frame">
+                    <Frame Grid.Row="6" Grid.Column="1"  Grid.RowSpan="2" x:Name="others_frame">
                         <Button Text="Others/Changes" x:Name="others_btn"
                                 Command="{Binding MainMenu_to_OthersChangesCommand}"                               
                                 HorizontalOptions="FillAndExpand"

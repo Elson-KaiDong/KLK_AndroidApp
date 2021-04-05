@@ -25,6 +25,7 @@
                 <Setter Property="Margin" Value="0,0,0,2"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="#9cdef6"/>
+                <Setter Property="FontSize" Value="16"/>
             </Style>
 
             <Style TargetType="Frame">
@@ -50,14 +51,12 @@
                                FontFamily="passion" 
                                HorizontalOptions="StartAndExpand" 
                                FontSize="40" 
-                               TextColor="Black" Margin="20,10,0,0"
-                               VerticalOptions="Start"/>
+                               TextColor="Black" Margin="20,10,0,0"/>
                         <Label Text="Reception" 
                                FontFamily="passion" 
                                HorizontalOptions="StartAndExpand" 
                                FontSize="40" 
-                               TextColor="Black" Margin="20,0,0,0"
-                               VerticalOptions="Start"/>
+                               TextColor="Black" Margin="20,0,0,0"/>
                 </StackLayout>                    
                 </Grid>
             
@@ -82,16 +81,16 @@
 
 
                         <!--FC Weighing-->
-                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
-                            <Button Text="FC Weighing" 
+                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="fc_weighing_frame">
+                            <Button Text="FC Weighing" x:Name="fc_weighing_btn" 
                                     Command="{Binding RubberReception_to_FCWeighingCommand}"   
                                     >
                             </Button>
                         </Frame>
 
                         <!--Latex and FC-->
-                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" >
-                            <Button Text="Latex and FC" 
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="latex_fc_frame">
+                            <Button Text="Latex and FC" x:Name="latex_fc_btn"
                                         Command="{Binding RubberReception_to_LatexFCCommand}" 
                                         >
                             </Button>
@@ -99,16 +98,16 @@
 
 
                         <!--Latex Weighing-->
-                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4">
-                            <Button Text="Latex Weighing" 
+                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="latex_weighing_frame">
+                            <Button Text="Latex Weighing" x:Name="latex_weighing_btn"
                                         Command="{Binding RubberReception_to_LatexWeighingCommand}"
                                         >
                             </Button>
                         </Frame>
 
                         <!--Bucket/Cage Wt-->
-                        <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  >
-                            <Button Text="Bucket/Cage Wt"
+                        <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="bucket_frame">
+                            <Button Text="Bucket/Cage Wt" x:Name="bucket_btn"
                                     Command="{Binding RubberReception_to_BucketCageWtCommand}"
                                    >
                             </Button>
@@ -129,16 +128,16 @@
                                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> -->
 
                         <!--Print Total Wt-->
-                        <Frame  Grid.Row="6" Grid.Column="1">
-                            <Button Text="Print Total Wt"   
+                        <Frame  Grid.Row="6" Grid.Column="1" x:Name="printTotal_frame">
+                            <Button Text="Print Total Wt"   x:Name="printTotal_btn"
                                     Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"
                                     Padding="0">
                             </Button>
                         </Frame>
 
                         <!--Mandore Attendance-->
-                        <Frame Grid.Row="7" Grid.Column="1">
-                            <Button Text="Mandore Attendance" Padding="0"
+                        <Frame Grid.Row="7" Grid.Column="1" x:Name="mandore_frame">
+                            <Button Text="Mandore Attendance" Padding="0" x:Name="mandore_btn"
                                     Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}" >
                             </Button>
                         </Frame>

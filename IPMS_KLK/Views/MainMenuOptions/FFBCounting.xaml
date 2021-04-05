@@ -73,30 +73,30 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Bunch Counting-->
-                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" >
-                        <Button Text="Bunch Counting" 
+                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="bunchCounting_frame">
+                        <Button Text="Bunch Counting" x:Name="bunchCounting_btn"
                                 Command="{Binding FFBCounting_to_BunchCountingCommand}">
                         </Button>
                     </Frame>
 
 
                     <!--Loose Fruit Weighing-->
-                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4">
-                        <Button Text="Loose Fruit Weighing" 
+                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="looseFruit_frame">
+                        <Button Text="Loose Fruit Weighing" x:Name="looseFruit_btn"
                                 Command="{Binding FFBCounting_to_LooseFruitWeighingCommand}">
                         </Button>
                     </Frame>
 
                     <!--FFB Verification-->
-                    <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
-                        <Button Text="FFB Verification" 
+                    <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="ffbVerification_frame">
+                        <Button Text="FFB Verification" x:Name="ffbVerification_btn"
                                     Command="{Binding FFBCounting_to_FFBVerificationCommand}">
                         </Button>
                     </Frame>
 
                     <!--Amend Verified FFB-->
-                    <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  >
-                        <Button Text="Amend Verified FFB"
+                    <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" x:Name="amendVerified_frame" >
+                        <Button Text="Amend Verified FFB" x:Name="amendVerified_btn"
                                     Command="{Binding FFBCounting_to_AmendVerifiedFFBCommand}"
                                    >
                         </Button>
@@ -104,8 +104,8 @@
 
 
                     <!--Mandore Attendance-->
-                    <Frame  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2">
-                        <Button Text="Mandore Attendance"   
+                    <Frame  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="mandoreAttendance_frame" >
+                        <Button Text="Mandore Attendance"  x:Name="mandoreAttendance_btn" 
                                 Command="{Binding FFBCounting_to_MandoreAttendanceCommand}">
                         </Button>
                     </Frame>

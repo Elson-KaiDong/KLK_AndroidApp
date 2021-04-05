@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\bluehouse.json" />
+    <None Remove="Resources\bluelaptopworking.json" />
+    <None Remove="Resources\carousel.json" />
+    <None Remove="Resources\dashboard.json" />
+    <None Remove="Resources\developer.json" />
+    <None Remove="Resources\farmer.json" />
     <None Remove="Resources\Fonts\BebasNeue-Regular.otf" />
     <None Remove="Resources\Fonts\coolvetica.ttf" />
     <None Remove="Resources\Fonts\KeepCalm-Medium.ttf" />
@@ -22,9 +28,46 @@
     <None Remove="Resources\Fonts\SFUIDisplay-Regular.otf" />
     <None Remove="Resources\Fonts\SFUIDisplay-Thin.otf" />
     <None Remove="Resources\Fonts\Theater_Bold.otf" />
+    <None Remove="Resources\icon-animation.json" />
+    <None Remove="Resources\illustration.json" />
+    <None Remove="Resources\login.json" />
+    <None Remove="Resources\lottie-animation.json" />
+    <None Remove="Resources\lumberjack.json" />
+    <None Remove="Resources\messaging.json" />
+    <None Remove="Resources\programming.json" />
+    <None Remove="Resources\searching.json" />
+    <None Remove="Resources\searchscroll.json" />
+    <None Remove="Resources\task.json" />
+    <None Remove="Resources\trusted-sites.json" />
+    <None Remove="Resources\user-testing.json" />
+    <None Remove="Resources\welcome.json" />
+    <None Remove="Resources\womenonphone.json" />
+    <None Remove="Resources\workers.json" />
+    <None Remove="Resources\workfromhome.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\lumberjack.json" />
+    <EmbeddedResource Include="Resources\icon-animation.json" />
+    <EmbeddedResource Include="Resources\trusted-sites.json" />
+    <EmbeddedResource Include="Resources\dashboard.json" />
+    <EmbeddedResource Include="Resources\developer.json" />
+    <EmbeddedResource Include="Resources\messaging.json" />
+    <EmbeddedResource Include="Resources\user-testing.json" />
+    <EmbeddedResource Include="Resources\lottie-animation.json" />
+    <EmbeddedResource Include="Resources\programming.json" />
+    <EmbeddedResource Include="Resources\illustration.json" />
+    <EmbeddedResource Include="Resources\carousel.json" />
+    <EmbeddedResource Include="Resources\bluehouse.json" />
+    <EmbeddedResource Include="Resources\bluelaptopworking.json" />
+    <EmbeddedResource Include="Resources\farmer.json" />
+    <EmbeddedResource Include="Resources\searching.json" />
+    <EmbeddedResource Include="Resources\searchscroll.json" />
+    <EmbeddedResource Include="Resources\task.json" />
+    <EmbeddedResource Include="Resources\welcome.json" />
+    <EmbeddedResource Include="Resources\womenonphone.json" />
+    <EmbeddedResource Include="Resources\workers.json" />
+    <EmbeddedResource Include="Resources\workfromhome.json" />
     <EmbeddedResource Include="Resources\Fonts\BebasNeue-Regular.otf" />
     <EmbeddedResource Include="Resources\Fonts\coolvetica.ttf" />
     <EmbeddedResource Include="Resources\Fonts\KeepCalm-Medium.ttf" />
@@ -36,11 +79,12 @@
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Regular.otf" />
     <EmbeddedResource Include="Resources\Fonts\SFUIDisplay-Thin.otf" />
     <EmbeddedResource Include="Resources\Fonts\Theater_Bold.otf" />
+    <EmbeddedResource Include="Resources\login.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.0.9" />
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.47" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />

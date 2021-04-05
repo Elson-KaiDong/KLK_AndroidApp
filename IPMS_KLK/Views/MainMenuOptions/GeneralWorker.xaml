@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.GeneralWorker" >
+             x:Class="IPMS_KLK.Views.MainMenuOptions.GeneralWorker" 
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
@@ -36,11 +38,16 @@
     <ContentPage.Content>
         <StackLayout Margin="0,0,0,0">
 
-            <Frame BackgroundColor="Transparent" HasShadow="True" Margin="20,5,20,0">
-                <StackLayout Margin="0,20,0,20">
+            
+                <StackLayout Margin="30,5,0,0">
                     <Grid>
-                        <Image HeightRequest="100" Source="pngworker.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="EndAndExpand"/>
-
+                        <lottie:AnimationView Animation="Resources.farmer.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="200"
+                         VerticalOptions="EndAndExpand"
+                         Margin="100,0,0,0"/>
                         <StackLayout Margin="0,0,10,0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
                             <Label Text="General"
                                FontSize="40"  
@@ -49,16 +56,11 @@
                             <Label Text="Worker"
                                FontSize="40"  
                                TextColor="Black"
-                               FontFamily="passion"/>
-
-                         
-                        </StackLayout>
-
-
-                       
+                               FontFamily="passion"/>                         
+                        </StackLayout>                       
                     </Grid>
                 </StackLayout>
-            </Frame>
+            
             
                     <StackLayout VerticalOptions="FillAndExpand" Margin="20,5,20,0">
                         <Grid  ColumnSpacing="20" RowSpacing="20" VerticalOptions="FillAndExpand">
@@ -78,8 +80,8 @@
                             </Grid.ColumnDefinitions>
 
                         <!--Guided by Job-->
-                            <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" >
-                            <Button Text="Guided by Job" 
+                            <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByJob_frame" >
+                            <Button Text="Guided by Job" x:Name="guidedByJob_btn"
                                         Command="{Binding GeneralWorker_to_GuidedByJobCommand}" 
                                         >                                    
                                 </Button>
@@ -87,23 +89,23 @@
 
 
                         <!--Guided by Vehicle-->
-                            <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4">
-                            <Button Text="Guided by Vehicle" 
+                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByVehicle_frame">
+                            <Button Text="Guided by Vehicle" x:Name="guidedByVehicle_btn"
                                         Command="{Binding GeneralWorker_to_GuidedByVehicleCommand}"
                                         >                                    
                                 </Button>
                             </Frame>
 
                         <!--Add New Job-->
-                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
-                            <Button Text="Add New Job" 
+                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="addNewJob_frame">
+                            <Button Text="Add New Job" x:Name="addNewJob_btn"
                                     Command="{Binding GeneralWorker_to_AddNewJobCommand}">
                             </Button>
                         </Frame>
 
                         <!--Add New Vehicle-->
-                            <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  >
-                            <Button Text="Add New Vehicle"
+                            <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="addNewVehicle_frame">
+                            <Button Text="Add New Vehicle" x:Name="addNewVehicle_btn"
                                     Command="{Binding GeneralWorker_to_AddNewVechicleCommand}"
                                    >                                    
                                 </Button>
@@ -124,8 +126,8 @@
                                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> -->
 
                         <!--Print Receipt-->
-                            <Frame  Grid.Row="6" Grid.Column="1">
-                            <Button Text="Print Receipt"   
+                            <Frame  Grid.Row="6" Grid.Column="1" x:Name="printReceipt_frame">
+                            <Button Text="Print Receipt" x:Name="printReceipt_btn"  
                                         Command="{Binding GeneralWorker_to_PrintReceiptCommand}"
                                         >
                                    
@@ -134,8 +136,8 @@
                             </Frame>
 
                         <!--Show Total Emp-->
-                            <Frame Grid.Row="7" Grid.Column="1">
-                            <Button Text="Show Total Emp" 
+                            <Frame Grid.Row="7" Grid.Column="1" x:Name="showTotalEmp_frame">
+                            <Button Text="Show Total Emp" x:Name="showTotalEmp_btn"
                                 Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}" 
                                 >                                    
                                 </Button>

@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.LoginPage"
-             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -20,8 +22,8 @@
 
     <StackLayout Padding="0" >
         
-        <StackLayout VerticalOptions="EndAndExpand">
-            <Image Source="klk_logo.png" HeightRequest="70" WidthRequest="70"  Margin="0,10,0,10"/>            
+        <StackLayout VerticalOptions="EndAndExpand">            
+            <Image Source="klk_logo.png" HeightRequest="70" WidthRequest="70"  Margin="0,10,0,10"/>           
         </StackLayout>
         
         <StackLayout>
@@ -31,7 +33,15 @@
         
         <Grid VerticalOptions="EndAndExpand">          
             <StackLayout >
-                <Image Source="ui1.png" Aspect="AspectFit" HorizontalOptions="Center" Margin="90,0,90,0"/>               
+                <lottie:AnimationView Animation="Resources.trusted-sites.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="200"
+                         VerticalOptions="EndAndExpand"
+                         HorizontalOptions="FillAndExpand" 
+                         Margin="20,0,20,0"/>
+                <!--<Image Source="ui1.png" Aspect="AspectFit" HorizontalOptions="Center" Margin="90,0,90,0"/>    -->           
                     
                     <StackLayout>  
                         <StackLayout Margin="50,0,50,0">

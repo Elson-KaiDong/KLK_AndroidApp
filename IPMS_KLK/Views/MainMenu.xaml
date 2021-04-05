@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenu"
-             Title="Main Menu">
+             Title="Main Menu"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
             <GradientStop Color="#ffffff" Offset="0.1" />
@@ -58,13 +60,19 @@
                         </StackLayout>
                           
                         <!--<Frame Margin="20,10,20,0" BorderColor="LightGray" HasShadow="True" CornerRadius="20"/>-->
-                        <Image HeightRequest="200" Source="ui.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="EndAndExpand"/>
+                        <lottie:AnimationView Animation="Resources.developer.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="250"
+                         VerticalOptions="CenterAndExpand"
+                         Margin="125,0,0,0"/>
                     </Grid>
                 </StackLayout>
             </Frame>
            
             
-            <StackLayout VerticalOptions="FillAndExpand" Margin="20,10,20,20">
+            <StackLayout VerticalOptions="FillAndExpand" Margin="20,0,20,20">
                         <Grid  ColumnSpacing="20" RowSpacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="45*"/>
@@ -81,9 +89,9 @@
 
 
                             <!--General Workers-->
-                            <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                            <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="general_worker_frame">
                                 <Button Text="General Worker" 
-                                        
+                                        x:Name="general_worker_btn"
                                         Command="{Binding MainMenu_to_GeneralWorkerCommand}"                               
                                         HorizontalOptions="FillAndExpand"
                                         Margin="0,0,0,2"
@@ -101,8 +109,8 @@
                             
                             <!--Rubber Reception-->
 
-                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" >
-                                <Button Text="Rubber Reception" 
+                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" x:Name="rubber_reception_frame">
+                                <Button Text="Rubber Reception" x:Name="rubber_reception_btn"
                                         Command="{Binding MainMenu_to_RubberReceptionCommand}"                               
                                         HorizontalOptions="FillAndExpand"
                                         Margin="0,0,0,2"
@@ -121,8 +129,8 @@
                     
 
                     <!--FFB Counting-->
-                    <Frame Grid.Row="3" Grid.Column="0" Grid.RowSpan="3">
-                                <Button Text="FFB Counting" 
+                    <Frame Grid.Row="3" Grid.Column="0" Grid.RowSpan="3" x:Name="ffb_frame">
+                                <Button Text="FFB Counting" x:Name="ffb_btn"
                                         Command="{Binding MainMenu_to_FFBCountingCommand}"                               
                                         HorizontalOptions="FillAndExpand"
                                         Margin="0,0,0,2"
@@ -138,8 +146,8 @@
                             </Frame>
                             
                             <!--Task Inspection-->
-                    <Frame  Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"  >
-                                <Button Text="Task Inspection"
+                    <Frame  Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" x:Name="task_inspection_frame" >
+                                <Button Text="Task Inspection" x:Name="task_inspection_btn"
                                         Command="{Binding MainMenu_to_TaskInspectionCommand}"                               
                                         HorizontalOptions="FillAndExpand"
                                         Margin="0,0,0,2"
@@ -170,8 +178,8 @@
                                    Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> --> 
 
                     <!--Receipt Reprint-->
-                    <Frame  Grid.Row="4" Grid.Column="1">
-                                <Button Text="Receipt Reprint/Cancel"   
+                    <Frame  Grid.Row="4" Grid.Column="1" x:Name="receipt_reprint_frame">
+                                <Button Text="Receipt Reprint/Cancel"  x:Name="receipt_reprint_btn"  
                                         Command="{Binding MainMenu_to_ReceiptReprintCommand}"                               
                                         HorizontalOptions="FillAndExpand"
                                         Margin="0,0,0,2"
@@ -187,8 +195,8 @@
                             </Frame>                           
                             
                             <!--Others/Changes-->
-                    <Frame Grid.Row="5" Grid.Column="1">
-                        <Button Text="Others/Changes" 
+                    <Frame Grid.Row="5" Grid.Column="1" x:Name="others_frame">
+                        <Button Text="Others/Changes" x:Name="others_btn"
                                 Command="{Binding MainMenu_to_OthersChangesCommand}"                               
                                 HorizontalOptions="FillAndExpand"
                                 Margin="0,0,0,2"

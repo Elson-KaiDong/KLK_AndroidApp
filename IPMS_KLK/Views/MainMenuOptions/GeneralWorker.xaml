@@ -48,10 +48,10 @@
                          AutoPlay="True"
                          HeightRequest="200"
                          VerticalOptions="EndAndExpand"
-                         Margin="100,0,0,0"/>
+                         Margin="110,20,0,0"/>
                         <StackLayout Margin="0,0,10,0" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
                             <Label Text="General"
-                               FontSize="40"  
+                               FontSize="55"  
                                TextColor="Black"
                                FontFamily="passion"/>
                             <Label Text="Worker"
@@ -107,40 +107,22 @@
                         <!--Add New Vehicle-->
                             <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="addNewVehicle_frame">
                             <Button Text="Add New Vehicle" x:Name="addNewVehicle_btn"
-                                    Command="{Binding GeneralWorker_to_AddNewVechicleCommand}"
-                                   >                                    
+                                    Command="{Binding GeneralWorker_to_AddNewVechicleCommand}">                                    
                                 </Button>
                             </Frame>
 
-                            <!--    <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" 
-                                  StrokeThickness="2"
-                                  StrokeDashArray="1,1"
-                                  StrokeDashOffset="10"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Margin="0"/>      
-
-                    <Label Text="Others"
-                                   FontSize="Title"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"                                   
-                                   Padding="0,0,0,0"
-                                   TextColor="Black"
-                                   FontFamily="Cool"
-                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> -->
 
                         <!--Print Receipt-->
                             <Frame  Grid.Row="6" Grid.Column="1" x:Name="printReceipt_frame">
                             <Button Text="Print Receipt" x:Name="printReceipt_btn"  
-                                        Command="{Binding GeneralWorker_to_PrintReceiptCommand}"
-                                        >
-                                   
-                                            
+                                        Command="{Binding GeneralWorker_to_PrintReceiptCommand}">
                                 </Button>
                             </Frame>
 
                         <!--Show Total Emp-->
                             <Frame Grid.Row="7" Grid.Column="1" x:Name="showTotalEmp_frame">
                             <Button Text="Show Total Emp" x:Name="showTotalEmp_btn"
-                                Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}" 
-                                >                                    
+                                Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}" >                                    
                                 </Button>
                             </Frame>
                         </Grid>        

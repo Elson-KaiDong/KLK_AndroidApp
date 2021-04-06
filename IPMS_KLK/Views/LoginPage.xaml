@@ -33,7 +33,7 @@
         
         <Grid VerticalOptions="EndAndExpand">          
             <StackLayout >
-                <lottie:AnimationView Animation="Resources.login-anim.json"
+                <lottie:AnimationView Animation="Resources.lottie-animation.json"
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
                          AutoPlay="True"

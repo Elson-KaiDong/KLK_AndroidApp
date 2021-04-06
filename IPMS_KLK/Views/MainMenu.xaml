@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenu"
              Title="Main Menu"
-             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
-            <GradientStop Color="#ffffff" Offset="0.1" />
-            <GradientStop Color="#e7e7e7" Offset="1.0" />
+            <GradientStop Color="White" Offset="0.1" />
+            <GradientStop Color="White" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
@@ -70,9 +70,10 @@
                     </Grid>
                 </StackLayout>
             </Frame>
-           
-            
-            <StackLayout VerticalOptions="FillAndExpand" Margin="20,0,20,20">
+
+
+            <pv:PancakeView  VerticalOptions="FillAndExpand" Margin="0,0,0,0" BackgroundColor="Transparent" CornerRadius="0">
+                <StackLayout Margin="20,0,20,0">
                         <Grid  ColumnSpacing="20" RowSpacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="45*"/>
@@ -83,20 +84,18 @@
                                 <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
                                 <RowDefinition Height="45*"/>
-                    </Grid.RowDefinitions>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-
-
                             <!--General Workers-->
                             <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="general_worker_frame">
                                 <Button Text="General Worker" 
                                         x:Name="general_worker_btn"
                                         Command="{Binding MainMenu_to_GeneralWorkerCommand}"                               
                                         HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,2"
+                                        Margin="0,0,0,3"
                                         TextColor="Black"
                                         BackgroundColor="#FBF7D5">
                                     
@@ -106,118 +105,73 @@
                             
                             <!--Rubber Reception-->
 
-                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="rubber_reception_frame">
+                            <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="rubber_reception_frame">
                                 <Button Text="Rubber Reception" x:Name="rubber_reception_btn"
                                         Command="{Binding MainMenu_to_RubberReceptionCommand}"                               
                                         HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,2"
+                                        Margin="0,0,0,3"
                                         TextColor="Black"
-                                        BackgroundColor="#CCE1F2">
-                                    <!--<Button.Background>
-                                        <LinearGradientBrush EndPoint="0,1">
-                                            <GradientStop Color="#e3ff73" Offset="0.1" />
-                                            <GradientStop Color="#e27c39" Offset="1.0" />
-                                        </LinearGradientBrush>
-                                    </Button.Background>-->
+                                        BackgroundColor="#CCE1F2">                                    
                                 </Button>
-                            </Frame>
-
-
-                    
+                            </Frame>                    
 
                     <!--FFB Counting-->
-                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="ffb_frame">
+                            <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="ffb_frame">
                                 <Button Text="FFB Counting" x:Name="ffb_btn"
                                         Command="{Binding MainMenu_to_FFBCountingCommand}"                               
                                         HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,2"
+                                        Margin="0,0,0,3"
                                         TextColor="Black"
-                                        BackgroundColor="#C6F8E5">
-                                    <!--<Button.Background>
-                                        <LinearGradientBrush EndPoint="0,1">
-                                            <GradientStop Color="#09ebbe" Offset="0.1" />
-                                            <GradientStop Color="#388ee9" Offset="1.0" />
-                                        </LinearGradientBrush>
-                                    </Button.Background>-->
+                                        BackgroundColor="#C6F8E5">                                    
                                 </Button>
                             </Frame>
                             
                             <!--Task Inspection-->
-                    <Frame  Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" x:Name="task_inspection_frame" >
+                            <Frame  Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" x:Name="task_inspection_frame" >
                                 <Button Text="Task Inspection" x:Name="task_inspection_btn"
                                         Command="{Binding MainMenu_to_TaskInspectionCommand}"                               
                                         HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,2"
+                                        Margin="0,0,0,3"
                                         TextColor="Black"
                                         BackgroundColor="#F9DED7">
-                                    <!---
-                            <Button.Background>
-                                <LinearGradientBrush EndPoint="0,1">
-                                    <GradientStop Color="#f1959b" Offset="0.1" />
-                                    <GradientStop Color="#dc1c13" Offset="1.0" />
-                                </LinearGradientBrush>
-                            </Button.Background>-->
-                        </Button>
+                                </Button>
                             </Frame>
 
-                        <!--    <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" 
-                                  StrokeThickness="2"
-                                  StrokeDashArray="1,1"
-                                  StrokeDashOffset="10"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Margin="0"/>      
-
-                    <Label Text="Others"
-                                   FontSize="Title"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"                                   
-                                   Padding="0,0,0,0"
-                                   TextColor="Black"
-                                   FontFamily="Cool"
-                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> --> 
-
-                    <!--Receipt Reprint-->
-                    <Frame  Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" x:Name="receipt_reprint_frame">
+                    
+                            <!--Receipt Reprint-->
+                            <Frame  Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" x:Name="receipt_reprint_frame">
                                 <Button Text="Receipt Reprint/Cancel"  x:Name="receipt_reprint_btn"  
                                         Command="{Binding MainMenu_to_ReceiptReprintCommand}"                               
                                         HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,2"
+                                        Margin="0,0,0,3"
                                         TextColor="Black"
-                                        BackgroundColor="#F5CDDE">
-                                            <!--<Button.Background>
-                                                <LinearGradientBrush EndPoint="0,1">
-                                                    <GradientStop Color="#b8d5cd" Offset="0.1" />
-                                                    <GradientStop Color="#5ca08e" Offset="1.0" />
-                                                </LinearGradientBrush>
-                                            </Button.Background>-->
-                        </Button>
+                                        BackgroundColor="#F5CDDE">                                                  
+                                </Button>
                             </Frame>                           
                             
                             <!--Others/Changes-->
-                    <Frame Grid.Row="6" Grid.Column="1"  Grid.RowSpan="2" x:Name="others_frame">
-                        <Button Text="Others/Changes" x:Name="others_btn"
-                                Command="{Binding MainMenu_to_OthersChangesCommand}"                               
-                                HorizontalOptions="FillAndExpand"
-                                Margin="0,0,0,2"
-                                TextColor="Black"
-                                BackgroundColor="#E2BEF1">
-                                            <!--<Button.Background>
-                                                <LinearGradientBrush EndPoint="0,1">
-                                                    <GradientStop Color="#C1B0E7" Offset="0.1" />
-                                                    <GradientStop Color="#743BF8" Offset="1.0" />
-                                                </LinearGradientBrush>
-                                            </Button.Background> -->   
-                                            </Button>
-                            </Frame>
+                            <Frame Grid.Row="6" Grid.Column="1"  Grid.RowSpan="2" x:Name="others_frame">
+                                <Button Text="Others/Changes" x:Name="others_btn"
+                                        Command="{Binding MainMenu_to_OthersChangesCommand}"                               
+                                        HorizontalOptions="FillAndExpand"
+                                        Margin="0,0,0,3"
+                                        TextColor="Black"
+                                        BackgroundColor="#E2BEF1">
+                                      <!--  BackgroundColor="#E2BEF1">       -->                             
+                                </Button>
+                            </Frame>    
 
-                                 
+
 
 
                 </Grid>
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50"  Margin="0,0,0,10"/>
+                
+                
 
 
-
-            </StackLayout>
-
+                </StackLayout>
+            </pv:PancakeView>
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50"  Margin="0,0,0,10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

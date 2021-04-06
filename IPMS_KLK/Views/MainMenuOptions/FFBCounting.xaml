@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="IPMS_KLK.Views.MainMenuOptions.FFBCounting">
 
     <ContentPage.Background>
@@ -23,6 +23,7 @@
                 <Setter Property="Margin" Value="0,0,0,2"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="#81fbd4"/>
+                <Setter Property="FontSize" Value="16"/>
             </Style>
 
             <Style TargetType="Frame">
@@ -35,14 +36,19 @@
 
     <ContentPage.Content>
         <StackLayout Margin="0,0,0,0" VerticalOptions="FillAndExpand">
-            <Frame BackgroundColor="Transparent" HasShadow="True" Margin="20,20,20,0">
+            
                 <StackLayout Margin="0,15,0,0">
                     <Grid>
-                        <Image HeightRequest="200" Source="ui6.png" Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="0,0,0,0" VerticalOptions="Start"/>
-
-                        <StackLayout Margin="20,20,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                    <lottie:AnimationView Animation="Resources.kid-on-laptop.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="200"
+                         
+                         Margin="150,0,0,0"/>
+                    <StackLayout Margin="30,20,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
                             <Label Text="FFB"
-                               FontSize="40"  
+                               FontSize="75"  
                                TextColor="BLack"
                                FontFamily="passion"/>
 
@@ -53,9 +59,9 @@
                         </StackLayout>
                     </Grid>
                 </StackLayout>
-            </Frame>
+            
 
-            <StackLayout VerticalOptions="FillAndExpand" Margin="20,50,20,0">
+            <StackLayout VerticalOptions="FillAndExpand" Margin="20,20,20,0">
                 <Grid  ColumnSpacing="20" RowSpacing="20" VerticalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>

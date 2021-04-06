@@ -44,8 +44,11 @@
     <None Remove="Resources\lumberjack.json" />
     <None Remove="Resources\messaging.json" />
     <None Remove="Resources\movie.json" />
+    <None Remove="Resources\no-wifi.json" />
+    <None Remove="Resources\print.json" />
     <None Remove="Resources\programming.json" />
     <None Remove="Resources\rocket.json" />
+    <None Remove="Resources\sad-dev.json" />
     <None Remove="Resources\searching.json" />
     <None Remove="Resources\searchscroll.json" />
     <None Remove="Resources\task.json" />
@@ -63,6 +66,9 @@
     <EmbeddedResource Include="Resources\doctors.json" />
     <EmbeddedResource Include="Resources\kid-on-laptop.json" />
     <EmbeddedResource Include="Resources\landscape.json" />
+    <EmbeddedResource Include="Resources\no-wifi.json" />
+    <EmbeddedResource Include="Resources\print.json" />
+    <EmbeddedResource Include="Resources\sad-dev.json" />
     <EmbeddedResource Include="Resources\wokrk-at-night.json" />
     <EmbeddedResource Include="Resources\construction.json" />
     <EmbeddedResource Include="Resources\login-anim.json" />

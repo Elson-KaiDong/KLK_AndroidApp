@@ -1,30 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="IPMS_KLK.Views.MainMenuOptions.TaskInspection"
              NavigationPage.HasBackButton="True">
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
             <GradientStop Color="#ffffff" Offset="0.1" />
-            <GradientStop Color="#F9DED7" Offset="1.0" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Button">
-                <Setter Property="FontSize" Value="Medium"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,5,0,5"/>
-                <Setter Property="Margin" Value="20,10,20,0"/>
+            <Style x:Key="labelBaseStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="Margin" Value="0"/>
                 <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="TextTransform" Value="None"/>
-                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
                 <Setter Property="HorizontalOptions" Value="Fill"/>
                 <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+
+            <Style x:Key="reset_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">                
+                <Setter Property="BackgroundColor" Value="Red"/>                
+            </Style>
+
+            <Style x:Key="bottom_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="#F9DED7"/>
             </Style>
 
             <Style TargetType="Label">
@@ -32,8 +40,16 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
+
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+
+
 
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="15"/>
@@ -56,90 +72,106 @@
 
             <Style TargetType="ImageButton">
                 <Setter Property="Source" Value="scan.png"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="20"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Margin="0,20,0,0">
-            <Label Text="TASK INSPECTION" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+        <StackLayout Margin="0,10,0,0">
+            <Grid >
+                <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0">
+                    <Label Text="TASK"  FontSize="70" FontFamily="passion"/>
+                    <Label Text="INSPECTION" FontSize="35" 
+                           VerticalOptions="StartAndExpand" 
+                           FontFamily="passion" TextColor="DimGray"/>
+                </StackLayout>
+                
+                <lottie:AnimationView Animation="Resources.searchscroll.json" x:Name="task_Anim"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="150"
+                         VerticalOptions="EndAndExpand"
+                         Margin="175,0,0,0"/>
+            </Grid>
+            
             
             <StackLayout>
-                <Frame Margin="30,10,30,0">
-                    <Label x:Name="BunchCCounting_pg1_OC_Name"
+                <Frame Margin="30,0,30,0">
+                    <Label x:Name="BunchCCounting_pg1_OC_Name" FontFamily="sfBlack"
                        Text="OC :135-LADANG SERAPOH"
                        HorizontalOptions="CenterAndExpand"/>
                 </Frame>
                 
             </StackLayout>
 
-            <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="15">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                </Grid.RowDefinitions>
+            <pv:PancakeView CornerRadius="0,30,0,30" BackgroundColor="#F9DED7" Margin="0,20,20,20">
+                <StackLayout>
+                    <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
 
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="1. Worker ID" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="2. Field No" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="3. Task No" Grid.Row="2" Grid.Column="0"/>
+                        <Label Text="4. Direction Type" Grid.Row="3" Grid.Column="0"/>
+
+                        <Frame Grid.Row="0" Grid.Column="1">
+                            <Entry x:Name="TaskInspection_WorkerID_Entry"/>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="1">
+                            <Entry x:Name="TaskInspection_FieldNo_Entry"/>
+                        </Frame>
+                        <Frame Grid.Row="2" Grid.Column="1">
+                            <Entry x:Name="TaskInspection_TaskNo_Entry"/>
+                        </Frame>
+                        <StackLayout RadioButtonGroup.GroupName="Direction_Type"  Grid.Row="3" Grid.Column="1">
+                            <RadioButton TextColor="Black" Content="P&lt;&lt;" Value="Left" IsChecked="True" x:Name="start_from_left"/>
+                            <RadioButton TextColor="Black" Content="&gt;&gt;P" Value="Right" x:Name="start_from_right"/>
+                        </StackLayout>
+
+
+                        <ImageButton Grid.Row="0" Grid.Column="2"/>
+                        <ImageButton Grid.Row="1" Grid.Column="2" />
+                        <ImageButton Grid.Row="2" Grid.Column="2" />
+                        <Button x:Name="btn_TaskInspection_Reset" Style="{StaticResource reset_btn}" Grid.Row="3" Grid.Column="2" Text="Reset"/>
+
+                    </Grid>
+                </StackLayout>
+            </pv:PancakeView>
+
+            <Grid Margin="10,0,10,0" ColumnSpacing="10" VerticalOptions="EndAndExpand" HeightRequest="75">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="125"/>
-                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="1. Worker ID" Grid.Row="0" Grid.Column="0"/>
-                <Label Text="2. Field No" Grid.Row="1" Grid.Column="0"/>
-                <Label Text="3. Task No" Grid.Row="2" Grid.Column="0"/>
-                <Label Text="4. Direction Type" Grid.Row="3" Grid.Column="0"/>
-
-                <Frame Grid.Row="0" Grid.Column="1">
-                    <Entry x:Name="TaskInspection_WorkerID_Entry"/>
+                <Frame Style="{StaticResource button_shadow_frame}" Grid.Column="0">
+                    <Button Style="{StaticResource bottom_btn}" Text="Next" />
                 </Frame>
-                <Frame Grid.Row="1" Grid.Column="1">
-                    <Entry x:Name="TaskInspection_FieldNo_Entry"/>
+                <Frame Style="{StaticResource button_shadow_frame}"  Grid.Column="1">
+                    <Button Style="{StaticResource bottom_btn}" Text="Print Summary" IsEnabled="True"/>
                 </Frame>
-                <Frame Grid.Row="2" Grid.Column="1">
-                    <Entry x:Name="TaskInspection_TaskNo_Entry"/>
-                </Frame>
-                <StackLayout RadioButtonGroup.GroupName="Direction_Type"  Grid.Row="3" Grid.Column="1">
-                    <RadioButton TextColor="Black" Content="P&lt;&lt;" Value="Left" IsChecked="True" x:Name="start_from_left"/>
-                    <RadioButton TextColor="Black" Content="&gt;&gt;P" Value="Right" x:Name="start_from_right"/>
-                </StackLayout>
+                
                 
 
-                <ImageButton Grid.Row="0" Grid.Column="2" x:Name="btn_ScanFieldNo"/>
-                <ImageButton Grid.Row="1" Grid.Column="2" x:Name="btn_ScanTaskNo"/>
-                <ImageButton Grid.Row="2" Grid.Column="2" x:Name="btn_ScanCutterID"/>
-                <Button Grid.Row="3" Grid.Column="2" Text="Reset" Grid.RowSpan="2" Margin="0"
-                        BackgroundColor="Red" x:Name="btn_TaskInspection_Reset"/>
 
             </Grid>
 
-            <StackLayout Margin="20,0,20,0" VerticalOptions="EndAndExpand">
-                <Button Text="Next" >
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0,1">
-                            <GradientStop Color="#f8dba4" Offset="0.1" />
-                            <GradientStop Color="#e09082" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    
-                </Button>
-                <Button Text="Print Summary" IsEnabled="True">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0,1">
-                            <GradientStop Color="#f8dba4" Offset="0.1" />
-                            <GradientStop Color="#e09082" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
-
-            </StackLayout>
-
-
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10" VerticalOptions="EndAndExpand"/>
 
         </StackLayout>
     </ContentPage.Content>

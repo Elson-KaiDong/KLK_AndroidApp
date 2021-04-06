@@ -1,49 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="IPMS_KLK.Views.MainMenuOptions.ReceiptReprint">
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
             <GradientStop Color="#ffffff" Offset="0.1" />
-            <GradientStop Color="#F5CDDE" Offset="1.0" />
+            <GradientStop Color="#E2BEF1" Offset="1.0" />
         </LinearGradientBrush>
     </ContentPage.Background>
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="30" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#ffb6c1"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HeightRequest" Value="125"/>
+                
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="passion"/>
+                <Setter Property="TextColor" Value="Black"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>     
-                <Label Text="RECEIPT REPRINT/CANCEL"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="Black"
-                   FontFamily="sfBlack"/>
-            
+        <StackLayout>
+            <Grid >                
+                <StackLayout HorizontalOptions="Start" Margin="20,0,0,0" Grid.Row="0">
+                    <Label Text="RECEIPT"
+                           FontSize="70"                                                      
+                           Padding="0,20,0,0"
+                           TextColor="Black"/>
+                    <Label Text="REPRINT/CANCEL"
+                           FontSize="35"
+                           Padding="0"
+                           TextColor="Black"/>       
+                </StackLayout>
+                <lottie:AnimationView Animation="Resources.illustration.json"  
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="275"
+                         VerticalOptions="CenterAndExpand" Margin="150,20,20,0"
+                          Grid.Row="0"/>
+            </Grid>    
+            <StackLayout Padding="20,0,20,0" VerticalOptions="FillAndExpand">
+                <Grid RowSpacing="30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                    <Frame Grid.Row="0" x:Name="reprint_frame">
+                        <Button Text="1. Receipt Reprint" x:Name="reprint_btn" Clicked="ReceiptReprint_to_ReceiptReprint"/>
+                    </Frame>
 
-            <StackLayout Padding="20,0,20,0" >
-                <Frame BorderColor="LightGray" HasShadow="True" CornerRadius="20">
-                    <StackLayout>
-                        <Button Text="1. Receipt Reprint" Clicked="ReceiptReprint_to_ReceiptReprint" />
-                        <Button Text="2. Receipt Cancel" Clicked="ReceiptReprint_to_ReceiptCancel"/>                        
-                    </StackLayout>
-                </Frame>
+                <Frame Grid.Row="1" Margin="0,15,0,0" x:Name="cancel_frame">
+                        <Button Text="2. Receipt Cancel" Clicked="ReceiptReprint_to_ReceiptCancel" x:Name="cancel_btn"/>
+                    </Frame>
             </StackLayout>
 
             <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>

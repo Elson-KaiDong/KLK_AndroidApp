@@ -2,24 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.LatexFC"
-             BackgroundImageSource="bg.jpg">
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#9cd0f2" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
+            </Style>
+            
             <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>                
             </Style>
-            
+
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="Small"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="CornerRadius" Value="30" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#1167b1"/>
+                <Setter Property="FontSize" Value="16"/>
             </Style>
 
             <Style TargetType="Label">
@@ -59,15 +76,22 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid>
-                <Image Source="rubbertree.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="LATEX AND FC"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="White"/>
+                <lottie:AnimationView Animation="Resources.bluelaptopworking.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="200"
+                         VerticalOptions="EndAndExpand" 
+                         Margin="0,0,20,0" Grid.Row="0" Grid.Column="0"/>
+                
+                              
+                <Label Text="Latex and FC" 
+                       FontFamily="passion" 
+                       HorizontalOptions="EndAndExpand" 
+                       FontSize="40" 
+                       TextColor="Black" Margin="0,0,20,0" Grid.Row="0" Grid.Column="1"/>
+                    
+                
             </Grid>
 
             <Grid Margin="20,20,20,20" RowSpacing="15">
@@ -117,8 +141,9 @@
 
             <StackLayout VerticalOptions="EndAndExpand" Margin="20,0,20,0">
                 <Label Text="** Only applied to Recovery Tapping"/>
-                <Button Text="NEXT" 
-                        Command="{Binding NextButtonCommand}"/>
+                <Frame Style="{StaticResource button_shadow_frame}">
+                    <Button Text="NEXT" Command="{Binding NextButtonCommand}"/>
+                </Frame>
                 <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
             </StackLayout>
 

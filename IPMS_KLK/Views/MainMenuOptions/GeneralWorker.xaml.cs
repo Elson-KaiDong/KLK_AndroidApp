@@ -14,6 +14,7 @@ namespace IPMS_KLK.Views.MainMenuOptions
     {
         public GeneralWorker()
         {
+            uint speed = 600;
             InitializeComponent();
             BindingContext = new ViewModels.GeneralWorkerViewModel();
 
@@ -22,10 +23,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             guidedByJob_btn.TranslationX = -300;
             guidedByJob_frame.Opacity = 0;
             guidedByJob_frame.TranslationX = -300;
-            guidedByJob_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            guidedByJob_btn.FadeTo(1, 1000);
-            guidedByJob_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            guidedByJob_frame.FadeTo(1, 1000);
+            guidedByJob_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            guidedByJob_btn.FadeTo(1, speed);
+            guidedByJob_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            guidedByJob_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Guided By Vehicle Animation***
@@ -33,10 +34,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             guidedByVehicle_btn.TranslationX = -300;
             guidedByVehicle_frame.Opacity = 0;
             guidedByVehicle_frame.TranslationX = -300;
-            guidedByVehicle_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            guidedByVehicle_btn.FadeTo(1, 1000);
-            guidedByVehicle_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            guidedByVehicle_frame.FadeTo(1, 1000);
+            guidedByVehicle_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            guidedByVehicle_btn.FadeTo(1, speed);
+            guidedByVehicle_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            guidedByVehicle_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Add New Job Animation***
@@ -44,10 +45,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             addNewJob_btn.TranslationX = 300;
             addNewJob_frame.Opacity = 0;
             addNewJob_frame.TranslationX = 300;
-            addNewJob_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            addNewJob_btn.FadeTo(1, 1000);
-            addNewJob_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            addNewJob_frame.FadeTo(1, 1000);
+            addNewJob_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            addNewJob_btn.FadeTo(1, speed);
+            addNewJob_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            addNewJob_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Add New Vehicle Animation***
@@ -55,10 +56,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             addNewVehicle_btn.TranslationX = 300;
             addNewVehicle_frame.Opacity = 0;
             addNewVehicle_frame.TranslationX = 300;
-            addNewVehicle_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            addNewVehicle_btn.FadeTo(1, 1000);
-            addNewVehicle_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            addNewVehicle_frame.FadeTo(1, 1000);
+            addNewVehicle_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            addNewVehicle_btn.FadeTo(1, speed);
+            addNewVehicle_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            addNewVehicle_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Print Receipt Animation***
@@ -66,10 +67,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             printReceipt_btn.TranslationX = 300;
             printReceipt_frame.Opacity = 0;
             printReceipt_frame.TranslationX = 300;
-            printReceipt_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            printReceipt_btn.FadeTo(1, 1000);
-            printReceipt_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            printReceipt_frame.FadeTo(1, 1000);
+            printReceipt_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            printReceipt_btn.FadeTo(1, speed);
+            printReceipt_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            printReceipt_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Show Total Emp Animation***
@@ -77,10 +78,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             showTotalEmp_btn.TranslationX = 300;
             showTotalEmp_frame.Opacity = 0;
             showTotalEmp_frame.TranslationX = 300;
-            showTotalEmp_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            showTotalEmp_btn.FadeTo(1, 1000);
-            showTotalEmp_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            showTotalEmp_frame.FadeTo(1, 1000);
+            showTotalEmp_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            showTotalEmp_btn.FadeTo(1, speed);
+            showTotalEmp_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            showTotalEmp_frame.FadeTo(1, speed);
             #endregion
 
 

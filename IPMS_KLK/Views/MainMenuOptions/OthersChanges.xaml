@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.OthersChanges"
-             BackgroundImageSource="bg.jpg">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="IPMS_KLK.Views.MainMenuOptions.OthersChanges">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#9e7cd7" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
@@ -15,23 +22,41 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
             </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
-                <Image Source="office1.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="OTHERS/CHANGES"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,0,0,0"
-                   TextColor="White"
-                   VerticalOptions="CenterAndExpand"/>
-            </Grid>
+            <StackLayout Margin="0,15,0,0">
+                <Grid>
+                    <lottie:AnimationView Animation="Resources.kid-on-laptop.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="200"
+                         HorizontalOptions="StartAndExpand"
+                         Margin="0,0,0,0"/>
+                    <StackLayout Margin="30,20,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand">
+                        <Label Text="Others"
+                               FontSize="75"  
+                               TextColor="BLack"
+                               FontFamily="passion"/>
+
+                        <Label Text="/Changes"
+                               FontSize="40"                
+                               TextColor="Black"
+                               FontFamily="passion" />
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
 
             <Grid Margin="20,0,20,0">
                 <Grid.RowDefinitions>

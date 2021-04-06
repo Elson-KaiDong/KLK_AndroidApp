@@ -19,6 +19,8 @@ namespace IPMS_KLK.Views.MainMenuOptions
             btn_TaskInspection_Reset.Clicked += Btn_TaskInspection_Reset_Clicked;
             SetValue(NavigationPage.HasBackButtonProperty, true);
             NavigationPage.SetHasBackButton(this, true);
+            task_Anim.TranslationX = 300;
+            task_Anim.TranslateTo(0, 0, 100, Easing.SpringOut);
             
         }
 

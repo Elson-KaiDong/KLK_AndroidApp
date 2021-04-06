@@ -14,6 +14,7 @@ namespace IPMS_KLK.Views.MainMenuOptions
     {
         public FFBCounting()
         {
+            uint speed = 600;
             InitializeComponent();
             BindingContext = new ViewModels.FFBCountingContentsViewModels.FFBCountingViewModel();
 
@@ -22,10 +23,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             bunchCounting_btn.TranslationX = -300;
             bunchCounting_frame.Opacity = 0;
             bunchCounting_frame.TranslationX = -300;
-            bunchCounting_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            bunchCounting_btn.FadeTo(1, 1000);
-            bunchCounting_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            bunchCounting_frame.FadeTo(1, 1000);
+            bunchCounting_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            bunchCounting_btn.FadeTo(1, speed);
+            bunchCounting_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            bunchCounting_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Loose Fruit Weighing Animation***
@@ -33,10 +34,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             looseFruit_btn.TranslationX = -300;
             looseFruit_frame.Opacity = 0;
             looseFruit_frame.TranslationX = -300;
-            looseFruit_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            looseFruit_btn.FadeTo(1, 1000);
-            looseFruit_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            looseFruit_frame.FadeTo(1, 1000);
+            looseFruit_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            looseFruit_btn.FadeTo(1, speed);
+            looseFruit_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            looseFruit_frame.FadeTo(1, speed);
             #endregion
 
             #region ***FFB Verification Animation***
@@ -44,10 +45,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             ffbVerification_btn.TranslationX = 300;
             ffbVerification_frame.Opacity = 0;
             ffbVerification_frame.TranslationX = 300;
-            ffbVerification_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            ffbVerification_btn.FadeTo(1, 1000);
-            ffbVerification_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            ffbVerification_frame.FadeTo(1, 1000);
+            ffbVerification_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            ffbVerification_btn.FadeTo(1, speed);
+            ffbVerification_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            ffbVerification_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Amend Verification Animation***
@@ -55,10 +56,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             amendVerified_btn.TranslationX = 300;
             amendVerified_frame.Opacity = 0;
             amendVerified_frame.TranslationX = 300;
-            amendVerified_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            amendVerified_btn.FadeTo(1, 1000);
-            amendVerified_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            amendVerified_frame.FadeTo(1, 1000);
+            amendVerified_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            amendVerified_btn.FadeTo(1, speed);
+            amendVerified_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            amendVerified_frame.FadeTo(1, speed);
             #endregion
 
             #region ***Mandore Attendance Animation***
@@ -66,10 +67,10 @@ namespace IPMS_KLK.Views.MainMenuOptions
             mandoreAttendance_btn.TranslationX = 300;
             mandoreAttendance_frame.Opacity = 0;
             mandoreAttendance_frame.TranslationX = 300;
-            mandoreAttendance_btn.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            mandoreAttendance_btn.FadeTo(1, 1000);
-            mandoreAttendance_frame.TranslateTo(0, 0, 1000, Easing.CubicInOut);
-            mandoreAttendance_frame.FadeTo(1, 1000);
+            mandoreAttendance_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            mandoreAttendance_btn.FadeTo(1, speed);
+            mandoreAttendance_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
+            mandoreAttendance_frame.FadeTo(1, speed);
             #endregion
 
            

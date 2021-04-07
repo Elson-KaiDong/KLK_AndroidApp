@@ -14,7 +14,7 @@ namespace IPMS_KLK.Views.MainMenuOptions
     {
         public GeneralWorker()
         {
-            uint speed = 600;
+            uint speed = 750;
             InitializeComponent();
             BindingContext = new ViewModels.GeneralWorkerViewModel();
 

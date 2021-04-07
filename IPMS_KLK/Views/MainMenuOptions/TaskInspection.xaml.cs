@@ -16,19 +16,23 @@ namespace IPMS_KLK.Views.MainMenuOptions
         {
             InitializeComponent();
             Title = "Task Inspection";
-            btn_TaskInspection_Reset.Clicked += Btn_TaskInspection_Reset_Clicked;
-            SetValue(NavigationPage.HasBackButtonProperty, true);
-            NavigationPage.SetHasBackButton(this, true);
-            task_Anim.TranslationX = 300;
-            task_Anim.TranslateTo(0, 0, 100, Easing.SpringOut);
-            
+            //btn_TaskInspection_Reset.Clicked += Btn_TaskInspection_Reset_Clicked;            
+            pv_workerID.TranslationX = -300;
+            pv_FieldNo.TranslationX = -300;
+            pv_TaskNo.TranslationX = 300;
+            pv_Direction.TranslationX = 300;
+            pv_workerID.TranslateTo(0, 0, 1000, Easing.CubicOut);
+            pv_FieldNo.TranslateTo(0, 0, 1500, Easing.CubicOut);
+            pv_TaskNo.TranslateTo(0, 0, 1000, Easing.CubicOut);
+            pv_Direction.TranslateTo(0, 0, 1500, Easing.CubicOut);
+
         }
 
         private void Btn_TaskInspection_Reset_Clicked(object sender, EventArgs e)
         {
-            TaskInspection_WorkerID_Entry.Text = "";
-            TaskInspection_FieldNo_Entry.Text = "";
-            TaskInspection_TaskNo_Entry.Text = "";         
+            //TaskInspection_WorkerID_Entry.Text = "";
+            //.Text = "";
+            //TaskInspection_TaskNo_Entry.Text = "";         
             
         }
     }

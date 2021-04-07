@@ -14,6 +14,7 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("KeepCalm-Medium.ttf", Alias = "keepcalm")]
 [assembly: ExportFont("PassionOne-Regular.ttf", Alias = "passion")]
 [assembly: ExportFont("SFUIDisplay-Medium.otf", Alias = "sfMedium")]
+[assembly: ExportFont("Theater_Bold.otf", Alias = "theater")]
 namespace IPMS_KLK
 {
     public partial class App : Application

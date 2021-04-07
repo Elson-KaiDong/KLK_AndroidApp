@@ -14,7 +14,7 @@ namespace IPMS_KLK.Views.MainMenuOptions
     {
         public ReceiptReprint()
         {
-            uint speed = 600;
+            uint speed = 750;
             InitializeComponent();
 
             #region ***Receipt Reprint Animation***

@@ -110,6 +110,8 @@
                     <RowDefinition Height="40"/>
                     
                 </Grid.RowDefinitions>
+                
+                
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="125"/>
@@ -146,6 +148,7 @@
                     <ColumnDefinition Width="*"/>
                     
                 </Grid.ColumnDefinitions>
+                
                 
                 <pv:PancakeView CornerRadius="00,20,00,20" Grid.Row="0"  Margin="0,0,0,0" 
                                 xct:ShadowEffect.Color="Black" 

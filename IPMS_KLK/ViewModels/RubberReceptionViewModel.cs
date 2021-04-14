@@ -27,32 +27,32 @@ namespace IPMS_KLK.ViewModels
 
         private async Task RubberReception_to_LatexFC()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexFC());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexFC(),false);
         }
 
         private async Task RubberReception_to_LatexWeighing()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexWeighing());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.LatexWeighing(), false);
         }
 
         private async Task RubberReception_to_FCWeighing()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.FCWeighing());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.FCWeighing(), false);
         }
 
         private async Task RubberReception_to_PrintTotalWt()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.PrintTotalWt());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.PrintTotalWt(), false);
         }
 
         private async Task RubberReception_to_BucketCageWt()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.BucketCageWt());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.BucketCageWt(), false);
         }
 
         private async Task RubberReception_to_RubberReception_MandoreAttendance()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.RubberReception_MandoreAttendance());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReceptionMenuOptions.RubberReception_MandoreAttendance(), false);
         }
     }
 }

@@ -45,18 +45,53 @@
                     
                     <StackLayout>  
                         <StackLayout Margin="50,0,50,0">
-                            <Label Text="Enter Username : "  Margin="10,0,0,0" FontAttributes="Bold" FontSize="Medium"/>
-                            <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                        
+                            
+                        <Label Text="Enter Username : "  Margin="10,0,0,0" FontAttributes="Bold" FontSize="Medium">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference username_entry},Path=IsFocused}" Value="true">
+                                    <Setter Property="FontSize" Value="Large"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>                        
+                            
+                        <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">                           
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="#cbe54e" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7"/>
-                                    <Entry PlaceholderColor="Black" Placeholder="Username" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                <Frame BackgroundColor="#cbe54e" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                    <Frame.Triggers>
+                                        <DataTrigger TargetType="Frame"
+                                             Binding="{Binding Source={x:Reference username_entry},Path=IsFocused}" Value="true">
+                                            <Setter Property="HeightRequest" Value="45"/>
+                                            <Setter Property="WidthRequest" Value="45"/>
+                                            <Setter Property="CornerRadius" Value="70"/>
+                                        </DataTrigger>
+                                    </Frame.Triggers>
+                                </Frame>
+                                <Entry x:Name="username_entry" PlaceholderColor="Black" Placeholder="Username" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
-                            <Label Text="Enter Password : "  Margin="10,25,0,0" FontAttributes="Bold" FontSize="Medium"/>
+                        <Label Text="Enter Password : "  Margin="10,25,0,0" FontAttributes="Bold" FontSize="Medium">
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference password_entry},Path=IsFocused}" Value="true">
+                                    <Setter Property="FontSize" Value="Large"/>
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
                         <Frame BackgroundColor="Transparent" BorderColor="Transparent" Padding="0" Margin="0,0,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                <Frame BackgroundColor="#cbe54e" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7"/>
-                                    <Entry PlaceholderColor="Black" Placeholder="Password" IsPassword="True" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                <Frame BackgroundColor="#cbe54e" CornerRadius="50" HeightRequest="35" WidthRequest="35" Padding="0" HorizontalOptions="Start" Margin="7">
+                                    <Frame.Triggers>
+                                        <DataTrigger TargetType="Frame"
+                                             Binding="{Binding Source={x:Reference password_entry},Path=IsFocused}" Value="true">
+                                            <Setter Property="HeightRequest" Value="45"/>
+                                            <Setter Property="WidthRequest" Value="45"/>
+                                            <Setter Property="CornerRadius" Value="70"/>
+                                        </DataTrigger>
+                                    </Frame.Triggers>
+                                </Frame>
+                                    <Entry x:Name="password_entry" PlaceholderColor="Black" Placeholder="Password" IsPassword="True" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>

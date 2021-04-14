@@ -25,32 +25,32 @@ namespace IPMS_KLK.ViewModels
 
         private async Task MainMenu_to_GeneralWorker()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorker());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorker(),false);
         }
 
         private async Task MainMenu_to_RubberReception()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReception());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.RubberReception(), false);
         }
 
         private async Task MainMenu_to_FFBCounting()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.FFBCounting());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.FFBCounting(), false);
         }
 
         private async Task MainMenu_to_TaskInspection()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.TaskInspection());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.TaskInspection(), false);
         }
 
         private async Task MainMenu_to_ReceiptReprint()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.ReceiptReprint());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.ReceiptReprint(), false);
         }
 
         private async Task MainMenu_to_OthersChanges()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.OthersChanges());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.OthersChanges(), false);
         }
     }
 }

@@ -1,9 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.FCWeighing" BackgroundImageSource="bg.jpg">
+             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.FCWeighing" 
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
     <ContentPage.Resources>
         <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
+            </Style>
+
             <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
@@ -11,14 +26,17 @@
             </Style>
 
             <Style TargetType="Button">
-                <Setter Property="FontSize" Value="Small"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="CornerRadius" Value="30" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="#1167b1"/>
+                <Setter Property="FontSize" Value="16"/>
             </Style>
 
             <Style TargetType="Label">
@@ -27,6 +45,7 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
             </Style>
 
             <Style TargetType="Entry">
@@ -58,18 +77,25 @@
     <ContentPage.Content>
         <StackLayout>
             <Grid>
-                <Image Source="rubbertree.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="FC WEIGHING"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="White"/>
+                <lottie:AnimationView Animation="Resources.bluelaptopworking.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="150"
+                         VerticalOptions="EndAndExpand" 
+                         Margin="10,0,20,0" Grid.Row="0" Grid.Column="0"/>
+
+
+                <Label Text="FC Weighing" 
+                       FontFamily="passion" 
+                       HorizontalOptions="EndAndExpand" 
+                       FontSize="40" 
+                       TextColor="Black" Margin="0,0,20,0" Grid.Row="0" Grid.Column="1"/>
+
+
             </Grid>
 
-            <Grid Margin="20,20,20,20" RowSpacing="15">
+            <Grid Margin="20,0,20,20" RowSpacing="15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="60"/>
@@ -84,20 +110,60 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="1. Worker ID" Grid.Row="0" Grid.Column="0"/>
-                <Label Text="2. Field No" Grid.Row="1" Grid.Column="0"/>
-                <Label Text="3. Task No" Grid.Row="2" Grid.Column="0"/>
-                <Label Text="4. Tapping Type" Grid.Row="3" Grid.Column="0"/>
-                <Label Text="5. Method **" Grid.Row="4" Grid.Column="0"/>
+                <Label Text="1. Worker ID" Grid.Row="0" Grid.Column="0">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference workerID_entry},Path=IsFocused}" Value="true">
+                            <Setter Property="FontSize" Value="Medium"/>
+                            <Setter Property="TextColor" Value="DarkBlue"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+                <Label Text="2. Field No" Grid.Row="1" Grid.Column="0">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference fieldNo_entry},Path=IsFocused}" Value="true">
+                            <Setter Property="FontSize" Value="Medium"/>
+                            <Setter Property="TextColor" Value="DarkBlue"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+                <Label Text="3. Task No" Grid.Row="2" Grid.Column="0">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference taskNo_entry},Path=IsFocused}" Value="true">
+                            <Setter Property="FontSize" Value="Medium"/>
+                            <Setter Property="TextColor" Value="DarkBlue"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+                <Label Text="4. Tapping Type" Grid.Row="3" Grid.Column="0">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference pickerTappingType},Path=IsFocused}" Value="true">
+                            <Setter Property="FontSize" Value="Medium"/>
+                            <Setter Property="TextColor" Value="DarkBlue"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+                <Label Text="5. Method **" Grid.Row="4" Grid.Column="0">
+                    <Label.Triggers>
+                        <DataTrigger TargetType="Label"
+                                             Binding="{Binding Source={x:Reference methodPicker},Path=IsFocused}" Value="true">
+                            <Setter Property="FontSize" Value="Medium"/>
+                            <Setter Property="TextColor" Value="DarkBlue"/>
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
 
                 <Frame Grid.Row="0" Grid.Column="1">
-                    <Entry Text="{Binding WorkerID}"/>
+                    <Entry Text="{Binding WorkerID}" x:Name="workerID_entry"/>
                 </Frame>
                 <Frame Grid.Row="1" Grid.Column="1">
-                    <Entry Text="{Binding FieldNo}"/>
+                    <Entry Text="{Binding FieldNo}" x:Name="fieldNo_entry"/>
                 </Frame>
                 <Frame Grid.Row="2" Grid.Column="1">
-                    <Entry Text="{Binding TaskNo}"/>
+                    <Entry Text="{Binding TaskNo}" x:Name="taskNo_entry"/>
                 </Frame>
                 <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
                     <Picker Title="--Select tapping type--" 
@@ -122,8 +188,9 @@
 
             <StackLayout VerticalOptions="EndAndExpand" Margin="20,0,20,0">
                 <Label Text="** Only applied to Recovery Tapping"/>
-                <Button Text="NEXT" 
-                        Command="{Binding NextButtonCommand}"/>
+                <Frame Style="{StaticResource button_shadow_frame}" Margin="0,10,0,0">
+                    <Button Text="NEXT" Command="{Binding NextButtonCommand}"/>
+                </Frame>
                 <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
             </StackLayout>
 

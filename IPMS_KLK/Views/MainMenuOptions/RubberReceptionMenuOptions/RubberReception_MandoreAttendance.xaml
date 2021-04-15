@@ -1,12 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.RubberReception_MandoreAttendance">
+             x:Class="IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions.RubberReception_MandoreAttendance"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
+            </Style>
+
+            <Style TargetType="Picker">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="#1167b1"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="7"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <lottie:AnimationView Animation="Resources.bluelaptopworking.json"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="150"
+                         VerticalOptions="EndAndExpand" 
+                         Margin="10,0,20,0" Grid.Row="0" Grid.Column="0"/>
+
+
+                <Label Text="Mandore Attendance" 
+                       FontFamily="passion" 
+                       HorizontalOptions="EndAndExpand" 
+                       FontSize="40" 
+                       TextColor="Black" Margin="0,0,20,0" Grid.Row="0" Grid.Column="1"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -2,38 +2,77 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenuOptions.ReceiptReprintMenuOptions.ReceiptCancel_InputScreen"
-             BackgroundImageSource="bg.jpg">
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="Black"/>
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="0,0,0,0"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="BackgroundColor" Value="#ffb6c1"/>
+                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="PlaceholderColor" Value="DarkGray"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="MaxLength" Value="7"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="passion"/>
+                <Setter Property="TextColor" Value="Black"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
-                <Image Source="desk.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="RECEIPT CANCEL"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="White"/>
+            <Grid >
+                <StackLayout HorizontalOptions="Start" Margin="20,0,0,0" Grid.Row="0" x:Name="titleStack">
+                    <Label Text="RECEIPT"
+                           FontSize="70"                                                      
+                           Padding="0,20,0,0"
+                           TextColor="Black"/>
+                    <Label Text="CANCEL"
+                           FontSize="35"
+                           Padding="0"
+                           TextColor="Black"/>
+                </StackLayout>
+                <lottie:AnimationView Animation="Resources.illustration.json"  
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="125"
+                         VerticalOptions="CenterAndExpand" Margin="175,20,20,0"
+                          Grid.Row="0"/>
             </Grid>
 
-            <Grid Margin="20,0,20,0">
+            <Grid Margin="20,50,20,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -43,21 +82,26 @@
                     <RowDefinition Height="70"/>
                 </Grid.RowDefinitions>
 
-                <Label Text="Transaction No:" 
-                       TextColor="Black" 
+                <Label Text="Transaction No:"                        
                        Grid.Column="0" 
                        VerticalOptions="CenterAndExpand"
-                       FontAttributes="Bold"
-                       FontSize="20"/>
-                <Entry Grid.Column="1"/>
+                       FontFamily="sfBlack"
+                       FontSize="Small"/>
+                <Frame Grid.Column="1">
+                    <Entry />
+                </Frame>
+
                 <ImageButton Source="scan.png" BackgroundColor="Transparent" Grid.Column="2"/>
             </Grid>
 
 
             <StackLayout VerticalOptions="EndAndExpand">
-                <Button Margin="20,0,20,0" Text="CANCEL" BackgroundColor="Green"  CornerRadius="20"/>
+                <Frame Style="{StaticResource button_shadow_frame}" Margin="20,0,20,0">
+                    <Button  Text="CANCEL"/>
+                </Frame>
                 <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50"  Margin="0,0,0,10"/>
             </StackLayout>
+
 
         </StackLayout>
     </ContentPage.Content>

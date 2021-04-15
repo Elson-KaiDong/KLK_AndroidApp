@@ -47,23 +47,23 @@
             <Grid >                
                 <StackLayout HorizontalOptions="Start" Margin="20,0,0,0" Grid.Row="0">
                     <Label Text="RECEIPT"
-                           FontSize="70"                                                      
+                           FontSize="60"                                                      
                            Padding="0,20,0,0"
                            TextColor="Black"/>
                     <Label Text="REPRINT/CANCEL"
-                           FontSize="35"
+                           FontSize="30"
                            Padding="0"
                            TextColor="Black"/>       
                 </StackLayout>
-                <lottie:AnimationView Animation="Resources.illustration.json"  
+                <lottie:AnimationView Animation="Resources.creator.json"  
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
                          AutoPlay="True"
-                         HeightRequest="275"
-                         VerticalOptions="CenterAndExpand" Margin="150,20,20,0"
+                         HeightRequest="125"
+                         VerticalOptions="CenterAndExpand" Margin="200,20,20,0"
                           Grid.Row="0"/>
             </Grid>    
-            <StackLayout Padding="20,0,20,0" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="20,0,20,0" VerticalOptions="CenterAndExpand">
                 <Grid RowSpacing="30">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>

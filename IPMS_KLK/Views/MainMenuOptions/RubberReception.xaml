@@ -39,24 +39,24 @@
     <ContentPage.Content>
         <StackLayout Margin="0,20,0,0">            
                 <Grid>
-                    <lottie:AnimationView Animation="Resources.bluelaptopworking.json"
+                    <lottie:AnimationView Animation="Resources.motorwaiting.json"
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
                          AutoPlay="True"
                          HeightRequest="200"
                          VerticalOptions="EndAndExpand" 
                          Margin="150,0,20,0"/>
-                    <StackLayout>
+                    <StackLayout Margin="20,15,0,0">
                         <Label Text="Rubber" 
                                FontFamily="passion" 
                                HorizontalOptions="StartAndExpand" 
                                FontSize="60" 
-                               TextColor="Black" Margin="20,0,0,0"/>
+                               TextColor="Black"/>
                         <Label Text="Reception" 
                                FontFamily="passion" 
                                HorizontalOptions="StartAndExpand" 
                                FontSize="35" 
-                               TextColor="Black" Margin="20,0,0,0"/>
+                               TextColor="Black"/>
                 </StackLayout>                    
                 </Grid>
             

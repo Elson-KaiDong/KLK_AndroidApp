@@ -11,11 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\banner-animation.json" />
     <None Remove="Resources\bluehouse.json" />
     <None Remove="Resources\bluelaptopworking.json" />
     <None Remove="Resources\carousel.json" />
     <None Remove="Resources\character.json" />
     <None Remove="Resources\construction.json" />
+    <None Remove="Resources\creator.json" />
     <None Remove="Resources\dashboard.json" />
     <None Remove="Resources\developer.json" />
     <None Remove="Resources\doctors.json" />
@@ -32,6 +34,7 @@
     <None Remove="Resources\Fonts\SFUIDisplay-Thin.otf" />
     <None Remove="Resources\Fonts\Theater_Bold.otf" />
     <None Remove="Resources\garbage.json" />
+    <None Remove="Resources\greenboy.json" />
     <None Remove="Resources\icon-animation.json" />
     <None Remove="Resources\illustration.json" />
     <None Remove="Resources\inbox-folder.json" />
@@ -43,15 +46,18 @@
     <None Remove="Resources\lottie-animation.json" />
     <None Remove="Resources\lumberjack.json" />
     <None Remove="Resources\messaging.json" />
+    <None Remove="Resources\motorwaiting.json" />
     <None Remove="Resources\movie.json" />
     <None Remove="Resources\no-wifi.json" />
     <None Remove="Resources\print.json" />
     <None Remove="Resources\programming.json" />
+    <None Remove="Resources\purple-threekids.json" />
     <None Remove="Resources\rocket.json" />
     <None Remove="Resources\sad-dev.json" />
     <None Remove="Resources\searching.json" />
     <None Remove="Resources\searchscroll.json" />
     <None Remove="Resources\task.json" />
+    <None Remove="Resources\teamwork.json" />
     <None Remove="Resources\trusted-sites.json" />
     <None Remove="Resources\user-testing.json" />
     <None Remove="Resources\welcome.json" />
@@ -63,12 +69,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\banner-animation.json" />
+    <EmbeddedResource Include="Resources\creator.json" />
     <EmbeddedResource Include="Resources\doctors.json" />
+    <EmbeddedResource Include="Resources\greenboy.json" />
     <EmbeddedResource Include="Resources\kid-on-laptop.json" />
     <EmbeddedResource Include="Resources\landscape.json" />
+    <EmbeddedResource Include="Resources\motorwaiting.json" />
     <EmbeddedResource Include="Resources\no-wifi.json" />
     <EmbeddedResource Include="Resources\print.json" />
+    <EmbeddedResource Include="Resources\purple-threekids.json" />
     <EmbeddedResource Include="Resources\sad-dev.json" />
+    <EmbeddedResource Include="Resources\teamwork.json" />
     <EmbeddedResource Include="Resources\wokrk-at-night.json" />
     <EmbeddedResource Include="Resources\construction.json" />
     <EmbeddedResource Include="Resources\login-anim.json" />

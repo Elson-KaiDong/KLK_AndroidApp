@@ -109,7 +109,7 @@
                     </Frame>
 
                     <Frame Style="{StaticResource button_shadow_frame}" Grid.Column="1" >
-                        <Button Text="No" BackgroundColor="DarkRed" Command="{Binding AddNewJobScanOC_NoCommand}"/>
+                        <Button Text="No" BackgroundColor="DarkRed" Command="{Binding NO_ScanLentLaborButtonCommand}"/>
                     </Frame>
                 </Grid>
 

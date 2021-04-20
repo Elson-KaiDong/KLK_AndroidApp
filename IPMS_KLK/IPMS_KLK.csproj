@@ -138,7 +138,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\MainMenuOptions\OthersChangesMenuOptions\" />
     <Folder Include="Views\MainMenuOptions\TaskInspectionMenuOptions\" />
   </ItemGroup>
 
@@ -201,6 +200,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\OthersChanges.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\OthersChangesMenuOptions\OthersChangesScreen2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\ReceiptReprint.xaml">

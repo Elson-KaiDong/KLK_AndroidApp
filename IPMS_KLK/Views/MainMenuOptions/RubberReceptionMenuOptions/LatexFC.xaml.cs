@@ -13,8 +13,9 @@ namespace IPMS_KLK.Views.MainMenuOptions.RubberReceptionMenuOptions
             BindingContext = new ViewModels.RubberReceptionContentsViewModels.LatexFC_ViewModel();
 
 
-            titleLabel.TranslationX = 300;
-            titleLabel.TranslateTo(0, 0, 750, Easing.SpringOut);
+            
+            latexFC_next_btn.Scale = 0;
+            latexFC_next_btn.ScaleTo(1, 1000, Easing.SpringOut);
         }
     }
 }

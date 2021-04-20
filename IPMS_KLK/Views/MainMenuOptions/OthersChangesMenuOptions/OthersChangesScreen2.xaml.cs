@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace IPMS_KLK.Views.MainMenuOptions
+namespace IPMS_KLK.Views.MainMenuOptions.OthersChangesMenuOptions
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OthersChanges : ContentPage
+    public partial class OthersChangesScreen2 : ContentPage
     {
-        public OthersChanges()
+        public OthersChangesScreen2()
         {
-            BindingContext = new ViewModels.OthersViewModel();
             InitializeComponent();
         }
     }

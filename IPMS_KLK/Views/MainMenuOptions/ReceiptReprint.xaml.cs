@@ -42,11 +42,11 @@ namespace IPMS_KLK.Views.MainMenuOptions
 
         private async void ReceiptReprint_to_ReceiptReprint(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new ReceiptReprintMenuOptions.ReceiptReprint_InputScreen());
+            await Navigation.PushModalAsync(new ReceiptReprintMenuOptions.ReceiptReprint_InputScreen(),false);
         }
         private async void ReceiptReprint_to_ReceiptCancel(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new ReceiptReprintMenuOptions.ReceiptCancel_InputScreen());
+            await Navigation.PushModalAsync(new ReceiptReprintMenuOptions.ReceiptCancel_InputScreen(),false);
         }
 
 

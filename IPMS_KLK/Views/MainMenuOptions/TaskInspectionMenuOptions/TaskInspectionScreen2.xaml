@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IPMS_KLK.Views.MainMenuOptions.TaskInspectionMenuOptions.TaskInspectionScreen2"
+              xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" >
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="Margin" Value="0,0,1,3"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BackgroundColor" Value="#ff6347"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="HeightRequest" Value="125"/>
+            </Style>
+
+            <Style x:Key="label_inside_button" TargetType="Label">
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalTextAlignment" Value="Start"/>
+                <Setter Property="Margin" Value="10,10,0,0"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="label_for_OC" TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style x:Key="label_for_title" TargetType="Label">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="30"/>
+            </Style>            
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="10,10,10,10"/>
+            </Style>
+
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Margin" Value="0,5,0,5"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="0,10,0,0" x:Name="task_inspection_StackLayout">
+            <Grid Margin="0" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="TASK" FontSize="55" Style="{StaticResource label_for_title}"  Grid.Row="0" Grid.Column="1"/>
+                <Label Text="INSPECTION" FontSize="30" Style="{StaticResource label_for_title}" Grid.Row="1" Grid.Column="1"/>
+
+
+                <lottie:AnimationView Animation="Resources.construction.json" x:Name="task_Anim"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="150"
+                         VerticalOptions="CenterAndExpand"
+                         Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+
+            </Grid>
+
+            <Frame >
+                <Label Text="OC :135-LADANG SERAPOH" Style="{StaticResource label_for_OC}" Margin="20,0,20,0"/>
+            </Frame>
+
+            <Grid RowSpacing="20" Margin="30,50,30,50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="0" x:Name="unharvested_frame">
+                        <Button Text="Unharvested Palm" Clicked="Unharvested_Clicked"/>
+                    </Frame>
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="1" x:Name="harvested_frame">
+                        <Button Text="Harvested Palm" Clicked="Harvested_Clicked"/>
+                    </Frame>
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="2" x:Name="harvested_defective_frame">
+                        <Button Text="Harvested Palm with Defective Circle" Clicked="HarvestedDefective_Clicked"/>
+                    </Frame>
+                
+            </Grid>
+            
+
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

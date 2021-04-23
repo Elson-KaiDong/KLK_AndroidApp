@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 
@@ -100,8 +98,11 @@ namespace IPMS_KLK.ViewModels.FFBCountingContentsViewModels
 
         private async Task CheckrollButton_Clicked()
         {
-            _harvestingType = "Checkroll";
-            checkIsEmptyField(_harvestingType);
+           
+                _harvestingType = "Checkroll";
+                checkIsEmptyField(_harvestingType);
+            
+            
         }
 
         private async Task ContractButton_Clicked()

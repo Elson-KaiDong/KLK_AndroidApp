@@ -29,7 +29,7 @@ namespace IPMS_KLK.Views.MainMenuOptions
             guidedByJob_frame.FadeTo(1, speed);
             #endregion
 
-            /*#region ***Guided By Vehicle Animation***
+            #region ***Guided By Vehicle Animation***
             guidedByVehicle_btn.Opacity = 0;
             guidedByVehicle_btn.TranslationX = -300;
             guidedByVehicle_frame.Opacity = 0;
@@ -38,13 +38,13 @@ namespace IPMS_KLK.Views.MainMenuOptions
             guidedByVehicle_btn.FadeTo(1, speed);
             guidedByVehicle_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);
             guidedByVehicle_frame.FadeTo(1, speed);
-            #endregion*/
+            #endregion
 
             #region ***Add New Job Animation***
             addNewJob_btn.Opacity = 0;
-            addNewJob_btn.TranslationX = -300;
+            addNewJob_btn.TranslationX = 300;
             addNewJob_frame.Opacity = 0;
-            addNewJob_frame.TranslationX = -300;
+            addNewJob_frame.TranslationX = 300;
             addNewJob_btn.TranslateTo(0, 0, speed, Easing.CubicInOut);
             addNewJob_btn.FadeTo(1, speed);
             addNewJob_frame.TranslateTo(0, 0, speed, Easing.CubicInOut);

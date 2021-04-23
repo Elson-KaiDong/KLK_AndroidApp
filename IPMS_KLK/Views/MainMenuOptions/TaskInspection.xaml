@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="IPMS_KLK.Views.MainMenuOptions.TaskInspection"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              NavigationPage.HasBackButton="True"
-             BackgroundColor="#F9DED7">
+             BackgroundColor="#F9DED7"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" >
 
     <ContentPage.Background>
         <LinearGradientBrush EndPoint="0,1">
@@ -29,11 +29,13 @@
             </Style>
 
             <Style x:Key="reset_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">                
-                <Setter Property="BackgroundColor" Value="Red"/>                
+                <Setter Property="BackgroundColor" Value="#ff3030"/>                
             </Style>
 
             <Style x:Key="bottom_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
-                <Setter Property="BackgroundColor" Value="#ff6700"/>
+                <Setter Property="BackgroundColor" Value="#ff6347"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+
             </Style>
 
             <Style x:Key="label_inside_button" TargetType="Label">
@@ -51,9 +53,17 @@
                 <Setter Property="TextColor" Value="Black"/>                
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-                <Setter Property="xct:ShadowEffect.Color" Value="Transparent"/>
              </Style>
-          
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
             <Style x:Key="label_for_title" TargetType="Label">
                 <Setter Property="Margin" Value="0"/>
                 <Setter Property="Padding" Value="0"/>
@@ -66,8 +76,8 @@
                 <Setter Property="BackgroundColor" Value="DarkGray"/>
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="CornerRadius" Value="20"/>
-            </Style>
-            
+            </Style>          
+
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="PlaceholderColor" Value="DarkGray"/>
@@ -104,39 +114,36 @@
 
     <ContentPage.Content>
         <StackLayout Margin="0,10,0,0" x:Name="task_inspection_StackLayout">
-            <Grid Margin="0">
+            <Grid Margin="0" RowSpacing="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
                     
                 </Grid.RowDefinitions>
-                
-                
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" Margin="0,0,0,0" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
 
-                    <Label Text="TASK INSPECTION" FontSize="30" Style="{StaticResource label_for_title}"/>
-                    <Frame  xct:ShadowEffect.Color="black"  >
-                        <Label Text="OC :135-LADANG SERAPOH" Style="{StaticResource label_for_OC}" Margin="20,0,20,0"/>
-                    </Frame>
-                </StackLayout>
-                <lottie:AnimationView Animation="Resources.sad-dev.json" x:Name="task_Anim"
+                    <Label Text="TASK" FontSize="55" Style="{StaticResource label_for_title}"  Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="INSPECTION" FontSize="30" Style="{StaticResource label_for_title}"  Grid.Row="1" Grid.Column="1"/>
+                    
+
+                <lottie:AnimationView Animation="Resources.construction.json" x:Name="task_Anim"
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
                          AutoPlay="True"
-                         HeightRequest="200"
+                         HeightRequest="150"
                          VerticalOptions="CenterAndExpand"
-                         Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"/>
-                <StackLayout  Grid.Column="1" Grid.Row="2"  VerticalOptions="Center" 
-                              HorizontalOptions="CenterAndExpand"
-                              Margin="0,20,20,0">
-                </StackLayout>
+                         Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+                
             </Grid>
 
+            <Frame >
+                <Label Text="OC :135-LADANG SERAPOH" Style="{StaticResource label_for_OC}" Margin="20,0,20,0"/>
+            </Frame>
+            <!--
             <Grid Margin="0,5,0,0" RowSpacing="20" ColumnSpacing="20" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -296,21 +303,21 @@
                     </StackLayout>
                 </pv:PancakeView>
             </Grid>
-
+-->
            
-              <!--  <StackLayout>
-                    <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="10">
+               <StackLayout>
+                    <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition Height="65"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="110"/>
-                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
@@ -320,13 +327,13 @@
                         <Label Text="4. Direction Type" Grid.Row="3" Grid.Column="0"/>
 
                         <Frame Grid.Row="0" Grid.Column="1">
-                            <Entry x:Name="TaskInspection_WorkerID_Entry"/>
+                            <Entry x:Name="TaskInspection_WorkerID_Entry" Text="{Binding WorkerID}"/>
                         </Frame>
                         <Frame Grid.Row="1" Grid.Column="1">
-                            <Entry x:Name="TaskInspection_FieldNo_Entry"/>
+                            <Entry x:Name="TaskInspection_FieldNo_Entry" Text="{Binding FieldNo}"/>
                         </Frame>
                         <Frame Grid.Row="2" Grid.Column="1">
-                            <Entry x:Name="TaskInspection_TaskNo_Entry"/>
+                            <Entry x:Name="TaskInspection_TaskNo_Entry" Text="{Binding TaskNo}"/>
                         </Frame>
                         <StackLayout RadioButtonGroup.GroupName="Direction_Type"  Grid.Row="3" Grid.Column="1">
                             <RadioButton TextColor="Black" Content="P&lt;&lt;" Value="Left" IsChecked="True" x:Name="start_from_left"/>
@@ -334,36 +341,35 @@
                         </StackLayout>
 
 
-                        <ImageButton Grid.Row="0" Grid.Column="2"/>
-                        <ImageButton Grid.Row="1" Grid.Column="2" />
-                        <ImageButton Grid.Row="2" Grid.Column="2" />
-                        <Button x:Name="btn_TaskInspection_Reset" Style="{StaticResource reset_btn}" Grid.Row="3" Grid.Column="2" Text="Reset"/>
+                        <ImageButton Grid.Row="0" Grid.Column="2" Command="{Binding ScanWorkerIDCommand}"/>
+                        <ImageButton Grid.Row="1" Grid.Column="2" Command="{Binding ScanFieldNoCommand}" />
+                        <ImageButton Grid.Row="2" Grid.Column="2" Command="{Binding ScanTaskNoCommand}"/>
+                        <Button x:Name="btn_TaskInspection_Reset" 
+                                Style="{StaticResource reset_btn}"
+                                Grid.Row="3" Grid.Column="2" 
+                                Text="Reset" Command="{Binding ResetCommand}"/>
                     </Grid>
-                </StackLayout> 
+                </StackLayout>
 
 
-            <StackLayout>
-                        <Grid Margin="10,10,10,0" ColumnSpacing="10" VerticalOptions="EndAndExpand" HeightRequest="75">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Grid Margin="10,10,10,0" ColumnSpacing="10"  HeightRequest="75">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                            <Frame Style="{StaticResource button_shadow_frame}" Grid.Column="0" xct:ShadowEffect.Color="Black" 
-                            xct:ShadowEffect.OffsetY="-10" 
-                            xct:ShadowEffect.OffsetX="-10"
-                            xct:ShadowEffect.Radius="30"
-                            xct:ShadowEffect.Opacity="1">
-                                <Button Style="{StaticResource bottom_btn}" Text="Next" />
-                            </Frame>
-                            <Frame Style="{StaticResource button_shadow_frame}"  Grid.Column="1" xct:VisualFeedbackEffect.FeedbackColor="Black" xct:ShadowEffect.Color="Black">
-                                <Button Style="{StaticResource bottom_btn}" Text="Print Summary" IsEnabled="True" xct:IconTintColorEffect.TintColor="Black"/>
-                            </Frame>
-                        </Grid>
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Column="0">
+                        <Button Style="{StaticResource bottom_btn}" Text="Next" Command="{Binding NextButtonCommand}"/>
+                    </Frame>
+                    <Frame Style="{StaticResource button_shadow_frame}"  Grid.Column="1" >
+                        <Button Style="{StaticResource bottom_btn}" Text="Print Summary" IsEnabled="False"/>
+                    </Frame>
+                </Grid>
 
-                        <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10" VerticalOptions="EndAndExpand"/>
-                    </StackLayout>-->
-              
+                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+
         </StackLayout>
         
     </ContentPage.Content>

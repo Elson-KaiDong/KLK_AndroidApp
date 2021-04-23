@@ -84,8 +84,10 @@
                          HeightRequest="150"
                          VerticalOptions="EndAndExpand" 
                          Margin="10,0,20,0" Grid.Row="0" Grid.Column="0"/>
+
                 
-                              
+
+
                 <Label Text="Latex and FC" x:Name="titleLabel"
                        FontFamily="passion" 
                        HorizontalOptions="EndAndExpand" 

@@ -73,8 +73,8 @@
                                 <RowDefinition Height="30"/>
                                 <RowDefinition Height="30"/>
                                 <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -89,15 +89,23 @@
                                 </Button>
                             </Frame>
 
-                        <!--Add New Job-->
-                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="addNewJob_frame">
-                            <Button Text="Add New Job" x:Name="addNewJob_btn"
-                                    Command="{Binding GeneralWorker_to_AddNewJobCommand}">
+                        <!--Guided by Vechicle-->
+                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByVehicle_frame" >
+                            <Button Text="Guided by Vehicle" x:Name="guidedByVehicle_btn"
+                                            Command="{Binding GeneralWorker_to_GuidedByVehicleCommand}" 
+                                            >
                             </Button>
                         </Frame>
 
+                        <!--Add New Job-->
+                            <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="addNewJob_frame">
+                                <Button Text="Add New Job" x:Name="addNewJob_btn"
+                                        Command="{Binding GeneralWorker_to_AddNewJobCommand}">
+                                </Button>
+                            </Frame>
+
                         <!--Add New Vehicle-->
-                            <Frame  Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"  x:Name="addNewVehicle_frame">
+                            <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="addNewVehicle_frame">
                             <Button Text="Add New Vehicle" x:Name="addNewVehicle_btn"
                                     Command="{Binding GeneralWorker_to_AddNewVechicleCommand}">                                    
                                 </Button>
@@ -105,14 +113,14 @@
 
 
                         <!--Print Receipt-->
-                            <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" x:Name="printReceipt_frame">
+                            <Frame  Grid.Row="6" Grid.Column="1" Grid.RowSpan="1" x:Name="printReceipt_frame">
                             <Button Text="Print Receipt" x:Name="printReceipt_btn"  
                                         Command="{Binding GeneralWorker_to_PrintReceiptCommand}">
                                 </Button>
                             </Frame>
 
                         <!--Show Total Emp-->
-                        <Frame Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="showTotalEmp_frame">
+                        <Frame Grid.Row="7" Grid.Column="1" Grid.RowSpan="1" x:Name="showTotalEmp_frame">
                             <Button Text="Show Total Emp" x:Name="showTotalEmp_btn"
                                 Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}" >                                    
                                 </Button>

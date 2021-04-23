@@ -52,11 +52,11 @@
         <StackLayout>
             <StackLayout Margin="0,15,0,0">
                 <Grid>
-                    <lottie:AnimationView Animation="Resources.login-anim.json"
+                    <lottie:AnimationView Animation="Resources.others-changes.json"
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
                          AutoPlay="True"
-                         HeightRequest="125"
+                         HeightRequest="200"
                          Margin="125,0,0,0"/>
                     <StackLayout Margin="30,20,10,0" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
                         <Label Text="Others"

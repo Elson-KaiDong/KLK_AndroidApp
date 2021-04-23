@@ -2,72 +2,150 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenuOptions.GeneralWorkerMenuOptions.AddNewJob"
-             BackgroundImageSource="bg.jpg">
+            xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#ffffff" Offset="0.1" />
+            <GradientStop Color="#ffffff" Offset="1.0" />
+            <!--<GradientStop Color="#FBF7D5" Offset="1.0" />-->
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="0,15,0,15"/>
-                <Setter Property="Margin" Value="0,10,0,0"/>
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
                 <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="Margin" Value="0,5,0,5"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="HorizontalOptions" Value="Fill"/>
-                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style x:Key="labelBaseStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="bottom_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="#effd5f"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+            </Style>
+
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+
+            <Style TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="10,10,10,10"/>
+            </Style>
+
+            <Style x:Key="label_for_OC" TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+
     <ContentPage.Content>
-
-        
-        <StackLayout>
-            <Grid>
-                <Image Source="workers.jpg" Aspect="AspectFill" HeightRequest="150"/>
-                <StackLayout  BackgroundColor="Black" Opacity="0.5"/>
-                <Label Text="ADD NEW JOB"
-                   FontSize="Title"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Padding="0,20,0,0"
-                   TextColor="White"/>
-                
-            </Grid>
-
-            <Grid Margin="20,0,20,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Label FontSize="Medium" FontAttributes="Bold" TextColor="Black" Text="OC Code" Grid.Column="0" VerticalOptions="Center"/>
-                <Entry IsEnabled="False" Grid.Column="1" VerticalOptions="Center"/>
-                <ImageButton Source="scan.png" BackgroundColor="Transparent"  Grid.Column="2" VerticalOptions="Center"/>
-            </Grid>
-
-            <StackLayout  VerticalOptions="EndAndExpand">
-                <Label TextColor="Black" Text="Scanning Lent Labor OC?" HorizontalOptions="CenterAndExpand"/>
-                <Grid Margin="20,20,20,0">
+        <StackLayout Margin="0,0,0,0">
+            <StackLayout Margin="0,20,0,0">
+                <Grid Margin="0,0,0,0">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Text="Yes" BackgroundColor="DarkGreen" Grid.Column="0" Command="{Binding AddNewJobScanOC_YesCommand}"/>
-                    <Button Text="No" BackgroundColor="DarkRed" Grid.Column="1" Command="{Binding AddNewJobScanOC_NoCommand}"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+                    <lottie:AnimationView Animation="Resources.yellowsun.json" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
+                         AnimationSource="EmbeddedResource"
+                         RepeatMode="Infinite"
+                         AutoPlay="True"
+                         HeightRequest="200"    
+                         VerticalOptions="Start"
+                         Margin="0,0,0,0"/>
+                    <StackLayout Grid.Row="0" Grid.Column="1"  VerticalOptions="Center" HorizontalOptions="StartAndExpand">
+                        <Label Text="Add New" 
+                               FontSize="40"  
+                               TextColor="Black"
+                               FontFamily="passion" VerticalOptions="End"/>
+                        <Label Text="JOB"
+                               FontSize="60"  
+                               TextColor="Black"
+                               FontFamily="passion" VerticalOptions="Start"/>
+                    </StackLayout>
                 </Grid>
-
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
-
             </StackLayout>
 
-            
-            
+            <Frame  Margin="20,0,20,0">
+                <Label Text="OC :135-LADANG SERAPOH" Style="{StaticResource label_for_OC}"/>
+            </Frame>
+
+            <Label Text="Scan Lent Labor OC?" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" VerticalOptions="Start"/>
+
+            <Grid Margin="20,20,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Frame Style="{StaticResource button_shadow_frame}" Grid.Column="0">
+                    <Button Text="YES" Style="{StaticResource bottom_btn}"/>
+                </Frame>
+
+                <Frame Style="{StaticResource button_shadow_frame}" Grid.Column="1">
+                    <Button Text="NO" Style="{StaticResource bottom_btn}"/>
+                </Frame>
+
+                
+
+            </Grid>
+            <Grid Margin="20,20,20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="OC Code" Grid.Column="0"/>
+                <Entry Grid.Column="1"/>
+                <ImageButton Grid.Column="2"/>
+            </Grid>         
+
+
+
+            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
 
         </StackLayout>
     </ContentPage.Content>

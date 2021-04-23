@@ -14,6 +14,7 @@
     <None Remove="Resources\banner-animation.json" />
     <None Remove="Resources\bluehouse.json" />
     <None Remove="Resources\bluelaptopworking.json" />
+    <None Remove="Resources\call.json" />
     <None Remove="Resources\carousel.json" />
     <None Remove="Resources\character.json" />
     <None Remove="Resources\construction.json" />
@@ -35,11 +36,13 @@
     <None Remove="Resources\Fonts\Theater_Bold.otf" />
     <None Remove="Resources\garbage.json" />
     <None Remove="Resources\greenboy.json" />
+    <None Remove="Resources\hello.json" />
     <None Remove="Resources\icon-animation.json" />
     <None Remove="Resources\illustration.json" />
     <None Remove="Resources\inbox-folder.json" />
     <None Remove="Resources\kid-on-laptop.json" />
     <None Remove="Resources\landscape.json" />
+    <None Remove="Resources\like.json" />
     <None Remove="Resources\lock-animation.json" />
     <None Remove="Resources\login-anim.json" />
     <None Remove="Resources\login.json" />
@@ -49,6 +52,8 @@
     <None Remove="Resources\motorwaiting.json" />
     <None Remove="Resources\movie.json" />
     <None Remove="Resources\no-wifi.json" />
+    <None Remove="Resources\oldtown.json" />
+    <None Remove="Resources\others-changes.json" />
     <None Remove="Resources\print.json" />
     <None Remove="Resources\programming.json" />
     <None Remove="Resources\purple-threekids.json" />
@@ -65,7 +70,14 @@
     <None Remove="Resources\womenonphone.json" />
     <None Remove="Resources\workers.json" />
     <None Remove="Resources\workfromhome.json" />
+    <None Remove="Resources\yellowmotor.json" />
+    <None Remove="Resources\yellowsun.json" />
     <None Remove="Resources\zezinho.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\call.json" />
+    <EmbeddedResource Include="Resources\oldtown.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,10 +85,13 @@
     <EmbeddedResource Include="Resources\creator.json" />
     <EmbeddedResource Include="Resources\doctors.json" />
     <EmbeddedResource Include="Resources\greenboy.json" />
+    <EmbeddedResource Include="Resources\hello.json" />
     <EmbeddedResource Include="Resources\kid-on-laptop.json" />
     <EmbeddedResource Include="Resources\landscape.json" />
+    <EmbeddedResource Include="Resources\like.json" />
     <EmbeddedResource Include="Resources\motorwaiting.json" />
     <EmbeddedResource Include="Resources\no-wifi.json" />
+    <EmbeddedResource Include="Resources\others-changes.json" />
     <EmbeddedResource Include="Resources\print.json" />
     <EmbeddedResource Include="Resources\purple-threekids.json" />
     <EmbeddedResource Include="Resources\sad-dev.json" />
@@ -88,6 +103,8 @@
     <EmbeddedResource Include="Resources\rocket.json" />
     <EmbeddedResource Include="Resources\lock-animation.json" />
     <EmbeddedResource Include="Resources\garbage.json" />
+    <EmbeddedResource Include="Resources\yellowmotor.json" />
+    <EmbeddedResource Include="Resources\yellowsun.json" />
     <EmbeddedResource Include="Resources\zezinho.json" />
     <EmbeddedResource Include="Resources\character.json" />
     <EmbeddedResource Include="Resources\movie.json" />
@@ -135,10 +152,6 @@
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\MainMenuOptions\TaskInspectionMenuOptions\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -239,6 +252,18 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainMenuOptions\TaskInspection.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\TaskInspectionMenuOptions\TaskInspectionHarvestedDefectivePalm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\TaskInspectionMenuOptions\TaskInspectionHarvestedPalm.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\TaskInspectionMenuOptions\TaskInspectionScreen2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainMenuOptions\TaskInspectionMenuOptions\TaskInspectionUnharvestedPalm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

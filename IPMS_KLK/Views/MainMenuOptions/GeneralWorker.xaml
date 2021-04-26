@@ -16,7 +16,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="TextTransform" Value="None"/>
                 <Setter Property="FontFamily" Value="sfBlack"/>
@@ -27,12 +27,6 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="#faefbe"/>
                 <Setter Property="FontSize" Value="16"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -82,54 +76,51 @@
                             </Grid.ColumnDefinitions>
 
                         <!--Guided by Job-->
-                            <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByJob_frame" >
-                            <Button Text="Guided by Job" x:Name="guidedByJob_btn"
-                                        Command="{Binding GeneralWorker_to_GuidedByJobCommand}" 
-                                        >                                    
-                                </Button>
+                            <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByJob_frame" >
+                                <Button Text="Guided by Job" x:Name="guidedByJob_btn"
+                                            Command="{Binding GeneralWorker_to_GuidedByJobCommand}">                                    
+                                    </Button>
                             </Frame>
 
                         <!--Guided by Vechicle-->
-                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByVehicle_frame" >
-                            <Button Text="Guided by Vehicle" x:Name="guidedByVehicle_btn"
-                                            Command="{Binding GeneralWorker_to_GuidedByVehicleCommand}" 
-                                            >
-                            </Button>
-                        </Frame>
+                            <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="guidedByVehicle_frame" >
+                                <Button Text="Guided by Vehicle" x:Name="guidedByVehicle_btn"
+                                                Command="{Binding GeneralWorker_to_GuidedByVehicleCommand}">
+                                </Button>
+                            </Frame>
 
                         <!--Add New Job-->
-                            <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="addNewJob_frame">
+                            <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="addNewJob_frame">
                                 <Button Text="Add New Job" x:Name="addNewJob_btn"
                                         Command="{Binding GeneralWorker_to_AddNewJobCommand}">
                                 </Button>
                             </Frame>
 
                         <!--Add New Vehicle-->
-                            <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="addNewVehicle_frame">
-                            <Button Text="Add New Vehicle" x:Name="addNewVehicle_btn"
+                            <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="addNewVehicle_frame">
+                                <Button Text="Add New Vehicle" x:Name="addNewVehicle_btn"
                                     Command="{Binding GeneralWorker_to_AddNewVechicleCommand}">                                    
                                 </Button>
                             </Frame>
 
 
                         <!--Print Receipt-->
-                            <Frame  Grid.Row="6" Grid.Column="1" Grid.RowSpan="1" x:Name="printReceipt_frame">
-                            <Button Text="Print Receipt" x:Name="printReceipt_btn"  
+                            <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="6" Grid.Column="1" Grid.RowSpan="1" x:Name="printReceipt_frame">
+                                <Button Text="Print Receipt" x:Name="printReceipt_btn"  
                                         Command="{Binding GeneralWorker_to_PrintReceiptCommand}">
                                 </Button>
                             </Frame>
 
                         <!--Show Total Emp-->
-                        <Frame Grid.Row="7" Grid.Column="1" Grid.RowSpan="1" x:Name="showTotalEmp_frame">
-                            <Button Text="Show Total Emp" x:Name="showTotalEmp_btn"
-                                Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}" >                                    
+                             <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="7" Grid.Column="1" Grid.RowSpan="1" x:Name="showTotalEmp_frame">
+                                <Button Text="Show Total Emp" x:Name="showTotalEmp_btn"
+                                        Command="{Binding GeneralWorker_to_ShowTotalEmpCommand}" >                                    
                                 </Button>
                             </Frame>
                         </Grid>        
-                    </StackLayout>  
+                    </StackLayout>
 
-                    <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
-        
+            <Image Style="{StaticResource klk_logo}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

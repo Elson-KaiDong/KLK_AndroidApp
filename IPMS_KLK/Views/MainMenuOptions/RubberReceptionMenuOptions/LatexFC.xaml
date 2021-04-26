@@ -12,13 +12,7 @@
     </ContentPage.Background>
     
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Frame" x:Key="button_shadow_frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
-            </Style>
-            
+        <ResourceDictionary>          
             <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
@@ -57,20 +51,7 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="MaxLength" Value="7"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BorderColor" Value="DarkGray"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="HasShadow" Value="True"/>
-                <Setter Property="Padding" Value="0"/>
-            </Style>
-
-            <Style TargetType="ImageButton">
-                <Setter Property="Source" Value="scan.png"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/>
-            </Style>
+            </Style>           
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -85,16 +66,11 @@
                          VerticalOptions="EndAndExpand" 
                          Margin="10,0,20,0" Grid.Row="0" Grid.Column="0"/>
 
-                
-
-
                 <Label Text="Latex and FC" x:Name="titleLabel"
                        FontFamily="passion" 
                        HorizontalOptions="EndAndExpand" 
                        FontSize="40" 
-                       TextColor="Black" Margin="0,0,20,0" Grid.Row="0" Grid.Column="1"/>
-                    
-                
+                       TextColor="Black" Margin="0,0,20,0" Grid.Row="0" Grid.Column="1"/>                    
             </Grid>
 
             <Grid Margin="20,0,20,20" RowSpacing="15">
@@ -158,10 +134,10 @@
                     </Label.Triggers>
                 </Label>
 
-                <Frame Grid.Row="0" Grid.Column="1"><Entry Text="{Binding WorkerID}" x:Name="workerID_entry"/></Frame>
-                <Frame Grid.Row="1" Grid.Column="1"><Entry Text="{Binding FieldNo}" x:Name="fieldNo_entry"/></Frame>
-                <Frame Grid.Row="2" Grid.Column="1"><Entry Text="{Binding TaskNo}" x:Name="taskNo_entry"/></Frame>
-                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                <Frame Grid.Row="0" Grid.Column="1"  Style="{StaticResource frame_for_entry}"><Entry Text="{Binding WorkerID}" x:Name="workerID_entry"/></Frame>
+                <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource frame_for_entry}"><Entry Text="{Binding FieldNo}" x:Name="fieldNo_entry"/></Frame>
+                <Frame Grid.Row="2" Grid.Column="1" Style="{StaticResource frame_for_entry}"><Entry Text="{Binding TaskNo}" x:Name="taskNo_entry"/></Frame>
+                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource frame_for_entry}">
                     <Picker Title="--Select tapping type--" 
                         SelectedIndex="{Binding TappingTypeSelectedIndex}"                        
                         x:Name="pickerTappingType"
@@ -169,7 +145,7 @@
                         ItemDisplayBinding="{Binding TappingType}"/>
                 </Frame>
 
-                <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource frame_for_entry}">
                     <Picker x:Name="methodPicker"
                         IsEnabled="{Binding IsMethodPickerEnabled, Mode=TwoWay}"
                         ItemsSource="{Binding methodList}"
@@ -187,10 +163,9 @@
                 <Frame Style="{StaticResource button_shadow_frame}" Margin="0,10,0,0" x:Name="latexFC_next_btn">
                     <Button Text="NEXT" Command="{Binding NextButtonCommand}" />
                 </Frame>
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
+                <Image Style="{StaticResource klk_logo}"/>
             </StackLayout>
-
-            
+           
 
         </StackLayout>
     </ContentPage.Content>

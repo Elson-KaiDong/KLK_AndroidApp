@@ -2,27 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IPMS_KLK.Views.MainMenu"
-             Title="Main Menu"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
-
-    <ContentPage.Background>
-        <LinearGradientBrush EndPoint="0,1">
-            <GradientStop Color="White" Offset="0.1" />
-            <GradientStop Color="White" Offset="1.0" />
-        </LinearGradientBrush>
-    </ContentPage.Background>
+             Title="Main Menu"             
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
+   
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
                 <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="TextTransform" Value="None"/>                
                 <Setter Property="FontFamily" Value="sfBlack"/>
                 <Setter Property="Padding" Value="10,10,10,10"/>                
                 <Setter Property="VerticalOptions" Value="FillAndExpand"/>
                 <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="0,0,0,3"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
             </Style>
 
             <Style TargetType="Frame">
@@ -36,8 +31,7 @@
     <ContentPage.Content>
     
     <StackLayout VerticalOptions="FillAndExpand">            
-            <!--Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/-->
-            <Frame BackgroundColor="Transparent" HasShadow="True" Margin="10,5,10,0">
+            
                 <StackLayout Margin="0,15,0,0">
                     <Grid>
                         <StackLayout>
@@ -59,8 +53,7 @@
                                FontFamily="sfRegular"
                                Margin="20,0,0,0"/>
                         </StackLayout>
-                          
-                        <!--<Frame Margin="20,10,20,0" BorderColor="LightGray" HasShadow="True" CornerRadius="20"/>-->
+                        
                         <lottie:AnimationView Animation="Resources.developer.json"
                          AnimationSource="EmbeddedResource"
                          RepeatMode="Infinite"
@@ -70,38 +63,32 @@
                          Margin="125,0,0,0"/>
                     </Grid>
                 </StackLayout>
-            </Frame>
-
-
-            <pv:PancakeView  VerticalOptions="FillAndExpand" Margin="0,0,0,0" BackgroundColor="Transparent" CornerRadius="0">
-                <StackLayout Margin="20,0,20,0">
-                        <Grid  ColumnSpacing="20" RowSpacing="20" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+            
+           
+                <StackLayout Margin="20,0,20,0" VerticalOptions="FillAndExpand">
+                        <Grid  ColumnSpacing="20" RowSpacing="20" HorizontalOptions="CenterAndExpand">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
-                                <RowDefinition Height="45*"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
+                                <RowDefinition Height="28"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
+                            
                             <!--General Workers-->
                             <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" x:Name="general_worker_frame">
                                 <Button Text="General Worker" 
                                         x:Name="general_worker_btn"
                                         Command="{Binding MainMenu_to_GeneralWorkerCommand}"                               
-                                        HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,3"
-                                        TextColor="Black"
                                         BackgroundColor="#FBF7D5">
-                                    
-
-                        </Button>                                
+                                  </Button>                                
                             </Frame>
                             
                             <!--Rubber Reception-->
@@ -110,9 +97,6 @@
                                 
                                 <Button  Text="Rubber Reception" x:Name="rubber_reception_btn"
                                         Command="{Binding MainMenu_to_RubberReceptionCommand}"                               
-                                        HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,3"
-                                        TextColor="Black"
                                         BackgroundColor="#CCE1F2">                                    
                                 </Button>
                             </Frame>                    
@@ -121,9 +105,6 @@
                             <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="ffb_frame">
                                 <Button Text="FFB Counting" x:Name="ffb_btn"
                                         Command="{Binding MainMenu_to_FFBCountingCommand}"                               
-                                        HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,3"
-                                        TextColor="Black"
                                         BackgroundColor="#C6F8E5">                                    
                                 </Button>
                             </Frame>
@@ -132,9 +113,6 @@
                             <Frame  Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" x:Name="task_inspection_frame" >
                                 <Button Text="Task Inspection" x:Name="task_inspection_btn"
                                         Command="{Binding MainMenu_to_TaskInspectionCommand}"                               
-                                        HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,3"
-                                        TextColor="Black"
                                         BackgroundColor="#F9DED7">
                                 </Button>
                             </Frame>
@@ -144,9 +122,6 @@
                             <Frame  Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" x:Name="receipt_reprint_frame">
                                 <Button Text="Receipt Reprint/Cancel"  x:Name="receipt_reprint_btn"  
                                         Command="{Binding MainMenu_to_ReceiptReprintCommand}"                               
-                                        HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,3"
-                                        TextColor="Black"
                                         BackgroundColor="#F5CDDE">                                                  
                                 </Button>
                             </Frame>                           
@@ -154,26 +129,14 @@
                             <!--Others/Changes-->
                             <Frame Grid.Row="6" Grid.Column="1"  Grid.RowSpan="2" x:Name="others_frame">
                                 <Button Text="Others/Changes" x:Name="others_btn"
-                                        Command="{Binding MainMenu_to_OthersChangesCommand}"                               
-                                        HorizontalOptions="FillAndExpand"
-                                        Margin="0,0,0,3"
-                                        TextColor="Black"
+                                        Command="{Binding MainMenu_to_OthersChangesCommand}" 
                                         BackgroundColor="#E2BEF1">
-                                      <!--  BackgroundColor="#E2BEF1">       -->                             
                                 </Button>
                             </Frame>    
-
-
-
-
                 </Grid>
-                
-                
-
-
                 </StackLayout>
-            </pv:PancakeView>
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50"  Margin="0,0,0,10"/>
+            
+            <Image Style="{StaticResource klk_logo}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

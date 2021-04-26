@@ -1,8 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IPMS_KLK.App">
+             x:Class="IPMS_KLK.App"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
     <Application.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ImageButton">
+                <Setter Property="Source" Value="scan.png"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Margin" Value="0,5,0,5"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="WidthRequest" Value="60"/>
+            </Style>
+            
+            <Style TargetType="Frame" x:Key="button_shadow_frame">
+                <Setter Property="BackgroundColor" Value="DarkGray"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
 
+            <Style x:Key="label_for_OC" TargetType="Label">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+
+            <Style x:Key="label_for_title" TargetType="Label">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+            </Style>
+
+            <Style x:Key="frame_for_entry" TargetType="Frame" >
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderColor" Value="DarkGray"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="Padding" Value="0"/>               
+            </Style>
+
+            <Style x:Key="frame_for_OC" TargetType="Frame" BasedOn="{StaticResource frame_for_entry}">
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+
+            <Style x:Key="labelBaseStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="TextTransform" Value="None"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="FontFamily" Value="sfBlack"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="reset_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="#ff3030"/>
+            </Style>
+
+            <Style x:Key="bottom_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="#ff6347"/>
+                <Setter Property="Margin" Value="0,0,0,2"/>
+            </Style>
+
+            <Style TargetType="lottie:AnimationView" x:Key="task_inspection_animation">
+                <Setter Property="AnimationSource" Value="EmbeddedResource"/>
+                <Setter Property="Animation" Value="Resources.construction.json"/>
+                <Setter Property="RepeatMode" Value="Infinite"/>
+                <Setter Property="AutoPlay" Value="True"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HeightRequest" Value="150"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Grid.Column" Value="0"/>
+                <Setter Property="Grid.Row" Value="0"/>
+            </Style>
+
+            <Style TargetType="Image" x:Key="klk_logo">
+                <Setter Property="Source" Value="klk_logo.png"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

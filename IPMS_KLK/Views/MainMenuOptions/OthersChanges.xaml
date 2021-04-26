@@ -113,8 +113,7 @@
                     </Frame>
                 </Grid>
 
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10"/>
-
+                <Image Style="{StaticResource klk_logo}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

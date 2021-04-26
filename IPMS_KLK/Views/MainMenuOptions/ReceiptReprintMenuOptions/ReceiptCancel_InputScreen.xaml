@@ -11,18 +11,12 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Padding" Value="0,0,0,0"/>
                 <Setter Property="Margin" Value="0,0,0,2"/>
-                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="CornerRadius" Value="20"/>
                 <Setter Property="BackgroundColor" Value="#ffb6c1"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="TextTransform" Value="None"/>
                 <Setter Property="FontFamily" Value="sfBlack"/>
-            </Style>
-
-            <Style TargetType="Frame" x:Key="button_shadow_frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
-            </Style>
+            </Style>            
 
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="Small"/>
@@ -35,13 +29,7 @@
                 <Setter Property="MaxLength" Value="7"/>
             </Style>
 
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BorderColor" Value="DarkGray"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="HasShadow" Value="True"/>
-                <Setter Property="Padding" Value="0"/>
-            </Style>
+            <Style TargetType="Frame" BasedOn="{StaticResource frame_for_entry}"/>
 
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="passion"/>
@@ -91,7 +79,7 @@
                     <Entry />
                 </Frame>
 
-                <ImageButton Source="scan.png" BackgroundColor="Transparent" Grid.Column="2"/>
+                <ImageButton Grid.Column="2"/>
             </Grid>
 
 
@@ -99,7 +87,7 @@
                 <Frame Style="{StaticResource button_shadow_frame}" Margin="20,0,20,0">
                     <Button  Text="CANCEL"/>
                 </Frame>
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50"  Margin="0,0,0,10"/>
+                <Image Style="{StaticResource klk_logo}"/>
             </StackLayout>
 
 

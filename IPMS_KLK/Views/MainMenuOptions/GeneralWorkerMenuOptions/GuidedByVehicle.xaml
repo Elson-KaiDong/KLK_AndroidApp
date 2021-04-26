@@ -48,13 +48,7 @@
             <Style x:Key="bottom_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
                 <Setter Property="BackgroundColor" Value="#effd5f"/>
                 <Setter Property="Margin" Value="0,0,0,2"/>
-            </Style>
-
-            <Style TargetType="Frame" x:Key="button_shadow_frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-            </Style>
+            </Style>            
 
             <Style TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="White"/>
@@ -63,14 +57,6 @@
                 <Setter Property="HasShadow" Value="True"/>
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="Margin" Value="10,10,10,10"/>
-            </Style>
-
-            <Style x:Key="label_for_OC" TargetType="Label">
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="FontFamily" Value="sfBlack"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

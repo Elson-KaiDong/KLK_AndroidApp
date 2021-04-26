@@ -15,8 +15,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="CornerRadius" Value="30" />
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="20" />                
                 <Setter Property="TextTransform" Value="None"/>
                 <Setter Property="FontFamily" Value="sfBlack"/>
                 <Setter Property="Padding" Value="10,10,10,10"/>
@@ -26,12 +25,6 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="#9cdef6"/>
                 <Setter Property="FontSize" Value="16"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -81,15 +74,15 @@
 
 
                         <!--FC Weighing-->
-                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="fc_weighing_frame">
-                            <Button Text="FC Weighing" x:Name="fc_weighing_btn" 
+                        <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="fc_weighing_frame" Style="{StaticResource button_shadow_frame}">
+                            <Button Text="FC Weighing" x:Name="fc_weighing_btn" CornerRadius="20"
                                     Command="{Binding RubberReception_to_FCWeighingCommand}"   
                                     >
                             </Button>
                         </Frame>
 
                         <!--Latex and FC-->
-                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="latex_fc_frame">
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="latex_fc_frame" Style="{StaticResource button_shadow_frame}">
                             <Button Text="Latex and FC" x:Name="latex_fc_btn"
                                         Command="{Binding RubberReception_to_LatexFCCommand}" 
                                         >
@@ -98,7 +91,7 @@
 
 
                         <!--Latex Weighing-->
-                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="latex_weighing_frame">
+                        <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="latex_weighing_frame" Style="{StaticResource button_shadow_frame}">
                             <Button Text="Latex Weighing" x:Name="latex_weighing_btn"
                                         Command="{Binding RubberReception_to_LatexWeighingCommand}"
                                         >
@@ -106,37 +99,23 @@
                         </Frame>
 
                         <!--Bucket/Cage Wt-->
-                        <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="bucket_frame">
+                        <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3"  x:Name="bucket_frame" Style="{StaticResource button_shadow_frame}">
                             <Button Text="Bucket/Cage Wt" x:Name="bucket_btn"
                                     Command="{Binding RubberReception_to_BucketCageWtCommand}"
                                    >
                             </Button>
-                        </Frame>
-
-                        <!--    <Line X1="0" Y1="0" X2="500" Y2="0" Stroke="black" 
-                                  StrokeThickness="2"
-                                  StrokeDashArray="1,1"
-                                  StrokeDashOffset="10"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  Margin="0"/>      
-
-                    <Label Text="Others"
-                                   FontSize="Title"
-                                   FontAttributes="Bold"
-                                   HorizontalTextAlignment="Center"                                   
-                                   Padding="0,0,0,0"
-                                   TextColor="Black"
-                                   FontFamily="Cool"
-                                   Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/> -->
+                        </Frame>                       
 
                         <!--Print Total Wt-->
-                        <Frame  Grid.Row="6" Grid.Column="1" x:Name="printTotal_frame">
-                            <Button Text="Print Total Wt"   x:Name="printTotal_btn"
+                        <Frame  Grid.Row="6" Grid.Column="1" x:Name="printTotal_frame" Style="{StaticResource button_shadow_frame}">
+                            <Button Text="Print Total Wt"   x:Name="printTotal_btn" 
                                     Command="{Binding RubberReception_to_PrintTotalWtFCCommand}"
                                     Padding="0">
                             </Button>
                         </Frame>
 
                         <!--Mandore Attendance-->
-                        <Frame Grid.Row="7" Grid.Column="1" x:Name="mandore_frame">
+                        <Frame Grid.Row="7" Grid.Column="1" x:Name="mandore_frame" Style="{StaticResource button_shadow_frame}">
                             <Button Text="Mandore Attendance" Padding="0" x:Name="mandore_btn"
                                     Command="{Binding RubberReception_to_RubberReception_MandoreAttendanceCommand}" >
                             </Button>
@@ -148,7 +127,7 @@
 
             </StackLayout>
 
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
+            <Image Style="{StaticResource klk_logo}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

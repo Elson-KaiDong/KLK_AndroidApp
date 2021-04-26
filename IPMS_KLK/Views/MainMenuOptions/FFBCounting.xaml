@@ -14,8 +14,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Button">
-                <Setter Property="CornerRadius" Value="30" />
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="TextTransform" Value="None"/>
                 <Setter Property="FontFamily" Value="sfBlack"/>
                 <Setter Property="Padding" Value="10,10,10,10"/>
@@ -25,12 +24,6 @@
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="BackgroundColor" Value="#81fbd4"/>
                 <Setter Property="FontSize" Value="16"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -80,7 +73,7 @@
                     </Grid.ColumnDefinitions>
 
                     <!--Bunch Counting-->
-                    <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="bunchCounting_frame">
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" x:Name="bunchCounting_frame">
                         <Button Text="Bunch Counting" x:Name="bunchCounting_btn"
                                 Command="{Binding FFBCounting_to_BunchCountingCommand}">
                         </Button>
@@ -88,21 +81,21 @@
 
 
                     <!--Loose Fruit Weighing-->
-                    <Frame Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="looseFruit_frame">
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" x:Name="looseFruit_frame">
                         <Button Text="Loose Fruit Weighing" x:Name="looseFruit_btn"
                                 Command="{Binding FFBCounting_to_LooseFruitWeighingCommand}">
                         </Button>
                     </Frame>
 
                     <!--FFB Verification-->
-                    <Frame Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="ffbVerification_frame">
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" x:Name="ffbVerification_frame">
                         <Button Text="FFB Verification" x:Name="ffbVerification_btn"
                                     Command="{Binding FFBCounting_to_FFBVerificationCommand}">
                         </Button>
                     </Frame>
 
                     <!--Amend Verified FFB-->
-                    <Frame  Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" x:Name="amendVerified_frame" >
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" x:Name="amendVerified_frame" >
                         <Button Text="Amend Verified FFB" x:Name="amendVerified_btn"
                                     Command="{Binding FFBCounting_to_AmendVerifiedFFBCommand}"
                                    >
@@ -111,7 +104,7 @@
 
 
                     <!--Mandore Attendance-->
-                    <Frame  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="mandoreAttendance_frame" >
+                    <Frame Style="{StaticResource button_shadow_frame}" Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="mandoreAttendance_frame" >
                         <Button Text="Mandore Attendance"  x:Name="mandoreAttendance_btn" 
                                 Command="{Binding FFBCounting_to_MandoreAttendanceCommand}">
                         </Button>
@@ -120,10 +113,9 @@
                     
                 </Grid>
             </StackLayout>
-         
 
-            <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" VerticalOptions="EndAndExpand" Margin="0,0,0,10"/>
 
+            <Image Style="{StaticResource klk_logo}"/>
         </StackLayout>
     </ContentPage.Content>    
 </ContentPage>

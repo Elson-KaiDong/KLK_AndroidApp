@@ -12,13 +12,7 @@
     </ContentPage.Background>
 
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Frame" x:Key="button_shadow_frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="30"/>
-            </Style>
-
+        <ResourceDictionary>     
             <Style TargetType="Picker">
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Black"/>
@@ -57,19 +51,6 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="MaxLength" Value="7"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BorderColor" Value="DarkGray"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="HasShadow" Value="True"/>
-                <Setter Property="Padding" Value="0"/>
-            </Style>
-
-            <Style TargetType="ImageButton">
-                <Setter Property="Source" Value="scan.png"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -156,16 +137,16 @@
                     </Label.Triggers>
                 </Label>
 
-                <Frame Grid.Row="0" Grid.Column="1">
+                <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource frame_for_entry}">
                     <Entry Text="{Binding WorkerID}" x:Name="workerID_entry"/>
                 </Frame>
-                <Frame Grid.Row="1" Grid.Column="1">
+                <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource frame_for_entry}">
                     <Entry Text="{Binding FieldNo}" x:Name="fieldNo_entry"/>
                 </Frame>
-                <Frame Grid.Row="2" Grid.Column="1">
+                <Frame Grid.Row="2" Grid.Column="1" Style="{StaticResource frame_for_entry}">
                     <Entry Text="{Binding TaskNo}" x:Name="taskNo_entry"/>
                 </Frame>
-                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+                <Frame Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource frame_for_entry}">
                     <Picker Title="--Select tapping type--" 
                         SelectedIndex="{Binding TappingTypeSelectedIndex}"                        
                         x:Name="pickerTappingType"
@@ -173,7 +154,7 @@
                         ItemDisplayBinding="{Binding TappingType}"/>
                 </Frame>
 
-                <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                <Frame Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource frame_for_entry}">
                     <Picker x:Name="methodPicker"
                         IsEnabled="{Binding IsMethodPickerEnabled, Mode=TwoWay}"
                         ItemsSource="{Binding methodList}"

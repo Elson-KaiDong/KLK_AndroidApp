@@ -25,27 +25,27 @@ namespace IPMS_KLK.ViewModels
 
         private async Task GeneralWorker_to_GuidedByJob()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.GuidedByJob());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.GuidedByJob(),false);
         }
 
         private async Task GeneralWorker_to_GuidedByVehicle()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.GuidedByVehicle());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.GuidedByVehicle(),false);
         }
 
         private async Task GeneralWorker_to_AddNewJob()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.AddNewJob());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.AddNewJob(),false);
         }
 
         private async Task GeneralWorker_to_AddNewVechicle()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.AddNewVehicle());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.AddNewVehicle(),false);
         }
 
         private async Task GeneralWorker_to_PrintReceipt()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.PrintReceipt());
+            await Application.Current.MainPage.Navigation.PushModalAsync(new Views.MainMenuOptions.GeneralWorkerMenuOptions.PrintReceipt(),false);
         }
 
         private async Task GeneralWorker_to_ShowTotalEmp()

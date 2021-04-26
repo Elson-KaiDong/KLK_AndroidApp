@@ -15,46 +15,7 @@
 
 
     <ContentPage.Resources>
-        <ResourceDictionary>            
-            <Style x:Key="labelBaseStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Padding" Value="10,10,10,10"/>
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="TextTransform" Value="None"/>
-                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
-                <Setter Property="HorizontalOptions" Value="Fill"/>
-                <Setter Property="FontFamily" Value="sfBlack"/>
-                <Setter Property="TextColor" Value="Black"/>
-            </Style>
-
-            <Style x:Key="reset_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">                
-                <Setter Property="BackgroundColor" Value="#ff3030"/>                
-            </Style>
-
-            <Style x:Key="bottom_btn" TargetType="Button" BasedOn="{StaticResource labelBaseStyle}">
-                <Setter Property="BackgroundColor" Value="#ff6347"/>
-                <Setter Property="Margin" Value="0,0,0,2"/>
-
-            </Style>
-
-            <Style x:Key="label_inside_button" TargetType="Label">
-                <Setter Property="FontFamily" Value="sfBlack"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="HorizontalTextAlignment" Value="Start"/>
-                <Setter Property="VerticalTextAlignment" Value="Start"/>
-                <Setter Property="Margin" Value="10,10,0,0"/>
-                <Setter Property="TextColor" Value="Black"/>
-            </Style>                       
-
-            <Style x:Key="label_for_OC" TargetType="Label">
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="FontFamily" Value="sfBlack"/>
-                <Setter Property="TextColor" Value="Black"/>                
-                <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-             </Style>
-
+        <ResourceDictionary>
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="14"/>
                 <Setter Property="TextColor" Value="Black"/>
@@ -64,50 +25,17 @@
                 <Setter Property="FontFamily" Value="sfBlack"/>
             </Style>
 
-            <Style x:Key="label_for_title" TargetType="Label">
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="HorizontalTextAlignment" Value="Center"/>
-                <Setter Property="FontFamily" Value="sfBlack"/>
-            </Style>
-
-            <Style TargetType="Frame" x:Key="button_shadow_frame">
-                <Setter Property="BackgroundColor" Value="DarkGray"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="CornerRadius" Value="20"/>
-            </Style>          
-
             <Style TargetType="Entry">
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="PlaceholderColor" Value="DarkGray"/>
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
                 <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="MaxLength" Value="8"/>
                 <Setter Property="Margin" Value="5,5,0,0"/>
                 <Setter Property="WidthRequest" Value="100"/>
-            </Style>
-
-            <Style TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BorderColor" Value="DarkGray"/>
-                <Setter Property="CornerRadius" Value="10"/>
-                <Setter Property="HasShadow" Value="True"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="Margin" Value="10,10,10,10"/>
-            </Style>
-
-            <Style TargetType="ImageButton">
-                <Setter Property="Source" Value="scan.png"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="Margin" Value="0,5,0,5"/>
-                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-                <Setter Property="HeightRequest" Value="50"/>
-                <Setter Property="WidthRequest" Value="50"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -115,204 +43,32 @@
     <ContentPage.Content>
         <StackLayout Margin="0,10,0,0" x:Name="task_inspection_StackLayout">
             <Grid Margin="0" RowSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition Height="70"/>
-                    
-                </Grid.RowDefinitions>
-
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                
+                <StackLayout Grid.Column="1" Grid.Row="0"  VerticalOptions="CenterAndExpand">
+                    <Label Text="TASK" FontSize="70" FontFamily="passion" Style="{StaticResource label_for_title}"/>
+                    <Label Text="INSPECTION" FontSize="35" FontFamily="passion" Style="{StaticResource label_for_title}"/>
+                </StackLayout>
 
-                    <Label Text="TASK" FontSize="55" Style="{StaticResource label_for_title}"  Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="INSPECTION" FontSize="30" Style="{StaticResource label_for_title}"  Grid.Row="1" Grid.Column="1"/>
-                    
-
-                <lottie:AnimationView Animation="Resources.construction.json" x:Name="task_Anim"
-                         AnimationSource="EmbeddedResource"
-                         RepeatMode="Infinite"
-                         AutoPlay="True"
-                         HeightRequest="150"
-                         VerticalOptions="CenterAndExpand"
-                         Margin="0,0,0,0" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+                <lottie:AnimationView Style="{StaticResource task_inspection_animation}"/>
                 
             </Grid>
 
-            <Frame >
-                <Label Text="OC :135-LADANG SERAPOH" Style="{StaticResource label_for_OC}" Margin="20,0,20,0"/>
-            </Frame>
-            <!--
-            <Grid Margin="0,5,0,0" RowSpacing="20" ColumnSpacing="20" >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    
-                </Grid.ColumnDefinitions>
-                
-                
-                <pv:PancakeView CornerRadius="00,20,00,20" Grid.Row="0"  Margin="0,0,0,0" 
-                                xct:ShadowEffect.Color="Black" 
-                                xct:ShadowEffect.OffsetX="10"
-                                xct:ShadowEffect.OffsetY="10"
-                                xct:ShadowEffect.Opacity="1"
-                                xct:ShadowEffect.Radius="20"
-                                x:Name="pv_workerID">
-                    <pv:PancakeView.BackgroundGradientStops>
-                        <pv:GradientStopCollection>
-                            <pv:GradientStop Color="#fc575e" Offset="0"/>
-                            <pv:GradientStop Color="#f7b42c" Offset="1"/>
-                        </pv:GradientStopCollection>                        
-                    </pv:PancakeView.BackgroundGradientStops>
-                    <StackLayout>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"/>
-                                    <RowDefinition Height="90"/>
-                                </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="150"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-
-                                <Label Text="1. Worker ID" Style="{StaticResource label_inside_button}"/>
-                                <Frame  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                                <StackLayout Orientation="Horizontal">
-                                    <Entry x:Name="TaskInspection_WorkerID_Entry"/>
-                                    <ImageButton />
-                                </StackLayout>
-                            </Frame>
-                                
-                            </Grid>                        
-                    </StackLayout> 
-                </pv:PancakeView>
-
-                <pv:PancakeView CornerRadius="0,20,0,20" Grid.Row="1" Margin="0,0,0,0"
-                                xct:ShadowEffect.Color="Black" 
-                                xct:ShadowEffect.OffsetX="10"
-                                xct:ShadowEffect.OffsetY="10"
-                                xct:ShadowEffect.Opacity="1"
-                                xct:ShadowEffect.Radius="20"
-                                x:Name="pv_FieldNo">
-                    <pv:PancakeView.BackgroundGradientStops>
-                        <pv:GradientStopCollection>
-                            <pv:GradientStop Color="#fc575e" Offset="0"/>
-                            <pv:GradientStop Color="#f7b42c" Offset="1"/>
-                        </pv:GradientStopCollection>
-                    </pv:PancakeView.BackgroundGradientStops>
-                    <StackLayout>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="90"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="2. Field No" Style="{StaticResource label_inside_button}"/>
-                            <Frame  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                                <StackLayout Orientation="Horizontal">
-                                    <Entry x:Name="TaskInspection_FieldNo_Entry"/>
-                                    <ImageButton />
-                                </StackLayout>
-                            </Frame>
-                            
-                        </Grid>
-                    </StackLayout>
-                </pv:PancakeView>
-
-                <pv:PancakeView CornerRadius="20,0,20,0" Grid.Row="0" Grid.Column="1" Margin="0,0,0,0"
-                                xct:ShadowEffect.Color="Black" 
-                                xct:ShadowEffect.OffsetX="10"
-                                xct:ShadowEffect.OffsetY="10"
-                                xct:ShadowEffect.Opacity="1"
-                                xct:ShadowEffect.Radius="20"
-                                x:Name="pv_TaskNo">
-                    <pv:PancakeView.BackgroundGradientStops>
-                        <pv:GradientStopCollection>
-                            <pv:GradientStop Color="#f7b42c" Offset="0"/>
-                            <pv:GradientStop Color="#fc575e" Offset="1"/>
-                        </pv:GradientStopCollection>
-                    </pv:PancakeView.BackgroundGradientStops>
-                    <StackLayout>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="90"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="3. Task No" Style="{StaticResource label_inside_button}"/>
-                            <Frame  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                                <StackLayout Orientation="Horizontal">
-                                    <Entry x:Name="TaskInspection_TaskNo_Entry" />
-                                    <ImageButton />
-                                </StackLayout>
-                            </Frame>
-                            
-                        </Grid>
-                    </StackLayout>
-                </pv:PancakeView>
-
-                <pv:PancakeView CornerRadius="20,0,20,0" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0"
-                                xct:ShadowEffect.Color="Black" 
-                                xct:ShadowEffect.OffsetX="10"
-                                xct:ShadowEffect.OffsetY="10"
-                                xct:ShadowEffect.Opacity="1"
-                                xct:ShadowEffect.Radius="20"
-                                x:Name="pv_Direction">
-                    <pv:PancakeView.BackgroundGradientStops>
-                        <pv:GradientStopCollection>
-                            <pv:GradientStop Color="#f7b42c" Offset="0"/>
-                            <pv:GradientStop Color="#fc575e" Offset="1"/>
-                        </pv:GradientStopCollection>
-                    </pv:PancakeView.BackgroundGradientStops>
-                    <StackLayout>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="90"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="4. Direction Type" Style="{StaticResource label_inside_button}"/>
-                            <Frame  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                                <StackLayout Orientation="Horizontal">
-                                    <StackLayout RadioButtonGroup.GroupName="Direction_Type"  Grid.Row="3" Grid.Column="1">
-                                        <RadioButton TextColor="Black" Content="P&lt;&lt;" Value="Left" IsChecked="True" x:Name="start_from_left"/>
-                                        <RadioButton TextColor="Black" Content="&gt;&gt;P" Value="Right" x:Name="start_from_right"/>
-                                    </StackLayout>
-                                </StackLayout>
-                            </Frame>
-
-                        </Grid>
-                    </StackLayout>
-                </pv:PancakeView>
-            </Grid>
--->
+            <Frame Style="{StaticResource frame_for_OC}" Margin="20,10,20,0">
+                <Label Text="OC :135-LADANG SERAPOH" Style="{StaticResource label_for_OC}"/>
+            </Frame>  
            
-               <StackLayout>
-                    <Grid VerticalOptions="Center" Padding="20,10,20,0" ColumnSpacing="10" RowSpacing="0">
+               <StackLayout Margin="20,0,20,0">
+                    <Grid VerticalOptions="Center" ColumnSpacing="10" RowSpacing="10">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="65"/>
-                            <RowDefinition Height="65"/>
-                            <RowDefinition Height="65"/>
-                            <RowDefinition Height="60"/>
-                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="55"/>
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
@@ -326,13 +82,13 @@
                         <Label Text="3. Task No" Grid.Row="2" Grid.Column="0"/>
                         <Label Text="4. Direction Type" Grid.Row="3" Grid.Column="0"/>
 
-                        <Frame Grid.Row="0" Grid.Column="1">
+                        <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource frame_for_entry}">
                             <Entry x:Name="TaskInspection_WorkerID_Entry" Text="{Binding WorkerID}"/>
                         </Frame>
-                        <Frame Grid.Row="1" Grid.Column="1">
+                        <Frame Grid.Row="1" Grid.Column="1" Style="{StaticResource frame_for_entry}">
                             <Entry x:Name="TaskInspection_FieldNo_Entry" Text="{Binding FieldNo}"/>
                         </Frame>
-                        <Frame Grid.Row="2" Grid.Column="1">
+                        <Frame Grid.Row="2" Grid.Column="1" Style="{StaticResource frame_for_entry}">
                             <Entry x:Name="TaskInspection_TaskNo_Entry" Text="{Binding TaskNo}"/>
                         </Frame>
                         <StackLayout RadioButtonGroup.GroupName="Direction_Type"  Grid.Row="3" Grid.Column="1">
@@ -351,7 +107,6 @@
                     </Grid>
                 </StackLayout>
 
-
             <StackLayout VerticalOptions="EndAndExpand">
                 <Grid Margin="10,10,10,0" ColumnSpacing="10"  HeightRequest="75">
                     <Grid.ColumnDefinitions>
@@ -367,10 +122,8 @@
                     </Frame>
                 </Grid>
 
-                <Image Source="klk_logo.png" HeightRequest="50" WidthRequest="50" Margin="0,0,0,10" VerticalOptions="EndAndExpand"/>
+                <Image Style="{StaticResource klk_logo}"/>
             </StackLayout>
-
-        </StackLayout>
-        
+        </StackLayout>        
     </ContentPage.Content>
 </ContentPage>
